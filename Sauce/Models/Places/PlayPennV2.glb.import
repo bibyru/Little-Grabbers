@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b52f2fioltr4u"
-path="res://.godot/imported/MainMenuBuilding.glb-f212f62dc56c8db0eea46e3544bdbddd.scn"
+uid="uid://bk16bm55tm288"
+path="res://.godot/imported/PlayPennV2.glb-b252f67f88939274a3ef0c41738857e8.scn"
 
 [deps]
 
-source_file="res://Sauce/Models/Places/MainMenuBuilding.glb"
-dest_files=["res://.godot/imported/MainMenuBuilding.glb-f212f62dc56c8db0eea46e3544bdbddd.scn"]
+source_file="res://Sauce/Models/Places/PlayPennV2.glb"
+dest_files=["res://.godot/imported/PlayPennV2.glb-b252f67f88939274a3ef0c41738857e8.scn"]
 
 [params]
 
