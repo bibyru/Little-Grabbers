@@ -1,0 +1,384 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck223tmuuto7h"]
+
+[ext_resource type="Theme" uid="uid://0h01xmjrd2lg" path="res://Sauce/Theme/PauseTheme.tres" id="1_pc0n4"]
+[ext_resource type="PackedScene" uid="uid://6iqunwf16155" path="res://Prefabs/UI/ButtonOnOff.tscn" id="2_0al4i"]
+[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="2_qbt6a"]
+[ext_resource type="Script" path="res://Scripts/MenuPause.gd" id="2_yesc8"]
+[ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="3_jfykm"]
+[ext_resource type="PackedScene" uid="uid://b43bys8l6npi2" path="res://Prefabs/UI/ButtonQuit.tscn" id="5_l45kg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv6jt"]
+bg_color = Color(0.135, 0.5, 0.5, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("2_yesc8")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pc0n4")
+
+[node name="KeyBinding" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = 54.0
+offset_right = 269.0
+offset_bottom = 282.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/KeyBinding"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.5
+offset_top = 16.0
+offset_right = 83.5
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "Key Bindings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panels" type="HBoxContainer" parent="Control/KeyBinding"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -251.5
+offset_top = 62.0
+offset_right = 252.5
+offset_bottom = 212.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="Control/KeyBinding/Panels"]
+custom_minimum_size = Vector2(160, 118)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv6jt")
+
+[node name="Control" type="Control" parent="Control/KeyBinding/Panels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel2" type="Panel" parent="Control/KeyBinding/Panels"]
+custom_minimum_size = Vector2(160, 118)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv6jt")
+
+[node name="Control2" type="Control" parent="Control/KeyBinding/Panels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel3" type="Panel" parent="Control/KeyBinding/Panels"]
+custom_minimum_size = Vector2(160, 118)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv6jt")
+
+[node name="Keys" type="HBoxContainer" parent="Control/KeyBinding"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.0
+offset_top = 70.0
+offset_right = 252.0
+offset_bottom = 188.0
+grow_horizontal = 2
+
+[node name="ActionVbox" type="VBoxContainer" parent="Control/KeyBinding/Keys"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Action"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Move"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Jump"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Interact"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Throw"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Control/KeyBinding/Keys"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MKBVbox" type="VBoxContainer" parent="Control/KeyBinding/Keys"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Keyboard"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "WASD"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "M"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "J"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "I"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Control/KeyBinding/Keys"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ControllerVbox" type="VBoxContainer" parent="Control/KeyBinding/Keys"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Joystick"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Left Stick"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "A"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "X"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Y"
+horizontal_alignment = 1
+
+[node name="Menu" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -287.0
+offset_right = 287.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = -133.0
+offset_right = -31.0
+offset_bottom = 133.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Fullscreen" type="HBoxContainer" parent="Control/Menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/Fullscreen"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+text = "Fullscreen"
+
+[node name="Control" type="Control" parent="Control/Menu/VBoxContainer/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" parent="Control/Menu/VBoxContainer/Fullscreen" instance=ExtResource("2_0al4i")]
+layout_mode = 2
+
+[node name="AntiAliasing" type="HBoxContainer" parent="Control/Menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/AntiAliasing"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+text = "Anti Aliasing"
+
+[node name="Control" type="Control" parent="Control/Menu/VBoxContainer/AntiAliasing"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" parent="Control/Menu/VBoxContainer/AntiAliasing" instance=ExtResource("2_0al4i")]
+layout_mode = 2
+
+[node name="Vsync" type="HBoxContainer" parent="Control/Menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/Vsync"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+text = "Vsync"
+
+[node name="Control" type="Control" parent="Control/Menu/VBoxContainer/Vsync"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" parent="Control/Menu/VBoxContainer/Vsync" instance=ExtResource("2_0al4i")]
+layout_mode = 2
+
+[node name="MasterVol" type="VBoxContainer" parent="Control/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/MasterVol"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Control/Menu/VBoxContainer/MasterVol"]
+layout_mode = 2
+value = 10.0
+
+[node name="MusicVol" type="VBoxContainer" parent="Control/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/MusicVol"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Control/Menu/VBoxContainer/MusicVol"]
+layout_mode = 2
+value = 50.0
+
+[node name="SFXVol" type="VBoxContainer" parent="Control/Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/SFXVol"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Control/Menu/VBoxContainer/SFXVol"]
+layout_mode = 2
+value = 50.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Menu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -139.0
+offset_right = 245.0
+offset_bottom = 114.0
+grow_vertical = 2
+theme = ExtResource("2_qbt6a")
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Control/Menu/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Menu/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ButtonResume" type="Button" parent="Control/Menu/VBoxContainer2"]
+layout_mode = 2
+text = "Resume"
+
+[node name="ButtonMain" type="Button" parent="Control/Menu/VBoxContainer2"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="ButtonQuit" parent="Control/Menu/VBoxContainer2" instance=ExtResource("5_l45kg")]
+layout_mode = 2
+
+[connection signal="toggled" from="Control/Menu/VBoxContainer/Fullscreen/Button" to="." method="button_fullscreen"]
+[connection signal="toggled" from="Control/Menu/VBoxContainer/AntiAliasing/Button" to="." method="button_antialiasing"]
+[connection signal="toggled" from="Control/Menu/VBoxContainer/Vsync/Button" to="." method="button_vsync"]
+[connection signal="button_down" from="Control/Menu/VBoxContainer2/ButtonResume" to="Control" method="_on_button_resume_button_down"]
+[connection signal="button_down" from="Control/Menu/VBoxContainer2/ButtonMain" to="Control" method="_on_button_main_button_down"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://rp2sncceh0hi"]
+
+[ext_resource type="Script" path="res://Scripts/ButtonColor.gd" id="1_agf2v"]
+
+[node name="ButtonColor" type="VBoxContainer"]
+theme_override_constants/separation = 10
+script = ExtResource("1_agf2v")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "WASD"
+horizontal_alignment = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="."]
+custom_minimum_size = Vector2(100, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+
+[connection signal="color_changed" from="ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]

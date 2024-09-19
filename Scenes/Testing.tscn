@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4jk71sfoityt"]
+
+[ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="1_sku1n"]
+[ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/SpawnerPlayer.tscn" id="2_800ds"]
+[ext_resource type="PackedScene" uid="uid://dpf88sgoc7ao2" path="res://Prefabs/Garbage/Organic_Fish.tscn" id="2_ptm41"]
+[ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/SpawnerItem.tscn" id="3_ep4wo"]
+[ext_resource type="PackedScene" uid="uid://cylg3xai1dn5m" path="res://Prefabs/SpawnerRecycler.tscn" id="3_w7k62"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyrcw"]
+albedo_color = Color(0, 0, 0.12, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jr4rv"]
+material = SubResource("StandardMaterial3D_dyrcw")
+size = Vector3(30, 1, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_airmi"]
+data = PackedVector3Array(-15, 0.5, 15, 15, 0.5, 15, -15, -0.5, 15, 15, 0.5, 15, 15, -0.5, 15, -15, -0.5, 15, 15, 0.5, -15, -15, 0.5, -15, 15, -0.5, -15, -15, 0.5, -15, -15, -0.5, -15, 15, -0.5, -15, 15, 0.5, 15, 15, 0.5, -15, 15, -0.5, 15, 15, 0.5, -15, 15, -0.5, -15, 15, -0.5, 15, -15, 0.5, -15, -15, 0.5, 15, -15, -0.5, -15, -15, 0.5, 15, -15, -0.5, 15, -15, -0.5, -15, 15, 0.5, 15, -15, 0.5, 15, 15, 0.5, -15, -15, 0.5, 15, -15, 0.5, -15, 15, 0.5, -15, -15, -0.5, 15, 15, -0.5, 15, -15, -0.5, -15, 15, -0.5, 15, 15, -0.5, -15, -15, -0.5, -15)
+
+[node name="Testing" type="Node3D"]
+
+[node name="GameUI" parent="." instance=ExtResource("1_sku1n")]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.505869, 0)
+mesh = SubResource("BoxMesh_jr4rv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_airmi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 19, -12)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.824127, 0.566407, 0, -0.566407, 0.824127, 0, 13.985, 20.895)
+current = true
+fov = 30.0
+
+[node name="PlayerSpawner" parent="." instance=ExtResource("2_800ds")]
+
+[node name="Recylers" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="RecyclerSpawner" parent="Recylers" instance=ExtResource("3_w7k62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, -2)
+type = "Metal"
+
+[node name="RecyclerSpawner2" parent="Recylers" instance=ExtResource("3_w7k62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, 0.506239)
+type = "Organic"
+
+[node name="RecyclerSpawner3" parent="Recylers" instance=ExtResource("3_w7k62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, 3)
+type = "Paper"
+
+[node name="RecyclerSpawner4" parent="Recylers" instance=ExtResource("3_w7k62")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 0, 5.54264)
+type = "Plastic"
+
+[node name="ItemSpawner" parent="." instance=ExtResource("3_ep4wo")]
+
+[node name="Fish" parent="ItemSpawner" instance=ExtResource("2_ptm41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35487, 4.28315, -0.0813799)
+type = "wasd"
+
+[node name="Fish2" parent="ItemSpawner" instance=ExtResource("2_ptm41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96215, 4.28315, -3.48963)
+type = "wasd"
+
+[node name="Fish3" parent="ItemSpawner" instance=ExtResource("2_ptm41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95941, 4.28315, -1.86753)
+type = "wasd"
+
+[node name="Fish4" parent="ItemSpawner" instance=ExtResource("2_ptm41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70866, 4.28315, 0.6146)
+type = "wasd"

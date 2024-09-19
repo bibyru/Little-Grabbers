@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c2jb8ccp3dkry"]
+
+[ext_resource type="Texture2D" uid="uid://43g5r4fale8i" path="res://Sauce/Models/Recyclers/Recycler-Organic.png" id="1_gof42"]
+
+[resource]
+albedo_texture = ExtResource("1_gof42")
+metallic_specular = 0.75
+roughness = 0.5

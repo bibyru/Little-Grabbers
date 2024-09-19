@@ -1,0 +1,15 @@
+Theme
+#00ffff (gowon color)
+#228080 (dark gowon)
+#cf8fc8 (bright pink)
+#bf77b9 (pink)
+#85407d (dark pink)
+
+
+Trash
+#ff0000 (metal red)
+#803300 (organic brown)
+#0000ff (paper blue)
+#ffff00 (plastic yellow)
+#00ff00 (glass green)
+#3d3d3d (metal gray)

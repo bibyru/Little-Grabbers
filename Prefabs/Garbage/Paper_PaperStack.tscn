@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg0spx35h8fs0"]
+
+[ext_resource type="Script" path="res://Scripts/EntityGarbage.gd" id="1_17p48"]
+[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_tnsp4"]
+[ext_resource type="PackedScene" uid="uid://b1oa74wy1v01" path="res://Sauce/Models/Garbages/Garbage-Paper-PaperStack.glb" id="3_pdry6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51nea"]
+size = Vector3(0.62, 0.185, 0.47)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r18dd"]
+
+[node name="Garbage" type="Node3D"]
+script = ExtResource("1_17p48")
+type = "Paper"
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 4
+collision_mask = 5
+continuous_cd = true
+script = ExtResource("2_tnsp4")
+path = "res://Prefabs/Garbage/Paper_PaperStack.tscn"
+
+[node name="Mesh" parent="RigidBody3D" instance=ExtResource("3_pdry6")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_51nea")
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+shape = SubResource("BoxShape3D_r18dd")

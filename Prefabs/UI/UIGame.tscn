@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0x3nbrb5gh5i"]
+
+[ext_resource type="Script" path="res://Scripts/UIGame.gd" id="1_37dgn"]
+[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="2_637tu"]
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_37dgn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_637tu")
+
+[node name="Score" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 70.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.81, 0.5589, 0.78489, 1)
+theme_override_font_sizes/font_size = 30
+text = "Muula"
+
+[node name="Label" type="Label" parent="Control/Score"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -21.0
+offset_right = 95.0
+offset_bottom = 21.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "1000"

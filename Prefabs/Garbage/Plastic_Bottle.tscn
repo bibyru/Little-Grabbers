@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgjd3207jxvh3"]
+
+[ext_resource type="Script" path="res://Scripts/EntityGarbage.gd" id="1_ucm64"]
+[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_8pghx"]
+[ext_resource type="PackedScene" uid="uid://e32apg0yaso2" path="res://Sauce/Models/Garbages/Garbage-Plastic-WaterBottle.glb" id="3_tosq1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51nea"]
+size = Vector3(0.497, 0.13, 0.125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r18dd"]
+
+[node name="Garbage" type="Node3D"]
+script = ExtResource("1_ucm64")
+type = "Plastic"
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 4
+collision_mask = 5
+continuous_cd = true
+script = ExtResource("2_8pghx")
+path = "res://Prefabs/Garbage/Plastic_Bottle.tscn"
+
+[node name="Mesh" parent="RigidBody3D" instance=ExtResource("3_tosq1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0261499, 0, 0)
+shape = SubResource("BoxShape3D_51nea")
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+shape = SubResource("BoxShape3D_r18dd")
