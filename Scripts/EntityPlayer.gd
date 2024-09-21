@@ -9,7 +9,7 @@ var joystick
 
 var dir = Vector3.ZERO
 
-var speed = 300
+var speed = 350
 var accel = 1
 
 var grav = 1

@@ -1,0 +1,10 @@
+Levels:
+	level script
+	
+	game ui
+	
+	level boundary (colshapes)
+	
+	player spawner
+	item spawner
+	recycler spawner

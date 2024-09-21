@@ -1,21 +1,26 @@
-extends Control
+extends Node
 
-@onready var PanelColor = $PanelColor
-@onready var ControllerWarning = $Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning
-@onready var WarningTimer = $Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning/Timer
+@onready var PanelColor = $CanvasLayer/Control/PanelColor
+@onready var ControllerWarning = $CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning
+@onready var WarningTimer = $CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning/Timer
+@onready var LevelSelect = $CanvasLayer/Control/LevelSelect
 
 func _ready():
+	LevelSelect.visible = false
 	PanelColor.visible = false
 	ControllerWarning.modulate = Color(1,1,1,0)
 
 func _on_button_play_button_down():
-	Manager.ReqNextLevel()
+	LevelSelect.visible = true
 
 func _on_button_color_button_down():
 	PanelColor.Turn()
 
 func _on_button_options_button_down():
 	Manager.PauseMenu()
+
+func _on_hide_level_select_button_down():
+	LevelSelect.visible = false
 
 
 func _on_button_add_player_button_down():
@@ -28,3 +33,7 @@ func _on_button_add_player_button_down():
 
 func _on_warning_timer_timeout():
 	create_tween().tween_property(ControllerWarning, "modulate", Color(1,1,1,0), 0.5)
+
+
+func _on_button_level0_down():
+	Manager.ReqLevel(0)

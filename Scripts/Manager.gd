@@ -21,6 +21,7 @@ var score = 0
 var playerspawner
 var itemspawner
 
+var levelentity
 var gameui
 var score_name = "Moula"
 var score_reward = 10
@@ -48,9 +49,9 @@ func ReqMainMenu():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	get_tree().paused = false
 
-func ReqNextLevel():
+func ReqLevel(levelnum):
 	get_tree().paused = true
-	get_tree().change_scene_to_file("res://Scenes/Level0.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level"+ str(levelnum) +".tscn")
 	get_tree().paused = false
 
 

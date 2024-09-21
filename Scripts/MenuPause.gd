@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node
 
 @onready var buttonfullscreen = $Control/Menu/VBoxContainer/Fullscreen/Button
 @onready var buttonantialiasing = $Control/Menu/VBoxContainer/AntiAliasing/Button

@@ -34,6 +34,8 @@ func GarbageCheck(garbage, garbageholder):
 		Manager.gameui.UpdateScore(true)
 	else:
 		Manager.gameui.UpdateScore(false)
+	
+	Manager.levelentity.GarbageRecycled()
 
 func _on_warning_timer_timeout():
 	create_tween().tween_property(PropertyWarning, "modulate", Color(1,1,1,0), 0.2)
