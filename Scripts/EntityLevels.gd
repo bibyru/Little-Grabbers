@@ -5,6 +5,7 @@ var finishlevel_timer
 
 @export var no_ui = false
 
+
 func _ready():
 	Manager.levelentity = self
 	

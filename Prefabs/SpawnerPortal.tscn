@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://decsajvqspm6"]
+
+[ext_resource type="PackedScene" uid="uid://b43phmj07ca82" path="res://Prefabs/Portal.tscn" id="1_55440"]
+
+[node name="PortalSpawner" type="Node3D"]
+
+[node name="Portal1" parent="." node_paths=PackedStringArray("otherPortal") instance=ExtResource("1_55440")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.50487, 0, 0)
+otherPortal = NodePath("../Portal2")
+
+[node name="Portal2" parent="." node_paths=PackedStringArray("otherPortal") instance=ExtResource("1_55440")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.49513, 0, 0)
+otherPortal = NodePath("../Portal1")

@@ -53,7 +53,7 @@ func ChangeColor():
 
 func _input(event):
 	if event.is_action_pressed("InputTest"):
-		print("Test: ", objectseen, objectheld)
+		print("Test: ", no_input)
 	
 	if controllerid == 0:
 		if event.is_action_pressed("Interact"):
