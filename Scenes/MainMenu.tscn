@@ -340,7 +340,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -2)
 
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonPlay" to="." method="_on_button_play_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer" to="." method="_on_button_add_player_button_down"]
-[connection signal="timeout" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning/Timer" to="CanvasLayer/Control" method="_on_warning_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning/Timer" to="." method="_on_warning_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonColor" to="." method="_on_button_color_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonOptions" to="." method="_on_button_options_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/HideLevelSelect" to="." method="_on_hide_level_select_button_down"]

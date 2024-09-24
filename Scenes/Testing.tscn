@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4jk71sfoityt"]
+[gd_scene load_steps=10 format=3 uid="uid://b4jk71sfoityt"]
 
 [ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="1_sku1n"]
 [ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/SpawnerPlayer.tscn" id="2_800ds"]
 [ext_resource type="PackedScene" uid="uid://dpf88sgoc7ao2" path="res://Prefabs/Garbage/Organic_Fish.tscn" id="2_ptm41"]
 [ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/SpawnerItem.tscn" id="3_ep4wo"]
 [ext_resource type="PackedScene" uid="uid://cylg3xai1dn5m" path="res://Prefabs/SpawnerRecycler.tscn" id="3_w7k62"]
+[ext_resource type="PackedScene" uid="uid://b43phmj07ca82" path="res://Prefabs/Portal.tscn" id="6_ic2je"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyrcw"]
-albedo_color = Color(0, 0, 0.12, 1)
+albedo_color = Color(0.545997, 0.749934, 0.539498, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jr4rv"]
 material = SubResource("StandardMaterial3D_dyrcw")
@@ -20,6 +21,14 @@ data = PackedVector3Array(-15, 0.5, 15, 15, 0.5, 15, -15, -0.5, 15, 15, 0.5, 15,
 
 [node name="GameUI" parent="." instance=ExtResource("1_sku1n")]
 
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.380667, 0.924712, 0, -0.924712, 0.380667, 0, 14.0891, 6.52659)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.824126, 0.566406, 0, -0.566406, 0.824126, 0, 13.985, 20.895)
+current = true
+fov = 30.0
+
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.505869, 0)
 mesh = SubResource("BoxMesh_jr4rv")
@@ -31,11 +40,6 @@ shape = SubResource("ConcavePolygonShape3D_airmi")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 19, -12)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.824127, 0.566407, 0, -0.566407, 0.824127, 0, 13.985, 20.895)
-current = true
-fov = 30.0
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("2_800ds")]
 
@@ -75,3 +79,13 @@ type = "wasd"
 [node name="Fish4" parent="ItemSpawner" instance=ExtResource("2_ptm41")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70866, 4.28315, 0.6146)
 type = "wasd"
+
+[node name="PortalSet" type="Node3D" parent="."]
+
+[node name="Portal1" parent="PortalSet" node_paths=PackedStringArray("otherPortal") instance=ExtResource("6_ic2je")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.42767, -0.00587082, -1.8508)
+otherPortal = NodePath("../Portal2")
+
+[node name="Portal2" parent="PortalSet" node_paths=PackedStringArray("otherPortal") instance=ExtResource("6_ic2je")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.42767, -0.00587082, 1.1492)
+otherPortal = NodePath("../Portal1")

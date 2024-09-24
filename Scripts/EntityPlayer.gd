@@ -8,6 +8,7 @@ var controllerid
 var joystick
 
 var dir = Vector3.ZERO
+var no_input = false
 
 var speed = 350
 var accel = 1
@@ -25,6 +26,8 @@ var recycler = null
 
 var normalhandpos = Vector3(0, 0.645495, -0.653775)
 var stephandpos = Vector3(0, 0.65, -0.9)
+
+
 
 func _ready():
 	hand.position = normalhandpos
@@ -149,7 +152,6 @@ var flag_joyX = false
 var flag_joyY = false
 
 func _physics_process(delta):
-	
 	# CONTROLLER INPUT
 	if Input.is_joy_button_pressed(controllerid-1, JOY_BUTTON_X):
 		if flag_joyX == false:
@@ -164,6 +166,31 @@ func _physics_process(delta):
 			ThrowObject()
 	else:
 		flag_joyY = false
+	
+	
+	
+	# ANIMATION
+	if velocity.x != 0 or velocity.z != 0:
+		var lookangle = atan2(-velocity.x, -velocity.z)
+		self.rotation.y = lerp_angle(self.rotation.y, lookangle, rotaccel)
+	
+	var posture_state = animtree.get("parameters/Posture/blend_position")
+	
+	if velocity.x == 0 and velocity.z == 0:
+		animtree.set("parameters/Posture/blend_position", lerp(posture_state, -1.0, animaccel))
+		
+		if objectheld != null:
+			animtree.set("parameters/Arms/blend_position", -0.1)
+		else:
+			animtree.set("parameters/Arms/blend_position", -0.2)
+		
+	else:
+		animtree.set("parameters/Posture/blend_position", lerp(posture_state, 1.0, animaccel))
+		
+		if objectheld != null:
+			animtree.set("parameters/Arms/blend_position", 0.1)
+		else:
+			animtree.set("parameters/Arms/blend_position", 0.2)
 	
 	
 	
@@ -191,29 +218,5 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("Jump"):
 				velocity.y = jumpforce * delta
 	
-	move_and_slide()
-	
-	
-	
-	# ANIMATION
-	if velocity.x != 0 or velocity.z != 0:
-		var lookangle = atan2(-velocity.x, -velocity.z)
-		self.rotation.y = lerp_angle(self.rotation.y, lookangle, rotaccel)
-	
-	var posture_state = animtree.get("parameters/Posture/blend_position")
-	
-	if velocity.x == 0 and velocity.z == 0:
-		animtree.set("parameters/Posture/blend_position", lerp(posture_state, -1.0, animaccel))
-		
-		if objectheld != null:
-			animtree.set("parameters/Arms/blend_position", -0.1)
-		else:
-			animtree.set("parameters/Arms/blend_position", -0.2)
-		
-	else:
-		animtree.set("parameters/Posture/blend_position", lerp(posture_state, 1.0, animaccel))
-		
-		if objectheld != null:
-			animtree.set("parameters/Arms/blend_position", 0.1)
-		else:
-			animtree.set("parameters/Arms/blend_position", 0.2)
+	if no_input == false:
+		move_and_slide()
