@@ -53,7 +53,7 @@ func ChangeColor():
 
 func _input(event):
 	if event.is_action_pressed("InputTest"):
-		print("Test: ", no_input)
+		print(name, " test-> ", objectseen, " ", objectheld)
 	
 	if controllerid == 0:
 		if event.is_action_pressed("Interact"):
@@ -88,8 +88,9 @@ func Interact():
 			if objectheld == null:
 				
 				var otherplayer = null
-				if objectseen.get_parent().get_owner().is_in_group("Player"):
-					otherplayer = objectseen.get_parent().get_owner()
+				if objectseen.object.being_held == true:
+					if objectseen.object.player_holding != self:
+						otherplayer = objectseen.object.player_holding
 				
 				if otherplayer == null:
 					GrabObject()
@@ -120,6 +121,8 @@ func GrabObject(from_other_player = false):
 	
 	objectheld.object.SetScale(objectscale)
 	objectheld.object.set("freeze", true)
+	objectheld.object.being_held = true
+	objectheld.object.player_holding = self
 
 func ObjectRemoved(recycled = false):
 	objectheld.object.mylocation = hand.global_position
