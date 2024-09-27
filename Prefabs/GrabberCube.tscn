@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/EntityPlayer.gd" id="1_cm4ri"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_vyka5"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tukn1"]
+size = Vector3(0.635, 0.996, 0.705957)
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_aa8pl"]
 filters = ["Armature_GrabberCube/Skeleton3D:Bone.Arm.L", "Armature_GrabberCube/Skeleton3D:Bone.Arm.R"]
@@ -42,6 +43,7 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_ryyu6")
 blend_point_1/pos = 1.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cp7sc"]
+graph_offset = Vector2(-528.909, 116.091)
 nodes/Add/node = SubResource("AnimationNodeAdd2_aa8pl")
 nodes/Add/position = Vector2(40, 140)
 nodes/Arms/node = SubResource("AnimationNodeBlendSpace1D_exmse")
@@ -566,13 +568,9 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_cm4ri")
 
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, -0.325)
-polygon = PackedVector2Array(0.255, 0.06, 0.32, 0.325, 0.255, 0.6, 0, 0.65, -0.255, 0.6, -0.32, 0.325, -0.255, 0.06, 0, 0.02)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512512, -0.0322067)
-shape = SubResource("SphereShape3D_vyka5")
+shape = SubResource("BoxShape3D_tukn1")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../Char_GrabberCube")

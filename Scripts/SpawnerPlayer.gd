@@ -66,7 +66,7 @@ func SpawnTimerTimeout(spawntimer, type):
 		#+ set player.playerid
 		#+ player.changecolor() -> already in player ready()
 	#
-	#TYPE = 2 (CANCELLED or is it)
+	#TYPE = 2 (CANCELLED)
 		#- player reconnects when joystick
 		  #disconnected
 		#+ wipe all player in tree

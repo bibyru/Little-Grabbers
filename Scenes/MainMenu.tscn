@@ -264,28 +264,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Tutorial"
 
-[node name="Level1" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 90)
-layout_mode = 2
-texture = ExtResource("6_wvy5c")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level1"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -52.0
-offset_top = 13.0
-offset_right = 52.0
-offset_bottom = 41.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Level 1"
-
 [node name="All3D" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="All3D"]
@@ -562,6 +540,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -2)
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonOptions" to="." method="_on_button_options_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/HideLevelSelect" to="." method="_on_hide_level_select_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level0/Button" to="." method="_on_button_level0_down"]
-[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level1/Button" to="." method="_on_button_level1_down"]
 
 [editable path="All3D/ItemSpawner/Fish2"]

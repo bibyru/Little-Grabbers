@@ -3,12 +3,17 @@ extends Node3D
 var total_garbage
 var finishlevel_timer
 
+@export var no_ui = false
+
 
 func _ready():
-	Manager.score = 0
 	Manager.levelentity = self
 	
 	total_garbage = get_tree().get_nodes_in_group("Garbage").size()
+	
+	if no_ui == true:
+		$GameUI.visible = false
+		$Tutorial.visible = false
 
 func GarbageRecycled():
 	total_garbage -= 1

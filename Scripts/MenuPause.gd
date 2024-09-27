@@ -25,9 +25,6 @@ func _ready():
 func _on_button_resume_button_down():
 	Manager.PauseMenu()
 
-func _on_button_restart_button_down():
-	Manager.ReloadLevel()
-
 func _on_button_main_button_down():
 	Manager.ReqMainMenu()
 

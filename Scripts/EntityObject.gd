@@ -9,9 +9,6 @@ var iniscale
 @onready var mesh = $Mesh
 @onready var colshape = $CollisionShape3D
 
-var being_held = false
-var player_holding = null
-
 func _ready():
 	gravity_scale = 3
 	iniscale = [mesh.scale, colshape.shape.size]

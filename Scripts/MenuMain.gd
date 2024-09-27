@@ -37,6 +37,3 @@ func _on_warning_timer_timeout():
 
 func _on_button_level0_down():
 	Manager.ReqLevel(0)
-
-func _on_button_level1_down():
-	Manager.ReqLevel(1)

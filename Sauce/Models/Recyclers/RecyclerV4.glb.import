@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://4qyfgts14tv8"
-path="res://.godot/imported/RecyclerV2.glb-1575ff66cfca046ec9d2e9b3cadeb215.scn"
+uid="uid://bw75ua1pi06u"
+path="res://.godot/imported/RecyclerV4.glb-3950efa293844c949fd4d4093ded4745.scn"
 
 [deps]
 
-source_file="res://Sauce/Models/Recyclers/RecyclerV2.glb"
-dest_files=["res://.godot/imported/RecyclerV2.glb-1575ff66cfca046ec9d2e9b3cadeb215.scn"]
+source_file="res://Sauce/Models/Recyclers/RecyclerV4.glb"
+dest_files=["res://.godot/imported/RecyclerV4.glb-3950efa293844c949fd4d4093ded4745.scn"]
 
 [params]
 

@@ -54,11 +54,6 @@ func ReqLevel(levelnum):
 	get_tree().change_scene_to_file("res://Scenes/Level"+ str(levelnum) +".tscn")
 	get_tree().paused = false
 
-func ReloadLevel():
-	get_tree().paused = true
-	get_tree().reload_current_scene()
-	get_tree().paused = false
-
 
 
 func CheckInPlayer(player):
