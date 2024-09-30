@@ -8,15 +8,22 @@ func _ready():
 	scorename.text = Manager.score_name
 	scorelabel.text = "0000"
 
-func UpdateScore(correct : bool, property = false):
+func UpdateScore(type : int):
+	#type 0 = reward
+	#type 1 = wrong
+	#type 2 = reward 50%
+	#type 9 = property
+	
 	var old_score = Manager.score
 	
-	if property == true:
+	if type == 9:
 		Manager.score -= Manager.score_property
-	elif correct == true:
+	elif type == 0:
 		Manager.score += Manager.score_reward
-	else:
+	elif type == 1:
 		Manager.score -= Manager.score_punish
+	elif type == 2:
+		Manager.score += float(Manager.score_reward) / 2
 	
 	create_tween().tween_method(UpdateLabel, old_score, Manager.score, 0.25)
 

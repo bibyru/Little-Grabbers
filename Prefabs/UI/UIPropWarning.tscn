@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnkuvbam6eix6"]
+
+[ext_resource type="Script" path="res://Scripts/UIPropWarning.gd" id="1_o6sgq"]
+[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="1_yn1m6"]
+
+[node name="UIPropWarning" type="CanvasLayer"]
+script = ExtResource("1_o6sgq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yn1m6")
+
+[node name="PropertyWarning" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.5
+offset_top = 31.0
+offset_right = 143.5
+offset_bottom = 112.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Control/PropertyWarning"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Corporate property recycled, WASD subtracted."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="WarningTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]

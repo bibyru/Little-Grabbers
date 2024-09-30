@@ -21,11 +21,10 @@ var animaccel = 0.5
 
 var objectseen
 var objectheld
-var objectscale
 var recycler = null
 
-var normalhandpos = Vector3(0, 0.645495, -0.653775)
-var stephandpos = Vector3(0, 0.65, -0.9)
+@onready var normalhandpos = $Char_GrabberCube/NormalHandPos.position
+@onready var stephandpos = $Char_GrabberCube/StepHandPos.position
 
 
 
@@ -53,7 +52,7 @@ func ChangeColor():
 
 func _input(event):
 	if event.is_action_pressed("InputTest"):
-		print("Test: ", no_input)
+		print("Test-> ", hand.position)
 	
 	if controllerid == 0:
 		if event.is_action_pressed("Interact"):
@@ -84,7 +83,7 @@ func Interact():
 	
 	if objectseen != null:
 		
-		if objectseen.is_in_group("Garbage") == true or objectseen.is_in_group("Step"):
+		if objectseen.is_in_group("Object") == true:
 			if objectheld == null:
 				
 				var otherplayer = null
@@ -106,20 +105,18 @@ func Interact():
 
 
 func GrabObject(from_other_player = false):
-	objectheld = load(objectseen.object.path).instantiate()
-	objectscale = objectseen.object.iniscale
-	
-	if from_other_player == false:
-		objectseen.get_parent().remove_child(objectseen)
-	
-	hand.add_child(objectheld)
-	if objectheld.is_in_group("Step"):
-		hand.position = stephandpos
-	else:
-		hand.position = normalhandpos
-	
-	objectheld.object.SetScale(objectscale)
-	objectheld.object.set("freeze", true)
+	#objectheld = load(objectseen.object.path).instantiate()
+	#
+	#if from_other_player == false:
+		#objectseen.get_parent().remove_child(objectseen)
+	#
+	#hand.add_child(objectheld)
+	#
+	#if objectheld.is_in_group("Step"):
+		#hand.position = stephandpos
+	#else:
+		#hand.position = normalhandpos
+	objectseen.object.PlayerGrabMe(self)
 
 func ObjectRemoved(recycled = false):
 	objectheld.object.mylocation = hand.global_position
@@ -131,19 +128,17 @@ func ObjectRemoved(recycled = false):
 	if recycled == false:
 		objectheld.object.ReturnToWorld()
 	
-	objectheld.object.SetScale(objectscale)
 	objectheld = null
 
 func ThrowObject():
 	if objectheld != null:
 		objectheld.object.mylocation = hand.global_position
 		objectheld.object.myrotation = objectheld.object.global_rotation
-		
 		objectheld.object.set("freeze", false)
+		
 		hand.remove_child(objectheld)
 		objectheld.object.Thrown()
 		
-		objectheld.object.SetScale(objectscale)
 		objectheld = null
 
 

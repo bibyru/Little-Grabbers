@@ -12,6 +12,12 @@ const recycler_materials = [
 	"res://Sauce/Models/Recyclers/Recycler-Paper.tres",
 	"res://Sauce/Models/Recyclers/Recycler-Plastic.tres"
 ]
+const garbage_colors = [
+	Color("#ff0000"),
+	Color("#803300"),
+	Color("#0000ff"),
+	Color("ffff00")
+]
 
 
 

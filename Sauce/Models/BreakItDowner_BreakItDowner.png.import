@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bixi2wmsskcx8"
+path.s3tc="res://.godot/imported/BreakItDowner_BreakItDowner.png-e87d8af407b07f3c45546aa1932c5628.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "3e5e0a5d320a3b1cd88d763fbb005096"
+}
+
+[deps]
+
+source_file="res://Sauce/Models/BreakItDowner_BreakItDowner.png"
+dest_files=["res://.godot/imported/BreakItDowner_BreakItDowner.png-e87d8af407b07f3c45546aa1932c5628.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

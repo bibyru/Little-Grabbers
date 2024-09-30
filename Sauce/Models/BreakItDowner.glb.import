@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bw75ua1pi06u"
-path="res://.godot/imported/RecyclerV4.glb-3950efa293844c949fd4d4093ded4745.scn"
+uid="uid://cn73814ma6k0f"
+path="res://.godot/imported/BreakItDowner.glb-267c4fe569c67edc2251cf3b0cf79fb7.scn"
 
 [deps]
 
-source_file="res://Sauce/Models/Recyclers/RecyclerV4.glb"
-dest_files=["res://.godot/imported/RecyclerV4.glb-3950efa293844c949fd4d4093ded4745.scn"]
+source_file="res://Sauce/Models/BreakItDowner.glb"
+dest_files=["res://.godot/imported/BreakItDowner.glb-267c4fe569c67edc2251cf3b0cf79fb7.scn"]
 
 [params]
 
