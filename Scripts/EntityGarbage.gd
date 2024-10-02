@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var type = "wasd"
+@export var type: Array[String] = ["wasd"]
 @export var reminder = Manager.garbage_types
 
 @onready var object = $RigidBody3D

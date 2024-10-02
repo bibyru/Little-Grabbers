@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://chrybqo485mo2"]
 
-[ext_resource type="Script" path="res://Scripts/EntityGarbageBlock.gd" id="1_k4sow"]
-[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_lp6mj"]
+[ext_resource type="Script" path="res://Scripts/EntityGarbageBlock.gd" id="1_ykou1"]
+[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_oc0us"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0uyr3"]
 size = Vector3(0.4, 0.15, 0.3)
@@ -13,14 +13,14 @@ size = Vector3(0.4, 0.15, 0.3)
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="GarbageBlock" type="Node3D"]
-script = ExtResource("1_k4sow")
+script = ExtResource("1_ykou1")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 4
 collision_mask = 5
 mass = 2.0
 continuous_cd = true
-script = ExtResource("2_lp6mj")
+script = ExtResource("2_oc0us")
 path = "res://Prefabs/GarbageBlock.tscn"
 
 [node name="Mesh" type="MeshInstance3D" parent="RigidBody3D"]

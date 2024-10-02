@@ -26,10 +26,6 @@ func GarbageCheck(entity):
 			Manager.gameui.UpdateScore(1)
 			
 	elif entity.is_in_group("Garbage"):
-		if entity.type == type:
-			Manager.gameui.UpdateScore(2)
-		else:
-			Manager.gameui.UpdateScore(1)
-			Manager.gameui.UpdateScore(1)
+		Manager.gameui.UpdateScore(1)
 	
 	Manager.levelentity.GarbageRecycled()

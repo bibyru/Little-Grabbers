@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://decsajvqspm6"]
 
-[ext_resource type="PackedScene" uid="uid://b43phmj07ca82" path="res://Prefabs/Portal.tscn" id="1_55440"]
+[ext_resource type="PackedScene" uid="uid://b43phmj07ca82" path="res://Prefabs/Entities/Portal.tscn" id="1_55440"]
 
 [node name="PortalSpawner" type="Node3D"]
 

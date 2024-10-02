@@ -52,14 +52,3 @@ func PlayerRemovedMe(player, thrown = false):
 	
 	if thrown == true:
 		apply_impulse(global_transform.basis.z.normalized() * -10 + Vector3(0,10,0))
-
-#func TransferToBID(player, bid):
-	#player.hand.remove_child(parent)
-	#
-	#bid.spitposition.add_child(parent)
-	#ResetPosition(parent)
-	#ResetPosition(self)
-	#
-	#print(bid.spitposition.position)
-	#print(parent.position)
-	#print(self.position)

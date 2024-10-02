@@ -9,9 +9,9 @@ size = Vector3(0.472, 0.11, 0.235)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r18dd"]
 
-[node name="Garbage" type="Node3D"]
+[node name="Fish" type="Node3D"]
 script = ExtResource("1_dfv68")
-type = "Organic"
+type = Array[String](["Organic"])
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 4

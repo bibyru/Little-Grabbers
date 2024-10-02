@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_pbcif"]
 [ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="1_sku1n"]
-[ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/SpawnerPlayer.tscn" id="2_800ds"]
+[ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/Spawners/SpawnerPlayer.tscn" id="2_800ds"]
 [ext_resource type="PackedScene" uid="uid://dpf88sgoc7ao2" path="res://Prefabs/Garbage/Organic_Fish.tscn" id="2_ptm41"]
-[ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/SpawnerItem.tscn" id="3_ep4wo"]
-[ext_resource type="PackedScene" uid="uid://cylg3xai1dn5m" path="res://Prefabs/SpawnerRecycler.tscn" id="3_w7k62"]
-[ext_resource type="PackedScene" uid="uid://decsajvqspm6" path="res://Prefabs/SpawnerPortal.tscn" id="7_482u6"]
+[ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/Spawners/SpawnerItem.tscn" id="3_ep4wo"]
+[ext_resource type="PackedScene" uid="uid://cylg3xai1dn5m" path="res://Prefabs/Spawners/SpawnerRecycler.tscn" id="3_w7k62"]
+[ext_resource type="PackedScene" uid="uid://decsajvqspm6" path="res://Prefabs/Spawners/SpawnerPortal.tscn" id="7_482u6"]
 [ext_resource type="PackedScene" uid="uid://c7l3mpls2kj0h" path="res://Prefabs/Garbage/Metal_CookingPan.tscn" id="7_na0di"]
-[ext_resource type="PackedScene" uid="uid://bm3badq7ralcp" path="res://Prefabs/BID.tscn" id="8_yk8fm"]
+[ext_resource type="PackedScene" uid="uid://bm3badq7ralcp" path="res://Prefabs/Entities/BID.tscn" id="8_yk8fm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2bmg"]
 transparency = 1
@@ -49,7 +49,7 @@ type = "Organic"
 [node name="Fish" parent="ItemSpawner" instance=ExtResource("2_ptm41")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30263, 1.28315, -3.8718)
 
-[node name="Garbage" parent="ItemSpawner" instance=ExtResource("7_na0di")]
+[node name="CookingPan" parent="ItemSpawner" instance=ExtResource("7_na0di")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825639, 1.23635, -3.20417)
 
 [node name="PortalSpawner" parent="." instance=ExtResource("7_482u6")]

@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var tipnumlabel = $Control/Control/Panel/Label
-@onready var TipLabel = $Control/Control/Panel/VBoxContainer/TipLabel
-@onready var TipLabel2 = $Control/Control/Panel/VBoxContainer/TipLabel2
+@onready var TimNumber = $Control/AnimateControl/Panel/TipNumber
+@onready var TipLabel = $Control/AnimateControl/Panel/VBoxContainer/TipLabel
+@onready var TipLabel2 = $Control/AnimateControl/Panel/VBoxContainer/TipLabel2
 
 var tips = [
 	[
@@ -38,18 +38,25 @@ func _ready():
 	NextTip()
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_left"):
+		PrevTip()
+	if event.is_action_pressed("ui_right"):
 		NextTip()
 
-func _on_button_button_down():
-	NextTip()
+func PrevTip():
+	index -= 1
+	UpdateTip()
 
 func NextTip():
 	index += 1
-	
-	if index == maxindex:
+	UpdateTip()
+
+func UpdateTip():
+	if index >= maxindex:
 		index = 0
+	elif index <= -1:
+		index = maxindex-1
 	
-	tipnumlabel.text = "Tip %d /%d" %[index+1, maxindex]
+	TimNumber.text = "Tip %d /%d" %[index+1, maxindex]
 	TipLabel.text = tips[index][0]
 	TipLabel2.text = tips[index][1]

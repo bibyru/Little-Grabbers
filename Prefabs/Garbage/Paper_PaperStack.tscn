@@ -9,9 +9,9 @@ size = Vector3(0.62, 0.185, 0.47)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r18dd"]
 
-[node name="Garbage" type="Node3D"]
+[node name="PaperStack" type="Node3D"]
 script = ExtResource("1_17p48")
-type = "Paper"
+type = Array[String](["Paper"])
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 4

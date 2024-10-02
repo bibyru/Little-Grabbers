@@ -9,9 +9,9 @@ size = Vector3(1.09841, 0.194385, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r18dd"]
 
-[node name="Garbage" type="Node3D"]
+[node name="CookingPan" type="Node3D"]
 script = ExtResource("1_ojxgo")
-type = "Metal"
+type = Array[String](["Metal", "Plastic"])
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 4

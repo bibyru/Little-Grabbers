@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-var garbageblock = preload("res://Prefabs/GarbageBlock.tscn")
+var garbageblock = preload("res://Prefabs/Entities/GarbageBlock.tscn")
 
 @onready var propwarning = $UIPropWarning
 
@@ -37,9 +37,10 @@ func SpitThing(entity):
 	processingtimer.disconnect("timeout", SpitThing)
 	
 	if spittype == 0:
-		var block = garbageblock.instantiate()
-		block.type = entity.type
-		spitposition.add_child(block)
+		for i in entity.type:
+			var block = garbageblock.instantiate()
+			block.type = i
+			spitposition.add_child(block)
 		
 	elif spittype == 1:
 		spitposition.add_child(entity)

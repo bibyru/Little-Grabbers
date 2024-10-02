@@ -1,6 +1,6 @@
 extends Node3D
 
-var grabbercube = preload("res://Prefabs/GrabberCube.tscn")
+var grabbercube = preload("res://Prefabs/Entities/GrabberCube.tscn")
 
 var needtospawn = -1
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck183gnsq6vri"]
+[gd_scene load_steps=12 format=3 uid="uid://ck183gnsq6vri"]
 
 [ext_resource type="Script" path="res://Scripts/EntityStep.gd" id="1_nttal"]
 [ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_ebbiu"]
@@ -46,8 +46,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xgvpn")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wmuv0"]
+size = Vector3(0.60376, 0.603455, 0.603638)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ytfb1"]
-size = Vector3(0.6, 0.595, 0.605)
+size = Vector3(0.6, 0.12355, 0.605)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tn72u"]
+size = Vector3(0.0749512, 0.503296, 0.0766602)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s8tl8"]
 
@@ -68,7 +74,32 @@ mesh = SubResource("ArrayMesh_ks7ib")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_wmuv0")
+
+[node name="Top" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235725, 0)
 shape = SubResource("BoxShape3D_ytfb1")
+disabled = true
+
+[node name="Foot" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236206, -0.048645, 0.236212)
+shape = SubResource("BoxShape3D_tn72u")
+disabled = true
+
+[node name="Foot2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235536, -0.048645, 0.23412)
+shape = SubResource("BoxShape3D_tn72u")
+disabled = true
+
+[node name="Foot3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.236206, -0.048645, -0.236637)
+shape = SubResource("BoxShape3D_tn72u")
+disabled = true
+
+[node name="Foot4" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235536, -0.048645, -0.238729)
+shape = SubResource("BoxShape3D_tn72u")
+disabled = true
 
 [node name="Area3D" type="Area3D" parent="RigidBody3D"]
 collision_layer = 4

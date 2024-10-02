@@ -1,6 +1,6 @@
 extends Node3D
 
-var loadrecycler = preload("res://Prefabs/Recycler.tscn")
+var loadrecycler = preload("res://Prefabs/Entities/Recycler.tscn")
 
 @export var type = "wasd"
 @export var reminder = Manager.garbage_types
