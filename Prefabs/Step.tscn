@@ -57,6 +57,7 @@ script = ExtResource("1_nttal")
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_mask = 5
 mass = 3.0
+can_sleep = false
 continuous_cd = true
 script = ExtResource("2_ebbiu")
 path = "res://Prefabs/Step.tscn"

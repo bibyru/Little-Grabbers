@@ -22,6 +22,7 @@ var animaccel = 0.5
 var objectseen
 var objectheld
 var recycler = null
+var bid = null
 
 @onready var normalhandpos = $Char_GrabberCube/NormalHandPos.position
 @onready var stephandpos = $Char_GrabberCube/StepHandPos.position
@@ -52,7 +53,9 @@ func ChangeColor():
 
 func _input(event):
 	if event.is_action_pressed("InputTest"):
-		print("Test-> ", hand.position)
+		print("<-Test->")
+		print(objectheld.type)
+		print("<-Test end->\n")
 	
 	if controllerid == 0:
 		if event.is_action_pressed("Interact"):
@@ -64,37 +67,45 @@ func _input(event):
 
 
 func _on_front_area_entered(area):
-	if area.get_owner().is_in_group("Recycler"):
-		recycler = area.get_owner()
+	var area_entity = area.get_owner()
+	
+	if area_entity.is_in_group("Recycler"):
+		recycler = area_entity
+	elif area_entity.is_in_group("BID"):
+		bid = area_entity
 	else:
-		objectseen = area.get_owner()
+		objectseen = area_entity
 
 func _on_front_area_exited(area):
-	if area.get_owner().is_in_group("Recycler"):
+	var area_entity = area.get_owner()
+	
+	if area_entity.is_in_group("Recycler"):
 		recycler = null
+	elif area_entity.is_in_group("BID"):
+		bid = null
 	else:
 		objectseen = null
 
 
 func Interact():
-	if recycler != null:
-		if objectheld != null:
-			recycler.GarbageCheck(objectheld, self)
+	if objectheld != null and (recycler != null or bid != null):
+		
+		if recycler != null:
+			if objectheld != null:
+				recycler.GarbageCheck(objectheld)
+			
+		elif bid != null:
+			if objectheld != null:
+				bid.BreakDown(objectheld)
+		
+		ObjectRemoved(true)
+	
 	
 	if objectseen != null:
 		
 		if objectseen.is_in_group("Object") == true:
 			if objectheld == null:
-				
-				var otherplayer = null
-				if objectseen.get_parent().get_owner().is_in_group("Player"):
-					otherplayer = objectseen.get_parent().get_owner()
-				
-				if otherplayer == null:
-					GrabObject()
-				else:
-					GrabObject(true)
-					otherplayer.ObjectRemoved(true)
+				GrabObject()
 				
 			else:
 				ObjectRemoved()
@@ -104,40 +115,25 @@ func Interact():
 			ObjectRemoved()
 
 
-func GrabObject(from_other_player = false):
-	#objectheld = load(objectseen.object.path).instantiate()
-	#
-	#if from_other_player == false:
-		#objectseen.get_parent().remove_child(objectseen)
-	#
-	#hand.add_child(objectheld)
-	#
-	#if objectheld.is_in_group("Step"):
-		#hand.position = stephandpos
-	#else:
-		#hand.position = normalhandpos
-	objectseen.object.PlayerGrabMe(self)
+func GrabObject():
+	objectseen.object.PlayerGrabbedMe(self)
+	
+	if objectheld.is_in_group("Property"):
+		hand.position = stephandpos
+	else:
+		hand.position = normalhandpos
 
-func ObjectRemoved(recycled = false):
-	objectheld.object.mylocation = hand.global_position
-	objectheld.object.myrotation = objectheld.object.global_rotation
-	
-	objectheld.object.set("freeze", false)
-	hand.remove_child(objectheld)
-	
-	if recycled == false:
-		objectheld.object.ReturnToWorld()
+func ObjectRemoved(ate = false):
+	if ate == true:
+		objectheld.object.Ate()
+	else:
+		objectheld.object.PlayerRemovedMe(self)
 	
 	objectheld = null
 
 func ThrowObject():
 	if objectheld != null:
-		objectheld.object.mylocation = hand.global_position
-		objectheld.object.myrotation = objectheld.object.global_rotation
-		objectheld.object.set("freeze", false)
-		
-		hand.remove_child(objectheld)
-		objectheld.object.Thrown()
+		objectheld.object.PlayerRemovedMe(self, true)
 		
 		objectheld = null
 

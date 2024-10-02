@@ -664,13 +664,10 @@ shape = SubResource("BoxShape3D_bjse5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.693, -0.698)
 
 [node name="NormalHandPos" type="Node3D" parent="Char_GrabberCube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.693315, -0.698179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.693315, -0.621802)
 
 [node name="StepHandPos" type="Node3D" parent="Char_GrabberCube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05205, -1.0862)
-
-[node name="Hand2" type="Node3D" parent="Char_GrabberCube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.693, -0.863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793031, -0.876993)
 
 [connection signal="area_entered" from="Char_GrabberCube/Front" to="." method="_on_front_area_entered"]
 [connection signal="area_exited" from="Char_GrabberCube/Front" to="." method="_on_front_area_exited"]

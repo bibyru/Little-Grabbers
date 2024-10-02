@@ -8,7 +8,7 @@ func _ready():
 	panel.modulate = Color(1,1,1,0)
 
 func WarnProp():
-	label.text = "Corporate property recycled, %d %ss subtracted." %[Manager.score_property, Manager.score_name]
+	label.text = "Corporate property destroyed, %d %ss subtracted." %[Manager.score_property, Manager.score_name]
 	StartWarning()
 
 func StartWarning():

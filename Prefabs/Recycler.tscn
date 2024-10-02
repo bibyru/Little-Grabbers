@@ -95,11 +95,13 @@ shadow_mesh = SubResource("ArrayMesh_2wr7i")
 size = Vector3(1.021, 1.126, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jsdlk"]
-size = Vector3(0.915, 1.141, 1.725)
+size = Vector3(0.915, 1.141, 2)
 
 [node name="Recycler" type="StaticBody3D"]
 collision_mask = 0
 script = ExtResource("1_osl4j")
+
+[node name="UIPropWarning" parent="." instance=ExtResource("2_sbjtj")]
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
@@ -117,5 +119,3 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.554, 0)
 shape = SubResource("BoxShape3D_jsdlk")
-
-[node name="UIPropWarning" parent="." instance=ExtResource("2_sbjtj")]

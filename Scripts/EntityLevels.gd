@@ -20,7 +20,6 @@ func GarbageRecycled():
 	
 	if total_garbage < 1:
 		print("No more trash")
-		#FinishLevel()
 
 
 func FinishLevel():
