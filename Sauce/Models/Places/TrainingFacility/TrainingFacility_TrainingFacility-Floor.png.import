@@ -3,24 +3,24 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cb5ew30664q8v"
-path.s3tc="res://.godot/imported/TrainingFacility_TrainingFacility-Floor.png-b73fce012d8dbadd0938c6b9519a9f53.s3tc.ctex"
+path.bptc="res://.godot/imported/TrainingFacility_TrainingFacility-Floor.png-b73fce012d8dbadd0938c6b9519a9f53.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d209fe5ee54d3f8334342b55857ec8ff"
+"md5": "e2a160aa8909775888e8e58a6af37438"
 }
 
 [deps]
 
 source_file="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Floor.png"
-dest_files=["res://.godot/imported/TrainingFacility_TrainingFacility-Floor.png-b73fce012d8dbadd0938c6b9519a9f53.s3tc.ctex"]
+dest_files=["res://.godot/imported/TrainingFacility_TrainingFacility-Floor.png-b73fce012d8dbadd0938c6b9519a9f53.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

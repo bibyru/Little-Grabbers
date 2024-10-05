@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bx3dmu3tsdxid"]
+[gd_scene load_steps=28 format=3 uid="uid://bx3dmu3tsdxid"]
 
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="2_7rpoe"]
 [ext_resource type="Script" path="res://Scripts/MenuMain.gd" id="3_5p7af"]
@@ -8,7 +8,8 @@
 [ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="5_tusdo"]
 [ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/Spawners/SpawnerItem.tscn" id="5_x307l"]
 [ext_resource type="PackedScene" uid="uid://dpf88sgoc7ao2" path="res://Prefabs/Garbage/Organic_Fish.tscn" id="6_gs76u"]
-[ext_resource type="Texture2D" uid="uid://0cedk4357tan" path="res://Sauce/GamePhotos/Levels-Level0.png" id="6_wvy5c"]
+[ext_resource type="Texture2D" uid="uid://bvsmtmd0j82rv" path="res://Sauce/GamePhotos/Levels-Level0.JPG" id="6_k7oro"]
+[ext_resource type="Texture2D" uid="uid://di6bpmeevs0wk" path="res://Sauce/GamePhotos/Levels-Level1.JPG" id="7_nhr4m"]
 [ext_resource type="PackedScene" uid="uid://x4ihdhn1mk1i" path="res://Sauce/Models/Decor/Grass001.glb" id="7_yqany"]
 [ext_resource type="PackedScene" uid="uid://b6d5ispyhvcij" path="res://Sauce/Models/Decor/Grass002.glb" id="8_ajj6y"]
 [ext_resource type="PackedScene" uid="uid://ck183gnsq6vri" path="res://Prefabs/Entities/Step.tscn" id="8_da6me"]
@@ -245,7 +246,7 @@ theme_override_constants/separation = 10
 [node name="Level0" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-texture = ExtResource("6_wvy5c")
+texture = ExtResource("6_k7oro")
 expand_mode = 3
 stretch_mode = 4
 
@@ -263,6 +264,28 @@ offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Tutorial"
+
+[node name="Level1" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+texture = ExtResource("7_nhr4m")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = 13.0
+offset_right = 52.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Level 1"
 
 [node name="All3D" type="Node3D" parent="."]
 
@@ -620,5 +643,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 1)
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonOptions" to="." method="_on_button_options_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/HideLevelSelect" to="." method="_on_hide_level_select_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level0/Button" to="." method="_on_button_level0_down"]
+[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level1/Button" to="." method="_on_button_level1_down"]
 
 [editable path="All3D/ItemSpawner/Fish2"]

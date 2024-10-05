@@ -35,7 +35,9 @@ func PlayerGrabbedMe(player):
 	
 	ResetPosition(parent)
 	ResetPosition(self)
+	
 	freeze = true
+	$CollisionShape3D.disabled = true
 
 
 
@@ -49,6 +51,7 @@ func PlayerRemovedMe(player, thrown = false):
 	global_rotation = myrotation
 	
 	freeze = false
+	$CollisionShape3D.disabled = false
 	
 	if thrown == true:
-		apply_impulse(global_transform.basis.z.normalized() * -10 + Vector3(0,10,0))
+		apply_impulse(global_transform.basis.z.normalized() * -8 + Vector3(0,10,0))

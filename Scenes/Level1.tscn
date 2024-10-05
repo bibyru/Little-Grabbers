@@ -1,20 +1,19 @@
-[gd_scene load_steps=32 format=3 uid="uid://dhog6g7obbrdw"]
+[gd_scene load_steps=32 format=3 uid="uid://cq2kbawxlq6y2"]
 
-[ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_2rnoe"]
-[ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/Spawners/SpawnerItem.tscn" id="1_uf82i"]
-[ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/Spawners/SpawnerPlayer.tscn" id="2_hh4s0"]
-[ext_resource type="PackedScene" uid="uid://bd3ujfdon8mlh" path="res://Prefabs/UI/UITutorial.tscn" id="2_mx4d6"]
-[ext_resource type="PackedScene" uid="uid://c7l3mpls2kj0h" path="res://Prefabs/Garbage/Metal_CookingPan.tscn" id="2_qu43l"]
-[ext_resource type="PackedScene" uid="uid://dpf88sgoc7ao2" path="res://Prefabs/Garbage/Organic_Fish.tscn" id="3_5bdee"]
-[ext_resource type="PackedScene" uid="uid://cylg3xai1dn5m" path="res://Prefabs/Spawners/SpawnerRecycler.tscn" id="3_5ig1x"]
-[ext_resource type="PackedScene" uid="uid://bg0spx35h8fs0" path="res://Prefabs/Garbage/Paper_PaperStack.tscn" id="4_7gciy"]
-[ext_resource type="PackedScene" uid="uid://ck183gnsq6vri" path="res://Prefabs/Entities/Step.tscn" id="4_8v1q1"]
-[ext_resource type="PackedScene" uid="uid://cgjd3207jxvh3" path="res://Prefabs/Garbage/Plastic_Bottle.tscn" id="5_87p3t"]
-[ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="11_7ecvl"]
-[ext_resource type="Texture2D" uid="uid://4hvisqlu7kkc" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Wall.png" id="13_kusgb"]
-[ext_resource type="Texture2D" uid="uid://cb5ew30664q8v" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Floor.png" id="13_wjfio"]
-[ext_resource type="Texture2D" uid="uid://lsjm4r1uvkdo" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Sign.png" id="15_717pl"]
-[ext_resource type="PackedScene" uid="uid://bm3badq7ralcp" path="res://Prefabs/Entities/BID.tscn" id="16_mwrwe"]
+[ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_6bphn"]
+[ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="2_nvk00"]
+[ext_resource type="Texture2D" uid="uid://cb5ew30664q8v" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Floor.png" id="4_0n31v"]
+[ext_resource type="Texture2D" uid="uid://4hvisqlu7kkc" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Wall.png" id="5_gc0ta"]
+[ext_resource type="Texture2D" uid="uid://lsjm4r1uvkdo" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Sign.png" id="6_3c8xq"]
+[ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/Spawners/SpawnerItem.tscn" id="7_51kcl"]
+[ext_resource type="PackedScene" uid="uid://ck183gnsq6vri" path="res://Prefabs/Entities/Step.tscn" id="8_j1vpd"]
+[ext_resource type="PackedScene" uid="uid://c7l3mpls2kj0h" path="res://Prefabs/Garbage/Metal_CookingPan.tscn" id="9_uwnnc"]
+[ext_resource type="PackedScene" uid="uid://dpf88sgoc7ao2" path="res://Prefabs/Garbage/Organic_Fish.tscn" id="10_j1nss"]
+[ext_resource type="PackedScene" uid="uid://bg0spx35h8fs0" path="res://Prefabs/Garbage/Paper_PaperStack.tscn" id="11_j2oi3"]
+[ext_resource type="PackedScene" uid="uid://cgjd3207jxvh3" path="res://Prefabs/Garbage/Plastic_Bottle.tscn" id="12_pvc4f"]
+[ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/Spawners/SpawnerPlayer.tscn" id="13_j3gi7"]
+[ext_resource type="PackedScene" uid="uid://cylg3xai1dn5m" path="res://Prefabs/Spawners/SpawnerRecycler.tscn" id="14_rhyq5"]
+[ext_resource type="PackedScene" uid="uid://bm3badq7ralcp" path="res://Prefabs/Entities/BID.tscn" id="15_oo5vx"]
 
 [sub_resource type="Environment" id="Environment_77svh"]
 background_mode = 1
@@ -27,7 +26,7 @@ albedo_color = Color(1, 1, 1, 0)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6kniq"]
 resource_name = "Floor"
 cull_mode = 2
-albedo_texture = ExtResource("13_wjfio")
+albedo_texture = ExtResource("4_0n31v")
 roughness = 0.5
 texture_filter = 2
 
@@ -69,7 +68,7 @@ data = PackedVector3Array(7.9998, 0.504, -7, -8, 0.504, 8, -8, 0.504, -7, 7.9998
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2i7k"]
 resource_name = "Wall"
 cull_mode = 2
-albedo_texture = ExtResource("13_kusgb")
+albedo_texture = ExtResource("5_gc0ta")
 roughness = 0.5
 texture_filter = 2
 
@@ -149,7 +148,7 @@ shadow_mesh = SubResource("ArrayMesh_mpjha")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51bii"]
 resource_name = "Sign"
 cull_mode = 2
-albedo_texture = ExtResource("15_717pl")
+albedo_texture = ExtResource("6_3c8xq")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_leh64"]
@@ -184,12 +183,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_leh64")
 
-[node name="Tutorial" type="Node3D"]
-script = ExtResource("1_2rnoe")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0cub"]
+albedo_color = Color(0, 1, 1, 1)
 
-[node name="GameUI" parent="." instance=ExtResource("11_7ecvl")]
+[node name="Level1" type="Node3D"]
+script = ExtResource("1_6bphn")
 
-[node name="Tutorial" parent="." instance=ExtResource("2_mx4d6")]
+[node name="GameUI" parent="." instance=ExtResource("2_nvk00")]
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.455, 13.089, 9.882)
@@ -204,6 +205,10 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.29, 2.
 use_collision = true
 size = Vector3(1, 5, 14.7)
 material = SubResource("StandardMaterial3D_00moq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290653, 4, -4.4881)
+omni_range = 16.8421
 
 [node name="TrainingFacility" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.29, 0, -0.716)
@@ -238,58 +243,60 @@ transform = Transform3D(1.15652, 0, 0, 0, 1.13431, 0, 0, 0, 1.13431, 0, 2.9009, 
 mesh = SubResource("ArrayMesh_6dgen")
 skeleton = NodePath("")
 
-[node name="ItemSpawner" parent="." instance=ExtResource("1_uf82i")]
+[node name="CSGBox3D" type="CSGBox3D" parent="TrainingFacility"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.854131, 0.0388725)
+use_collision = true
+size = Vector3(0.475, 1.77734, 13.5343)
+material = SubResource("StandardMaterial3D_u0cub")
+
+[node name="ItemSpawner" parent="." instance=ExtResource("7_51kcl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48718, 0)
 
-[node name="Step" parent="ItemSpawner" instance=ExtResource("4_8v1q1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.557, -1.78024, -5.70657)
+[node name="Step" parent="ItemSpawner" instance=ExtResource("8_j1vpd")]
+transform = Transform3D(-0.286742, 0, 0.958008, 0, 1, 0, -0.958008, 0, -0.286742, 1.41271, -1.78024, -1.58336)
 
-[node name="Step2" parent="ItemSpawner" instance=ExtResource("4_8v1q1")]
-transform = Transform3D(0.97008, 0, 0.242785, 0, 1, 0, -0.242785, 0, 0.97008, 5.557, -0.998426, -5.73231)
+[node name="Step2" parent="ItemSpawner" instance=ExtResource("8_j1vpd")]
+transform = Transform3D(0.695298, 0, -0.718722, 0, 1, 0, 0.718722, 0, 0.695298, -0.870659, -0.998426, -5.7099)
 
-[node name="CookingPan" parent="ItemSpawner" instance=ExtResource("2_qu43l")]
-transform = Transform3D(-0.539418, 0, 0.842038, 0, 1, 0, -0.842038, 0, -0.539418, 1.44751, 1.90735e-06, -4.34455)
+[node name="CookingPan" parent="ItemSpawner" instance=ExtResource("9_uwnnc")]
+transform = Transform3D(-0.916496, 0, 0.400045, 0, 1, 0, -0.400045, 0, -0.916496, 3.85267, 1.90735e-06, -5.80883)
 
-[node name="Fish" parent="ItemSpawner" instance=ExtResource("3_5bdee")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31899, 1.90735e-06, -2.76946)
+[node name="Fish" parent="ItemSpawner" instance=ExtResource("10_j1nss")]
+transform = Transform3D(-0.697403, 0, -0.716679, 0, 1, 0, 0.716679, 0, -0.697403, 5.22008, 1.90735e-06, -2.64716)
 
-[node name="Fish2" parent="ItemSpawner" instance=ExtResource("3_5bdee")]
+[node name="Fish2" parent="ItemSpawner" instance=ExtResource("10_j1nss")]
 transform = Transform3D(0.956244, 0, 0.292572, 0, 1, 0, -0.292572, 0, 0.956244, -3.23737, 1.90735e-06, -0.689536)
 
-[node name="PaperStack" parent="ItemSpawner" instance=ExtResource("4_7gciy")]
-transform = Transform3D(0.68592, 0, -0.727677, 0, 1, 0, 0.727677, 0, 0.68592, 1.85138, 1.90735e-06, -1.7396)
+[node name="PaperStack" parent="ItemSpawner" instance=ExtResource("11_j2oi3")]
+transform = Transform3D(0.68592, 0, -0.727677, 0, 1, 0, 0.727677, 0, 0.68592, 2.40603, 1.90735e-06, -3.52789)
 
-[node name="WaterBottle" parent="ItemSpawner" instance=ExtResource("5_87p3t")]
-transform = Transform3D(0.784863, 0, 0.619669, 0, 1, 0, -0.619669, 0, 0.784863, -4.14607, 1.90735e-06, -3.69836)
+[node name="WaterBottle" parent="ItemSpawner" instance=ExtResource("12_pvc4f")]
+transform = Transform3D(0.784863, 0, 0.619669, 0, 1, 0, -0.619669, 0, 0.784863, -1.7262, 1.90735e-06, -2.59652)
 
-[node name="WaterBottle2" parent="ItemSpawner" instance=ExtResource("5_87p3t")]
-transform = Transform3D(-0.708906, 0, 0.705303, 0, 1, 0, -0.705303, 0, -0.708906, 0.882089, 1.90735e-06, 0.400904)
+[node name="WaterBottle2" parent="ItemSpawner" instance=ExtResource("12_pvc4f")]
+transform = Transform3D(-0.708906, 0, 0.705303, 0, 1, 0, -0.705303, 0, -0.708906, 4.84395, 1.90735e-06, -0.156833)
 
-[node name="PlayerSpawner" parent="." instance=ExtResource("2_hh4s0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0.926818)
+[node name="PlayerSpawner" parent="." instance=ExtResource("13_j3gi7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96395, 5, -2.77637)
 
 [node name="Recyclers" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.189, 0, -6.867)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.49141, 0, -6.33871)
 
-[node name="RecyclerSpawner4" parent="Recyclers" instance=ExtResource("3_5ig1x")]
+[node name="RecyclerSpawner4" parent="Recyclers" instance=ExtResource("14_rhyq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.393, 0, 0)
 type = "Plastic"
 
-[node name="RecyclerSpawner2" parent="Recyclers" instance=ExtResource("3_5ig1x")]
+[node name="RecyclerSpawner2" parent="Recyclers" instance=ExtResource("14_rhyq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.041, 0, 0)
 type = "Paper"
 
-[node name="RecyclerSpawner3" parent="Recyclers" instance=ExtResource("3_5ig1x")]
+[node name="RecyclerSpawner3" parent="Recyclers" instance=ExtResource("14_rhyq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.703, 0, 0)
 type = "Organic"
 
-[node name="RecyclerSpawner" parent="Recyclers" instance=ExtResource("3_5ig1x")]
+[node name="RecyclerSpawner" parent="Recyclers" instance=ExtResource("14_rhyq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.636, 0, 0)
 type = "Metal"
 
-[node name="BID" parent="." instance=ExtResource("16_mwrwe")]
+[node name="BID" parent="." instance=ExtResource("15_oo5vx")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.582, 0, -4.384)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290653, 4, -4.4881)
-omni_range = 16.8421

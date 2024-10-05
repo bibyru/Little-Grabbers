@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var animtree = $AnimationTree
 @onready var hand = $Char_GrabberCube/Hand
+@onready var frontcolshape = $FrontCS
 
 var playerid
 var controllerid
@@ -13,10 +14,10 @@ var no_input = false
 var speed = 350
 var accel = 1
 
-var grav = 1
+var grav = 70
 var jumpforce = 800
 
-var rotaccel = 0.3
+var rotaccel = 0.5
 var animaccel = 0.5
 
 var objectseen
@@ -30,6 +31,7 @@ var bid = null
 
 
 func _ready():
+	frontcolshape.disabled = true
 	hand.position = normalhandpos
 	
 	for i in Manager.playerindex.size():
@@ -116,6 +118,7 @@ func Interact():
 
 
 func GrabObject():
+	frontcolshape.disabled = false
 	objectseen.object.PlayerGrabbedMe(self)
 	
 	if objectheld.is_in_group("Property"):
@@ -124,6 +127,7 @@ func GrabObject():
 		hand.position = normalhandpos
 
 func ObjectRemoved(ate = false):
+	frontcolshape.disabled = true
 	if ate == true:
 		objectheld.object.Ate()
 	else:
@@ -132,6 +136,7 @@ func ObjectRemoved(ate = false):
 	objectheld = null
 
 func ThrowObject():
+	frontcolshape.disabled = true
 	if objectheld != null:
 		objectheld.object.PlayerRemovedMe(self, true)
 		
@@ -161,7 +166,7 @@ func _physics_process(delta):
 	
 	
 	# ANIMATION
-	if velocity.x != 0 or velocity.z != 0:
+	if (velocity.x != 0 or velocity.z != 0) and is_on_floor():
 		var lookangle = atan2(-velocity.x, -velocity.z)
 		self.rotation.y = lerp_angle(self.rotation.y, lookangle, rotaccel)
 	
@@ -196,11 +201,12 @@ func _physics_process(delta):
 		axisX = Input.get_axis("Left", "Right")
 		axisZ = Input.get_axis("Forward", "Backward")
 	
-	velocity.x = move_toward(velocity.x, axisX * speed * delta, accel)
-	velocity.z = move_toward(velocity.z, axisZ * speed * delta, accel)
+	if !is_on_wall_only():
+		velocity.x = move_toward(velocity.x, axisX * speed * delta, accel)
+		velocity.z = move_toward(velocity.z, axisZ * speed * delta, accel)
 	
 	if !is_on_floor():
-		velocity.y -= grav
+		velocity.y -= grav * delta
 	else:
 		if controllerid > 0 and Input.get_connected_joypads().size() > 0:
 			if Input.is_joy_button_pressed(joystick, JOY_BUTTON_A):

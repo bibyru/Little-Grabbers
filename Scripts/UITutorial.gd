@@ -11,7 +11,7 @@ var tips = [
 	],
 	[
 		"Pick up the Garbage, then put it into\nthe BreakItDowner (BID) machine!",
-		"(to get more points)"
+		""
 	],
 	[
 		"Pick up the Garbage Block, then put\nit into the same colored Recycler!",
