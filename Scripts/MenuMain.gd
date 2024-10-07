@@ -9,14 +9,15 @@ extends Node
 @onready var CansPanel = $CanvasLayer/Control/LevelSelect/CansWarning
 @onready var CansTimer = $CanvasLayer/Control/LevelSelect/CansWarning/Timer
 
+var levelid = [0, 1]
 
 func _ready():
+	Manager.levelentity = self
+	
 	LevelSelect.visible = false
 	PanelColor.visible = false
 	ControllerWarning.modulate = Color(1,1,1,0)
 	CansPanel.modulate = Color(1,1,1,0)
-	
-	Manager.levelentity = self
 
 
 func CansWarning():
@@ -54,7 +55,7 @@ func _on_warning_timer_timeout():
 
 
 func _on_button_level0_down():
-	Manager.ReqLevel(1,0)
+	Manager.ReqLevel([1,0])
 
 func _on_button_level1_down():
-	Manager.ReqLevel(1,1)
+	Manager.ReqLevel([1,1])

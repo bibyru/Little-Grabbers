@@ -1,9 +1,13 @@
 extends CanvasLayer
 
-@onready var trashcans = $Control/Panel/TrashCans
+@onready var TrashCansUI = $Control/Panel/TrashCans
 
-func _on_restart_button_down():
+func _ready():
+	TrashCansUI.levelid = Manager.levelentity.levelid
+	TrashCansUI.Initialize()
+
+func button_restart():
 	Manager.ReqRestartLevel()
 
-func _on_main_menu_button_down():
+func button_mainmenu():
 	Manager.ReqMainMenu()

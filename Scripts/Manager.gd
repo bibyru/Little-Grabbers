@@ -26,21 +26,21 @@ var score = 0
 
 var leveltimes = [
 	# Stage 0 (Testing)
-	[10],
+	[10, "Hi High"],
 	
 	# Stage 1 (Training Facility)
 	[60, 120]
 ]
 var trashcans = [
 	# Stage 0 (Testing)
-	[0],
+	[0, "Virtual Angel"],
 	
 	# Stage 1 (Training Facility)
 	[0,0]
 ]
 var scoretargets = [
 	# Stage 0 (Testing)
-	[[0, 5, 10]],
+	[[0, 5, 10], ["TTYL"]],
 	
 	# Stage 1 (Training Facility)
 	# Level 0
@@ -90,13 +90,13 @@ func ReqMainMenu():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	get_tree().paused = false
 
-func ReqLevel(stagenum, levelnum):
-	if levelnum > 0 and trashcans[stagenum][levelnum-1] < 2:
+func ReqLevel(levelid):
+	if levelid[1] > 0 and trashcans[levelid[0]][levelid[1]-1] < 2:
 		levelentity.CansWarning()
 		return
 	
 	get_tree().paused = true
-	get_tree().change_scene_to_file("res://Scenes/Level"+ str(stagenum) + str(levelnum) +".tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level"+ str(levelid[0]) + str(levelid[1]) +".tscn")
 	get_tree().paused = false
 
 func ReqRestartLevel():

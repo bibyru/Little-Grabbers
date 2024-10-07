@@ -224,7 +224,8 @@ stretch_mode = 4
 
 [node name="TrashStars" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0" instance=ExtResource("6_wi6u4")]
 layout_mode = 2
-stagenum = 1
+levelid = [1, 0]
+manually_set_levelid = true
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0"]
 layout_mode = 2
@@ -244,8 +245,8 @@ stretch_mode = 4
 
 [node name="TrashStars" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1" instance=ExtResource("6_wi6u4")]
 layout_mode = 2
-stagenum = 1
-levelnum = 1
+levelid = [1, 1]
+manually_set_levelid = true
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1"]
 layout_mode = 2

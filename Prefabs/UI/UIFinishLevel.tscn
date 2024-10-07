@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cakwlqgjrf5w1" path="res://Prefabs/UI/UITrashCans.tscn" id="2_68pxp"]
 
 [node name="UIFinishLevel" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_fcddn")
 
 [node name="Control" type="Control" parent="."]
@@ -79,5 +80,5 @@ text = "Restart"
 layout_mode = 2
 text = "Main menu"
 
-[connection signal="button_down" from="Control/Panel/VBoxContainer/Restart" to="." method="_on_restart_button_down"]
-[connection signal="button_down" from="Control/Panel/VBoxContainer/MainMenu" to="." method="_on_main_menu_button_down"]
+[connection signal="button_down" from="Control/Panel/VBoxContainer/Restart" to="." method="button_restart"]
+[connection signal="button_down" from="Control/Panel/VBoxContainer/MainMenu" to="." method="button_mainmenu"]

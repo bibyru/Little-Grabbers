@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cakwlqgjrf5w1"]
+[gd_scene load_steps=5 format=3 uid="uid://cakwlqgjrf5w1"]
 
 [ext_resource type="Script" path="res://Scripts/UITrashCans.gd" id="1_agbhc"]
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="1_ps2bw"]
 [ext_resource type="Texture2D" uid="uid://vf0orvlw7vt7" path="res://Sauce/Sprites/TrashCan-True.png" id="1_tkd10"]
+[ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="4_3wdpd"]
 
 [node name="TrashCans" type="HBoxContainer"]
 offset_right = 110.0
@@ -14,7 +15,6 @@ script = ExtResource("1_agbhc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = -2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 texture_filter = 1
@@ -25,13 +25,14 @@ stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+theme_override_fonts/font = ExtResource("4_3wdpd")
 theme_override_font_sizes/font_size = 16
 text = "999"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = -2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer2"]
 texture_filter = 1
@@ -42,13 +43,14 @@ stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+theme_override_fonts/font = ExtResource("4_3wdpd")
 theme_override_font_sizes/font_size = 16
 text = "999"
 horizontal_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = -2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer3"]
 texture_filter = 1
@@ -59,6 +61,8 @@ stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+theme_override_fonts/font = ExtResource("4_3wdpd")
 theme_override_font_sizes/font_size = 16
 text = "999"
 horizontal_alignment = 1

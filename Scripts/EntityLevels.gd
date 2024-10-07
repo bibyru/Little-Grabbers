@@ -1,22 +1,24 @@
 extends Node3D
 
-var finish_ui = preload("res://Prefabs/UI/UIFinishLevel.tscn")
+var FinishUI = preload("res://Prefabs/UI/UIFinishLevel.tscn")
 
 var checkgarbage_timer = null
 var finishlevel_timer = null
 
-@export var stagenum : int
-@export var levelnum : int
+@export var levelid = [12, 12]
 
 var scoretarget
-@onready var game_ui = $GameUI
+@onready var GameUI = $GameUI
 
 func _ready():
 	Manager.levelentity = self
 	Manager.score = 0
 	
-	scoretarget = Manager.scoretargets[stagenum][levelnum]
-	game_ui.level_time = Manager.leveltimes[stagenum][levelnum]
+	scoretarget = Manager.scoretargets[levelid[0]][levelid[1]]
+	
+	var time = Manager.leveltimes[levelid[0]][levelid[1]]
+	GameUI.level_time = time
+	GameUI.timelabel.text = str("%02d:%02d" %[time/60, time%60])
 
 func GarbageRecycled():
 	if checkgarbage_timer != null:
@@ -37,7 +39,7 @@ func CheckGarbage():
 func FinishLevel():
 	for player in Manager.playerindex:
 		player[2].no_input = true
-	game_ui.UpdateScore(3)
+	GameUI.UpdateScore(3)
 	
 	var trashcansgot = 0
 	for i in 3:
@@ -46,9 +48,7 @@ func FinishLevel():
 		else:
 			break
 	
-	Manager.trashcans[stagenum][levelnum] = trashcansgot
+	Manager.trashcans[levelid[0]][levelid[1]] = trashcansgot
 	
-	var finish_ui_child = finish_ui.instantiate()
-	add_child(finish_ui_child)
-	finish_ui_child.trashcans.SetLevelInfo(stagenum, levelnum)
-	finish_ui_child.trashcans.Initialize()
+	var finishui_child = FinishUI.instantiate()
+	Manager.itemspawner.add_child(finishui_child)
