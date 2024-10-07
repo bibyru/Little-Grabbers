@@ -187,10 +187,8 @@ shadow_mesh = SubResource("ArrayMesh_leh64")
 [node name="Tutorial" type="Node3D"]
 script = ExtResource("1_0dnnh")
 stagenum = 1
-scoretargets = Array[int]([50, 100, 150])
 
 [node name="GameUI" parent="." instance=ExtResource("2_fgywb")]
-level_time = 60
 
 [node name="Tutorial" parent="." instance=ExtResource("3_w5x2h")]
 

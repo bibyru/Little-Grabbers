@@ -114,7 +114,7 @@ layout_mode = 1
 offset_left = 365.0
 offset_top = 50.0
 offset_right = 922.0
-offset_bottom = 269.0
+offset_bottom = 346.0
 
 [node name="HideLevelSelect" type="Button" parent="CanvasLayer/Control/LevelSelect"]
 layout_mode = 1
@@ -136,17 +136,7 @@ text = "Select Level"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="CanvasLayer/Control/LevelSelect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 65.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CansWarning" type="Panel" parent="CanvasLayer/Control/LevelSelect/Control"]
+[node name="CansWarning" type="Panel" parent="CanvasLayer/Control/LevelSelect"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -160,7 +150,7 @@ offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelect/CansWarning"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -169,23 +159,33 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning/HBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/LevelSelect/CansWarning/HBoxContainer"]
 layout_mode = 2
 text = "Need at least 2"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/CansWarning/HBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("5_2vl81")
 stretch_mode = 3
 
-[node name="Label2" type="Label" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning/HBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/Control/LevelSelect/CansWarning/HBoxContainer"]
 layout_mode = 2
 text = "on previous level!"
 
-[node name="Timer" type="Timer" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning"]
+[node name="Timer" type="Timer" parent="CanvasLayer/Control/LevelSelect/CansWarning"]
+wait_time = 2.0
 one_shot = true
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/LevelSelect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 57.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/LevelSelect/Control"]
 layout_mode = 1
@@ -689,7 +689,7 @@ shape = SubResource("BoxShape3D_56h4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 1)
 
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/HideLevelSelect" to="." method="_on_hide_level_select_button_down"]
-[connection signal="timeout" from="CanvasLayer/Control/LevelSelect/Control/CansWarning/Timer" to="." method="CansTimeout"]
+[connection signal="timeout" from="CanvasLayer/Control/LevelSelect/CansWarning/Timer" to="." method="CansTimeout"]
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0/Button" to="." method="_on_button_level0_down"]
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1/Button" to="." method="_on_button_level1_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonPlay" to="." method="_on_button_play_button_down"]

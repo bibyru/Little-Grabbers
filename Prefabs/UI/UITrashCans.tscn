@@ -1,32 +1,64 @@
 [gd_scene load_steps=4 format=3 uid="uid://cakwlqgjrf5w1"]
 
 [ext_resource type="Script" path="res://Scripts/UITrashCans.gd" id="1_agbhc"]
+[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="1_ps2bw"]
 [ext_resource type="Texture2D" uid="uid://vf0orvlw7vt7" path="res://Sauce/Sprites/TrashCan-True.png" id="1_tkd10"]
-[ext_resource type="Texture2D" uid="uid://bjqm4qk55qxgu" path="res://Sauce/Sprites/TrashCan-False.png" id="2_xx2ud"]
 
-[node name="TrashStars" type="HBoxContainer" node_paths=PackedStringArray("trashcanImages")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-grow_horizontal = 2
+[node name="TrashCans" type="HBoxContainer"]
+offset_right = 110.0
+offset_bottom = 41.0
+theme = ExtResource("1_ps2bw")
+theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("1_agbhc")
-trashcanImages = [NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3")]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("1_tkd10")
+stretch_mode = 3
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "999"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2"]
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 texture = ExtResource("1_tkd10")
+stretch_mode = 3
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "999"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer3"]
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("2_xx2ud")
+texture = ExtResource("1_tkd10")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "999"
+horizontal_alignment = 1

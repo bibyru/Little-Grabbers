@@ -1,5 +1,7 @@
 extends Node3D
 
+var finish_ui = preload("res://Prefabs/UI/UIFinishLevel.tscn")
+
 var checkgarbage_timer = null
 var finishlevel_timer = null
 
@@ -11,8 +13,9 @@ var scoretarget
 
 func _ready():
 	Manager.levelentity = self
+	Manager.score = 0
 	
-	scoretarget = Manager.scoretargets[0][0]
+	scoretarget = Manager.scoretargets[stagenum][levelnum]
 	game_ui.level_time = Manager.leveltimes[stagenum][levelnum]
 
 func GarbageRecycled():
@@ -36,14 +39,6 @@ func FinishLevel():
 		player[2].no_input = true
 	game_ui.UpdateScore(3)
 	
-	finishlevel_timer = Timer.new()
-	finishlevel_timer.one_shot = true
-	finishlevel_timer.autostart = true
-	finishlevel_timer.wait_time = 5
-	finishlevel_timer.timeout.connect(LevelEnd)
-	add_child(finishlevel_timer)
-
-func LevelEnd():
 	var trashcansgot = 0
 	for i in 3:
 		if Manager.score >= scoretarget[i]:
@@ -52,4 +47,8 @@ func LevelEnd():
 			break
 	
 	Manager.trashcans[stagenum][levelnum] = trashcansgot
-	Manager.ReqMainMenu()
+	
+	var finish_ui_child = finish_ui.instantiate()
+	add_child(finish_ui_child)
+	finish_ui_child.trashcans.SetLevelInfo(stagenum, levelnum)
+	finish_ui_child.trashcans.Initialize()

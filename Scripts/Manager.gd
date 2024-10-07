@@ -44,7 +44,7 @@ var scoretargets = [
 	
 	# Stage 1 (Training Facility)
 	# Level 0
-	[[90, 100, 150], [0]]
+	[[90, 100, 150], [450, 500, 550]]
 ]
 
 
@@ -97,6 +97,15 @@ func ReqLevel(stagenum, levelnum):
 	
 	get_tree().paused = true
 	get_tree().change_scene_to_file("res://Scenes/Level"+ str(stagenum) + str(levelnum) +".tscn")
+	get_tree().paused = false
+
+func ReqRestartLevel():
+	get_tree().paused = true
+	get_tree().reload_current_scene()
+	
+	if pausechild != null:
+		itemspawner.remove_child(pausechild)
+		pausechild = null
 	get_tree().paused = false
 
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/EntityPlayer.gd" id="1_sy3j4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ucc8v"]
-size = Vector3(1, 0.894043, 0.522522)
+size = Vector3(0.645, 0.894, 0.523)
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_aa8pl"]
 filters = ["Armature_GrabberCube/Skeleton3D:Bone.Arm.L", "Armature_GrabberCube/Skeleton3D:Bone.Arm.R"]
@@ -560,7 +560,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bjse5"]
-size = Vector3(0.715, 0.780483, 1.06689)
+size = Vector3(0.61, 0.78, 0.879)
 
 [node name="GrabberCube" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
@@ -660,7 +660,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Char_GrabberCube/Front"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45712e-13, 0.429189, -0.515668)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45712e-13, 0.429189, -0.421797)
 shape = SubResource("BoxShape3D_bjse5")
 
 [node name="Hand" type="Node3D" parent="Char_GrabberCube"]

@@ -28,6 +28,9 @@ func _on_button_resume_button_down():
 func _on_button_main_button_down():
 	Manager.ReqMainMenu()
 
+func _on_button_restart_button_down():
+	Manager.ReqRestartLevel()
+
 
 
 func button_fullscreen(toggled_on):
@@ -38,3 +41,4 @@ func button_antialiasing(toggled_on):
 
 func button_vsync(toggled_on):
 	Manager.SetVsync(toggled_on)
+

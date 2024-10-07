@@ -76,7 +76,8 @@ func _on_front_area_entered(area):
 	elif area_entity.is_in_group("BID"):
 		bid = area_entity
 	else:
-		objectseen = area_entity
+		if objectseen == null:
+			objectseen = area_entity
 
 func _on_front_area_exited(area):
 	var area_entity = area.get_owner()

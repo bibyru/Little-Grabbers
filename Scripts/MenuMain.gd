@@ -1,11 +1,14 @@
 extends Node
 
 @onready var PanelColor = $CanvasLayer/Control/PanelColor
-@onready var ControllerWarning = $CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning
-@onready var CansPanel = $CanvasLayer/Control/LevelSelect/Control/CansWarning
-@onready var CansTimer = $CanvasLayer/Control/LevelSelect/Control/CansWarning/Timer
-@onready var WarningTimer = $CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning/Timer
 @onready var LevelSelect = $CanvasLayer/Control/LevelSelect
+
+@onready var ControllerWarning = $CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning
+@onready var WarningTimer = $CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning/Timer
+
+@onready var CansPanel = $CanvasLayer/Control/LevelSelect/CansWarning
+@onready var CansTimer = $CanvasLayer/Control/LevelSelect/CansWarning/Timer
+
 
 func _ready():
 	LevelSelect.visible = false

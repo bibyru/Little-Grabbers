@@ -16,6 +16,7 @@ grow_vertical = 2
 theme = ExtResource("2_637tu")
 
 [node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
 offset_left = 11.0
 offset_top = 13.0
 offset_right = 286.0
