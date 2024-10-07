@@ -3,15 +3,17 @@ extends Node3D
 var checkgarbage_timer = null
 var finishlevel_timer = null
 
-@export var no_ui = false
+@export var stagenum : int
+@export var levelnum : int
 
+var scoretarget
+@onready var game_ui = $GameUI
 
 func _ready():
 	Manager.levelentity = self
 	
-	if no_ui == true:
-		$GameUI.visible = false
-		$Tutorial.visible = false
+	scoretarget = Manager.scoretargets[0][0]
+	game_ui.level_time = Manager.leveltimes[stagenum][levelnum]
 
 func GarbageRecycled():
 	if checkgarbage_timer != null:
@@ -30,9 +32,24 @@ func CheckGarbage():
 			FinishLevel()
 
 func FinishLevel():
+	for player in Manager.playerindex:
+		player[2].no_input = true
+	game_ui.UpdateScore(3)
+	
 	finishlevel_timer = Timer.new()
 	finishlevel_timer.one_shot = true
 	finishlevel_timer.autostart = true
-	finishlevel_timer.wait_time = 2
-	finishlevel_timer.timeout.connect(Manager.ReqMainMenu)
+	finishlevel_timer.wait_time = 5
+	finishlevel_timer.timeout.connect(LevelEnd)
 	add_child(finishlevel_timer)
+
+func LevelEnd():
+	var trashcansgot = 0
+	for i in 3:
+		if Manager.score >= scoretarget[i]:
+			trashcansgot += 1
+		else:
+			break
+	
+	Manager.trashcans[stagenum][levelnum] = trashcansgot
+	Manager.ReqMainMenu()

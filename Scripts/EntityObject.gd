@@ -21,6 +21,15 @@ func Ate():
 
 
 
+func ObjectActivate():
+	freeze = false
+	$CollisionShape3D.disabled = false
+
+func ObjectDisable():
+	freeze = true
+	$CollisionShape3D.disabled = true
+
+
 func PlayerGrabbedMe(player):
 	# if object being held by player, clear its objectheld
 	var grandparent = parent.get_parent()
@@ -36,9 +45,7 @@ func PlayerGrabbedMe(player):
 	ResetPosition(parent)
 	ResetPosition(self)
 	
-	freeze = true
-	$CollisionShape3D.disabled = true
-
+	ObjectDisable()
 
 
 func PlayerRemovedMe(player, thrown = false):
@@ -50,8 +57,7 @@ func PlayerRemovedMe(player, thrown = false):
 	global_position = mylocation
 	global_rotation = myrotation
 	
-	freeze = false
-	$CollisionShape3D.disabled = false
+	ObjectActivate()
 	
 	if thrown == true:
 		apply_impulse(global_transform.basis.z.normalized() * -8 + Vector3(0,10,0))

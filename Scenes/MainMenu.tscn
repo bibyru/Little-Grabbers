@@ -1,14 +1,16 @@
-[gd_scene load_steps=28 format=3 uid="uid://bx3dmu3tsdxid"]
+[gd_scene load_steps=30 format=3 uid="uid://bx3dmu3tsdxid"]
 
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="2_7rpoe"]
 [ext_resource type="Script" path="res://Scripts/MenuMain.gd" id="3_5p7af"]
 [ext_resource type="PackedScene" uid="uid://b43bys8l6npi2" path="res://Prefabs/UI/ButtonQuit.tscn" id="4_g5ug6"]
+[ext_resource type="Texture2D" uid="uid://vf0orvlw7vt7" path="res://Sauce/Sprites/TrashCan-True.png" id="5_2vl81"]
 [ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/Spawners/SpawnerPlayer.tscn" id="5_3psu1"]
 [ext_resource type="PackedScene" uid="uid://coxlah0vdhwhp" path="res://Prefabs/UI/PanelColor.tscn" id="5_qw37a"]
 [ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="5_tusdo"]
 [ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/Spawners/SpawnerItem.tscn" id="5_x307l"]
 [ext_resource type="PackedScene" uid="uid://dpf88sgoc7ao2" path="res://Prefabs/Garbage/Organic_Fish.tscn" id="6_gs76u"]
 [ext_resource type="Texture2D" uid="uid://bvsmtmd0j82rv" path="res://Sauce/GamePhotos/Levels-Level0.JPG" id="6_k7oro"]
+[ext_resource type="PackedScene" uid="uid://cakwlqgjrf5w1" path="res://Prefabs/UI/UITrashCans.tscn" id="6_wi6u4"]
 [ext_resource type="Texture2D" uid="uid://di6bpmeevs0wk" path="res://Sauce/GamePhotos/Levels-Level1.JPG" id="7_nhr4m"]
 [ext_resource type="PackedScene" uid="uid://x4ihdhn1mk1i" path="res://Sauce/Models/Decor/Grass001.glb" id="7_yqany"]
 [ext_resource type="PackedScene" uid="uid://b6d5ispyhvcij" path="res://Sauce/Models/Decor/Grass002.glb" id="8_ajj6y"]
@@ -102,6 +104,154 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_7rpoe")
 
+[node name="PanelColor" parent="CanvasLayer/Control" instance=ExtResource("5_qw37a")]
+layout_mode = 1
+offset_top = 170.0
+offset_bottom = 321.0
+
+[node name="LevelSelect" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+offset_left = 365.0
+offset_top = 50.0
+offset_right = 922.0
+offset_bottom = 269.0
+
+[node name="HideLevelSelect" type="Button" parent="CanvasLayer/Control/LevelSelect"]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 13.0
+offset_right = 41.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("5_tusdo")
+text = "X"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/LevelSelect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "Select Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/LevelSelect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 65.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CansWarning" type="Panel" parent="CanvasLayer/Control/LevelSelect/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -191.0
+offset_top = 13.0
+offset_right = 191.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning/HBoxContainer"]
+layout_mode = 2
+text = "Need at least 2"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("5_2vl81")
+stretch_mode = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning/HBoxContainer"]
+layout_mode = 2
+text = "on previous level!"
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control/LevelSelect/Control/CansWarning"]
+one_shot = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/LevelSelect/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aedfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 55
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "@ Garbies Training Facility"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Level0" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+texture = ExtResource("6_k7oro")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TrashStars" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0" instance=ExtResource("6_wi6u4")]
+layout_mode = 2
+stagenum = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Tutorial"
+
+[node name="Level1" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+texture = ExtResource("7_nhr4m")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TrashStars" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1" instance=ExtResource("6_wi6u4")]
+layout_mode = 2
+stagenum = 1
+levelnum = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Level 1"
+
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
 offset_left = 52.0
@@ -188,104 +338,6 @@ text = "Options"
 
 [node name="ButtonQuit" parent="CanvasLayer/Control/Panel/VBoxContainer" instance=ExtResource("4_g5ug6")]
 layout_mode = 2
-
-[node name="PanelColor" parent="CanvasLayer/Control" instance=ExtResource("5_qw37a")]
-layout_mode = 1
-offset_top = 170.0
-offset_bottom = 321.0
-
-[node name="LevelSelect" type="Panel" parent="CanvasLayer/Control"]
-layout_mode = 1
-offset_left = 365.0
-offset_top = 50.0
-offset_right = 922.0
-offset_bottom = 269.0
-
-[node name="HideLevelSelect" type="Button" parent="CanvasLayer/Control/LevelSelect"]
-layout_mode = 1
-offset_left = 9.0
-offset_top = 13.0
-offset_right = 41.0
-offset_bottom = 34.0
-theme_override_fonts/font = ExtResource("5_tusdo")
-text = "X"
-
-[node name="Label" type="Label" parent="CanvasLayer/Control/LevelSelect"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 49.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 25
-text = "Select Level"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control" type="Control" parent="CanvasLayer/Control/LevelSelect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 65.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Control/LevelSelect/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_aedfw")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Level0" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 90)
-layout_mode = 2
-texture = ExtResource("6_k7oro")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level0"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -52.0
-offset_top = 13.0
-offset_right = 52.0
-offset_bottom = 41.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Tutorial"
-
-[node name="Level1" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer"]
-custom_minimum_size = Vector2(0, 90)
-layout_mode = 2
-texture = ExtResource("7_nhr4m")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level1"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -52.0
-offset_top = 13.0
-offset_right = 52.0
-offset_bottom = 41.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Level 1"
 
 [node name="All3D" type="Node3D" parent="."]
 
@@ -636,13 +688,14 @@ shape = SubResource("BoxShape3D_56h4o")
 [node name="PlayerSpawner" parent="All3D" instance=ExtResource("5_3psu1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 1)
 
+[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/HideLevelSelect" to="." method="_on_hide_level_select_button_down"]
+[connection signal="timeout" from="CanvasLayer/Control/LevelSelect/Control/CansWarning/Timer" to="." method="CansTimeout"]
+[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0/Button" to="." method="_on_button_level0_down"]
+[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1/Button" to="." method="_on_button_level1_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonPlay" to="." method="_on_button_play_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer" to="." method="_on_button_add_player_button_down"]
 [connection signal="timeout" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning/Timer" to="." method="_on_warning_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonColor" to="." method="_on_button_color_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonOptions" to="." method="_on_button_options_button_down"]
-[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/HideLevelSelect" to="." method="_on_hide_level_select_button_down"]
-[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level0/Button" to="." method="_on_button_level0_down"]
-[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/HBoxContainer/Level1/Button" to="." method="_on_button_level1_down"]
 
 [editable path="All3D/ItemSpawner/Fish2"]

@@ -29,8 +29,6 @@ func BreakDown(entity):
 			spittype = 1
 			processingtimer.start()
 			
-			entity.object.Ate()
-			
 			processingtimer.timeout.connect(SpitThing.bind(entity))
 
 func SpitThing(entity):
@@ -44,4 +42,5 @@ func SpitThing(entity):
 		
 	elif spittype == 1:
 		spitposition.add_child(entity)
+		entity.object.ObjectActivate()
 		entity.global_position = spitposition.global_position

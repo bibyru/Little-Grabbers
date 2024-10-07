@@ -10,8 +10,8 @@ var tips = [
 		"(any type of controllers are usable)"
 	],
 	[
-		"Pick up the Garbage, then put it into\nthe BreakItDowner (BID) machine!",
-		""
+		"Pick up the Garbage, then put\nit into the BID machine!",
+		"(the taller one with two holes)"
 	],
 	[
 		"Pick up the Garbage Block, then put\nit into the same colored Recycler!",

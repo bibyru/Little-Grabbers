@@ -5,17 +5,17 @@ extends Node
 @onready var buttonvsync = $Control/Menu/VBoxContainer/Vsync/Button
 
 func _ready():
-	if Manager.settings[0] == 1:
+	if Manager.settings[3] == 1:
 		if buttonfullscreen.button_pressed == false:
 			buttonfullscreen.set_pressed_no_signal(true)
 			buttonfullscreen.Turn(true)
 	
-	if Manager.settings[1] == 1:
+	if Manager.settings[4] == 1:
 		if buttonantialiasing.button_pressed == false:
 			buttonantialiasing.set_pressed_no_signal(true)
 			buttonantialiasing.Turn(true)
 	
-	if Manager.settings[2] == 1:
+	if Manager.settings[5] == 1:
 		if buttonvsync.button_pressed == false:
 			buttonvsync.set_pressed_no_signal(true)
 			buttonvsync.Turn(true)

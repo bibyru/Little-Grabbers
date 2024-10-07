@@ -24,18 +24,53 @@ const garbage_colors = [
 var playerindex = []
 var score = 0
 
+var leveltimes = [
+	# Stage 0 (Testing)
+	[10],
+	
+	# Stage 1 (Training Facility)
+	[60, 120]
+]
+var trashcans = [
+	# Stage 0 (Testing)
+	[0],
+	
+	# Stage 1 (Training Facility)
+	[0,0]
+]
+var scoretargets = [
+	# Stage 0 (Testing)
+	[[0, 5, 10]],
+	
+	# Stage 1 (Training Facility)
+	# Level 0
+	[[90, 100, 150], [0]]
+]
+
+
+
 var playerspawner
 var itemspawner
 
 var levelentity
+var pausechild
 var gameui
 var score_name = "Moula"
 var score_reward = 10
 var score_punish = 5
 var score_property = 20
+var score_onesecond = 5
 
-var pausechild
-var settings = [1,0,0,10,50,100]
+
+var settings = [10,50,100, 1,0,0]
+# settings[0] is master
+# settings[1] is music
+# settings[2] is sound
+#
+# settings[3] is fullscreen
+# settings[4] is aa
+# settings[5] is vsync
+
 var savepath
 # res://Output/Records.txt
 # user://Records.txt
@@ -55,9 +90,13 @@ func ReqMainMenu():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	get_tree().paused = false
 
-func ReqLevel(levelnum):
+func ReqLevel(stagenum, levelnum):
+	if levelnum > 0 and trashcans[stagenum][levelnum-1] < 2:
+		levelentity.CansWarning()
+		return
+	
 	get_tree().paused = true
-	get_tree().change_scene_to_file("res://Scenes/Level"+ str(levelnum) +".tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level"+ str(stagenum) + str(levelnum) +".tscn")
 	get_tree().paused = false
 
 
@@ -88,23 +127,23 @@ func PauseMenu():
 func SetFullscreen(booleah):
 	if booleah == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		settings[0] = 1
+		settings[3] = 1
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		settings[0] = 0
+		settings[3] = 0
 
 func SetAntiAliasing(booleah):
 	if booleah == true:
 		get_viewport().msaa_3d = Viewport.MSAA_8X
-		settings[1] = 1
+		settings[4] = 1
 	else:
 		get_viewport().msaa_3d = Viewport.MSAA_DISABLED
-		settings[1] = 0
+		settings[4] = 0
 
 func SetVsync(booleah):
 	if booleah == true:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ADAPTIVE)
-		settings[2] = 1
+		settings[5] = 1
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
-		settings[2] = 0
+		settings[5] = 0

@@ -59,8 +59,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1280.0
-offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -133,8 +131,7 @@ theme_override_constants/separation = 10
 
 [node name="TipLabel" type="Label" parent="Control/AnimateControl/Panel/VBoxContainer"]
 layout_mode = 2
-text = "Pick up Garbage Block, then put it in
-the same colored Recycler!"
+text = "(Wasd)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -142,7 +139,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 18
-text = "(to get more points)"
+text = "(wasd)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
