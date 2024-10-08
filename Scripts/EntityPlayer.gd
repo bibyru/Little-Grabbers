@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var animtree = $AnimationTree
 @onready var hand = $Char_GrabberCube/Hand
 @onready var frontcolshape = $FrontCS
+@onready var frontarea = $Char_GrabberCube/Front
 
 var playerid
 var controllerid
@@ -56,7 +57,7 @@ func ChangeColor():
 func _input(event):
 	if event.is_action_pressed("InputTest"):
 		print("<-Test->")
-		print(objectheld.type)
+		print(Manager.score)
 		print("<-Test end->\n")
 	
 	if controllerid == 0:
@@ -116,6 +117,10 @@ func Interact():
 	else:
 		if objectheld != null:
 			ObjectRemoved()
+	
+	
+	frontarea.monitoring = false
+	frontarea.monitoring = true
 
 
 func GrabObject():
@@ -192,19 +197,19 @@ func _physics_process(delta):
 	
 	
 	# MOVEMENT
-	var axisX
-	var axisZ
+	var axisXY = Vector2(0,0)
 	
 	if controllerid > 0 and Input.get_connected_joypads().size() > 0:
-		axisX = Input.get_joy_axis(joystick, JOY_AXIS_LEFT_X)
-		axisZ = Input.get_joy_axis(joystick, JOY_AXIS_LEFT_Y)
+		axisXY.x = Input.get_joy_axis(joystick, JOY_AXIS_LEFT_X)
+		axisXY.y = Input.get_joy_axis(joystick, JOY_AXIS_LEFT_Y)
 	else:
-		axisX = Input.get_axis("Left", "Right")
-		axisZ = Input.get_axis("Forward", "Backward")
+		axisXY.x = Input.get_axis("Left", "Right")
+		axisXY.y = Input.get_axis("Forward", "Backward")
 	
 	if !is_on_wall_only():
-		velocity.x = move_toward(velocity.x, axisX * speed * delta, accel)
-		velocity.z = move_toward(velocity.z, axisZ * speed * delta, accel)
+		axisXY = axisXY.normalized()
+		velocity.x = move_toward(velocity.x, axisXY.x * speed * delta, accel)
+		velocity.z = move_toward(velocity.z, axisXY.y * speed * delta, accel)
 	
 	if !is_on_floor():
 		velocity.y -= grav * delta

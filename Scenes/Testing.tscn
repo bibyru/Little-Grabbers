@@ -1,13 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4jk71sfoityt"]
+[gd_scene load_steps=12 format=3 uid="uid://b4jk71sfoityt"]
 
 [ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_pbcif"]
 [ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="1_sku1n"]
+[ext_resource type="PackedScene" uid="uid://bnjwctrutcrt" path="res://Prefabs/Entities/EntityFallCatcher.tscn" id="2_5qicc"]
 [ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/Spawners/SpawnerPlayer.tscn" id="2_800ds"]
 [ext_resource type="PackedScene" uid="uid://dpf88sgoc7ao2" path="res://Prefabs/Garbage/Organic_Fish.tscn" id="2_ptm41"]
 [ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/Spawners/SpawnerItem.tscn" id="3_ep4wo"]
 [ext_resource type="PackedScene" uid="uid://cylg3xai1dn5m" path="res://Prefabs/Spawners/SpawnerRecycler.tscn" id="3_w7k62"]
 [ext_resource type="PackedScene" uid="uid://decsajvqspm6" path="res://Prefabs/Spawners/SpawnerPortal.tscn" id="7_482u6"]
 [ext_resource type="PackedScene" uid="uid://bm3badq7ralcp" path="res://Prefabs/Entities/BID.tscn" id="8_yk8fm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7du0"]
+size = Vector3(5, 1, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2bmg"]
 transparency = 1
@@ -16,6 +20,12 @@ albedo_color = Color(1, 1, 1, 0.121569)
 [node name="Testing" type="Node3D"]
 script = ExtResource("1_pbcif")
 levelid = [0, 0]
+
+[node name="FallCatcher" parent="." instance=ExtResource("2_5qicc")]
+
+[node name="CollisionShape3D" parent="FallCatcher" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87391, 2.84321, -0.269138)
+shape = SubResource("BoxShape3D_d7du0")
 
 [node name="GameUI" parent="." instance=ExtResource("1_sku1n")]
 
@@ -45,12 +55,15 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.141
 type = "Organic"
 
 [node name="ItemSpawner" parent="." instance=ExtResource("3_ep4wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -1)
 
 [node name="Fish" parent="ItemSpawner" instance=ExtResource("2_ptm41")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30263, 1.28315, -3.8718)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91339, 5.30129, 0.1282)
 
 [node name="PortalSpawner" parent="." instance=ExtResource("7_482u6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201218, -0.00587082, -9.81961)
 
 [node name="BID" parent="." instance=ExtResource("8_yk8fm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, -3)
+
+[editable path="FallCatcher"]

@@ -24,13 +24,6 @@ const garbage_colors = [
 var playerindex = []
 var score = 0
 
-var leveltimes = [
-	# Stage 0 (Testing)
-	[10, "Hi High"],
-	
-	# Stage 1 (Training Facility)
-	[60, 120]
-]
 var trashcans = [
 	# Stage 0 (Testing)
 	[0, "Virtual Angel"],
@@ -38,13 +31,20 @@ var trashcans = [
 	# Stage 1 (Training Facility)
 	[0,0]
 ]
+var leveltimes = [
+	# Stage 0 (Testing)
+	[10, "Hi High"],
+	
+	# Stage 1 (Training Facility)
+	[60, 100]
+]
 var scoretargets = [
 	# Stage 0 (Testing)
 	[[0, 5, 10], ["TTYL"]],
 	
 	# Stage 1 (Training Facility)
 	# Level 0
-	[[90, 100, 150], [450, 500, 550]]
+	[[70, 90, 120], [140, 160, 190]]
 ]
 
 
@@ -59,10 +59,10 @@ var score_name = "Moula"
 var score_reward = 10
 var score_punish = 5
 var score_property = 20
-var score_onesecond = 5
+var score_onesecond = 2
 
 
-var settings = [10,50,100, 1,0,0]
+var settings = [10,50,100, 1,1,0]
 # settings[0] is master
 # settings[1] is music
 # settings[2] is sound

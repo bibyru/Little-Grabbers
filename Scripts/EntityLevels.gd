@@ -50,5 +50,13 @@ func FinishLevel():
 	
 	Manager.trashcans[levelid[0]][levelid[1]] = trashcansgot
 	
+	finishlevel_timer = Timer.new()
+	finishlevel_timer.one_shot = true
+	finishlevel_timer.autostart = true
+	finishlevel_timer.wait_time = 4
+	finishlevel_timer.timeout.connect(SpawnFinishUI)
+	add_child(finishlevel_timer)
+
+func SpawnFinishUI():
 	var finishui_child = FinishUI.instantiate()
 	Manager.itemspawner.add_child(finishui_child)

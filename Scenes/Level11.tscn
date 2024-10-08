@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://cq2kbawxlq6y2"]
+[gd_scene load_steps=33 format=3 uid="uid://cq2kbawxlq6y2"]
 
 [ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_6bphn"]
 [ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="2_nvk00"]
+[ext_resource type="PackedScene" uid="uid://bnjwctrutcrt" path="res://Prefabs/Entities/EntityFallCatcher.tscn" id="3_nfn7n"]
 [ext_resource type="Texture2D" uid="uid://cb5ew30664q8v" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Floor.png" id="4_0n31v"]
 [ext_resource type="Texture2D" uid="uid://4hvisqlu7kkc" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Wall.png" id="5_gc0ta"]
 [ext_resource type="Texture2D" uid="uid://lsjm4r1uvkdo" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Sign.png" id="6_3c8xq"]
@@ -192,6 +193,12 @@ levelid = [1, 1]
 
 [node name="GameUI" parent="." instance=ExtResource("2_nvk00")]
 
+[node name="FallCatcher" parent="." instance=ExtResource("3_nfn7n")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290653, 4, -4.4881)
+omni_range = 16.8421
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.455, 13.089, 9.882)
 current = true
@@ -205,10 +212,6 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.29, 2.
 use_collision = true
 size = Vector3(1, 5, 14.7)
 material = SubResource("StandardMaterial3D_00moq")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290653, 4, -4.4881)
-omni_range = 16.8421
 
 [node name="TrainingFacility" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.29, 0, -0.716)
@@ -244,19 +247,19 @@ mesh = SubResource("ArrayMesh_6dgen")
 skeleton = NodePath("")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="TrainingFacility"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.854131, 0.0388725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.751105, 0.0388725)
 use_collision = true
-size = Vector3(0.475, 1.77734, 13.5343)
+size = Vector3(0.475, 1.57129, 13.5343)
 material = SubResource("StandardMaterial3D_u0cub")
 
 [node name="ItemSpawner" parent="." instance=ExtResource("7_51kcl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48718, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.48718, 0)
 
 [node name="Step" parent="ItemSpawner" instance=ExtResource("8_j1vpd")]
-transform = Transform3D(-0.286742, 0, 0.958008, 0, 1, 0, -0.958008, 0, -0.286742, 1.41271, -1.78024, -1.58336)
+transform = Transform3D(-0.286742, 0, 0.958008, 0, 1, 0, -0.958008, 0, -0.286742, 2.89334, -1.78024, -0.987736)
 
 [node name="Step2" parent="ItemSpawner" instance=ExtResource("8_j1vpd")]
-transform = Transform3D(0.695298, 0, -0.718722, 0, 1, 0, 0.718722, 0, 0.695298, -0.870659, -0.998426, -5.7099)
+transform = Transform3D(0.695298, 0, -0.718722, 0, 1, 0, 0.718722, 0, 0.695298, 0.0773225, -0.998426, -5.19815)
 
 [node name="CookingPan" parent="ItemSpawner" instance=ExtResource("9_uwnnc")]
 transform = Transform3D(-0.916496, 0, 0.400045, 0, 1, 0, -0.400045, 0, -0.916496, 3.85267, 1.90735e-06, -5.80883)
@@ -280,7 +283,7 @@ transform = Transform3D(-0.708906, 0, 0.705303, 0, 1, 0, -0.705303, 0, -0.708906
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96395, 5, -2.77637)
 
 [node name="Recyclers" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.49141, 0, -6.33871)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.74835, 0, -6.33871)
 
 [node name="RecyclerSpawner4" parent="Recyclers" instance=ExtResource("14_rhyq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.393, 0, 0)

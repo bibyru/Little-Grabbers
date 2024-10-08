@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bx3dmu3tsdxid"]
+[gd_scene load_steps=31 format=3 uid="uid://bx3dmu3tsdxid"]
 
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="2_7rpoe"]
 [ext_resource type="Script" path="res://Scripts/MenuMain.gd" id="3_5p7af"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b6d5ispyhvcij" path="res://Sauce/Models/Decor/Grass002.glb" id="8_ajj6y"]
 [ext_resource type="PackedScene" uid="uid://ck183gnsq6vri" path="res://Prefabs/Entities/Step.tscn" id="8_da6me"]
 [ext_resource type="PackedScene" uid="uid://db373mbl17jkm" path="res://Sauce/Models/Decor/Rock002.glb" id="9_x86cr"]
+[ext_resource type="PackedScene" uid="uid://bnjwctrutcrt" path="res://Prefabs/Entities/EntityFallCatcher.tscn" id="10_gb1hj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aedfw"]
 content_margin_left = 20.0
@@ -272,7 +273,7 @@ offset_bottom = 61.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.749545, 0.464919, 0.723905, 1)
 theme_override_font_sizes/font_size = 30
-text = "Little Grabbers"
+text = "Trash Grabbers"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
@@ -341,6 +342,8 @@ text = "Options"
 layout_mode = 2
 
 [node name="All3D" type="Node3D" parent="."]
+
+[node name="FallCatcher" parent="All3D" instance=ExtResource("10_gb1hj")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="All3D"]
 environment = SubResource("Environment_wabu4")

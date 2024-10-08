@@ -60,4 +60,4 @@ func PlayerRemovedMe(player, thrown = false):
 	ObjectActivate()
 	
 	if thrown == true:
-		apply_impulse(global_transform.basis.z.normalized() * -8 + Vector3(0,10,0))
+		apply_impulse(global_transform.basis.z.normalized() * -8 + Vector3(0,12,0))

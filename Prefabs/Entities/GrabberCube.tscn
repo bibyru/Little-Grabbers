@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/EntityPlayer.gd" id="1_sy3j4"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ucc8v"]
-size = Vector3(0.645, 0.894, 0.523)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ukcaq"]
+height = 0.995
+radius = 0.255
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_aa8pl"]
 filters = ["Armature_GrabberCube/Skeleton3D:Bone.Arm.L", "Armature_GrabberCube/Skeleton3D:Bone.Arm.R"]
@@ -560,7 +561,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bjse5"]
-size = Vector3(0.61, 0.78, 0.879)
+size = Vector3(1.045, 0.78, 1.072)
 
 [node name="GrabberCube" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
@@ -572,8 +573,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5
 polygon = PackedVector2Array(-0.00348128, 0.304265, -0.164546, 0.280838, -0.272898, 0.166629, -0.302183, 0.0055642, -0.272898, -0.158429, -0.167474, -0.281423, -0.00175014, -0.336371, 0.186868, -0.269709, 0.271792, -0.181856, 0.298148, -0.000292716, 0.283506, 0.213484, 0.183939, 0.286695)
 
 [node name="FrontCS" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.471724, -0.604425)
-shape = SubResource("BoxShape3D_ucc8v")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.499299, -0.560071)
+shape = SubResource("CylinderShape3D_ukcaq")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../Char_GrabberCube")
@@ -660,7 +661,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Char_GrabberCube/Front"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45712e-13, 0.429189, -0.421797)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45712e-13, 0.429189, -0.518319)
 shape = SubResource("BoxShape3D_bjse5")
 
 [node name="Hand" type="Node3D" parent="Char_GrabberCube"]
