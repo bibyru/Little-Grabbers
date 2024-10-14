@@ -1,5 +1,6 @@
-Use godot-jolt v12.0 stable:
-https://github.com/godot-jolt/godot-jolt/releases/tag/v0.12.0-stable
+## Game Description
+Trash Grabbers is a game where players work cooperatively as trash grabbers in a corporation creatively named The Corporation. Players must use wits (and corporate tools) to finish their job quickly and efficiently!
 
-Versioning format:
-[version].yymm.[numofupload]
+## Project Information
+- Trash Grabbers is a personal project made with Godot.
+- Trash Grabbers was started in September 2024 and is in development.
