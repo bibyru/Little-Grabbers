@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cakwlqgjrf5w1"]
+[gd_scene load_steps=6 format=3 uid="uid://cakwlqgjrf5w1"]
 
 [ext_resource type="Script" path="res://Scripts/UITrashCans.gd" id="1_agbhc"]
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="1_ps2bw"]
 [ext_resource type="Texture2D" uid="uid://vf0orvlw7vt7" path="res://Sauce/Sprites/TrashCan-True.png" id="1_tkd10"]
 [ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="4_3wdpd"]
+[ext_resource type="Texture2D" uid="uid://bjqm4qk55qxgu" path="res://Sauce/Sprites/TrashCan-False.png" id="5_nhg3h"]
 
 [node name="TrashCans" type="HBoxContainer"]
 offset_right = 110.0
@@ -17,6 +18,7 @@ script = ExtResource("1_agbhc")
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+modulate = Color(0, 0.85, 0.85, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -35,6 +37,7 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer2"]
+modulate = Color(0, 0.85, 0.85, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -53,10 +56,11 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer3"]
+modulate = Color(0, 0.85, 0.85, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("1_tkd10")
+texture = ExtResource("5_nhg3h")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer3"]

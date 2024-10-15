@@ -10,6 +10,17 @@ var finishlevel_timer = null
 var scoretarget
 @onready var GameUI = $GameUI
 
+# Level Requirements
+	# level script
+	# game ui
+	#
+	# player spawner
+	# item spawner
+	# recycler spawner
+	#
+	# level boundary (colshapes)
+	# fall catcher
+
 func _ready():
 	Manager.levelentity = self
 	Manager.score = 0

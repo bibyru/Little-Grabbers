@@ -29,22 +29,32 @@ var trashcans = [
 	[0, "Virtual Angel"],
 	
 	# Stage 1 (Training Facility)
-	[0,0]
+	[0,0],
+	
+	# Stage 2 (Classroom)
+	[0]
 ]
 var leveltimes = [
 	# Stage 0 (Testing)
 	[10, "Hi High"],
 	
 	# Stage 1 (Training Facility)
-	[60, 100]
+	[60, 100],
+	
+	# Stage 2 (Classroom)
+	[120]
 ]
 var scoretargets = [
 	# Stage 0 (Testing)
 	[[0, 5, 10], ["TTYL"]],
 	
 	# Stage 1 (Training Facility)
+	# Level 0         Level 1
+	[[45, 65, 120], [115, 135, 190]],
+	
+	# Stage 2 (Classroom)
 	# Level 0
-	[[70, 90, 120], [140, 160, 190]]
+	[[12, 12, 12]]
 ]
 
 

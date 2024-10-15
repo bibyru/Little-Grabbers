@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c322uhlmy564l"]
+
+[ext_resource type="Script" path="res://Scripts/EntityMovingPlatform.gd" id="1_6no27"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6xxr"]
+albedo_color = Color(1, 0, 0.833333, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l1l13"]
+material = SubResource("StandardMaterial3D_w6xxr")
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="MovingPlatform" type="Node3D" node_paths=PackedStringArray("points")]
+script = ExtResource("1_6no27")
+points = [NodePath("Point1"), NodePath("Point2")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+collision_mask = 0
+
+[node name="Point1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+mesh = SubResource("BoxMesh_l1l13")
+
+[node name="Point2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("BoxMesh_l1l13")

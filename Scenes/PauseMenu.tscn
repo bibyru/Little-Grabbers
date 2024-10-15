@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b43bys8l6npi2" path="res://Prefabs/UI/ButtonQuit.tscn" id="5_l45kg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv6jt"]
-bg_color = Color(0.135, 0.5, 0.5, 1)
+bg_color = Color(0, 0.6, 0.6, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -261,7 +261,6 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/Menu/VBoxContainer/Fullscreen"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
 text = "Fullscreen"
 
 [node name="Control" type="Control" parent="Control/Menu/VBoxContainer/Fullscreen"]
@@ -276,7 +275,6 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/Menu/VBoxContainer/AntiAliasing"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
 text = "Anti Aliasing"
 
 [node name="Control" type="Control" parent="Control/Menu/VBoxContainer/AntiAliasing"]
@@ -291,7 +289,6 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/Menu/VBoxContainer/Vsync"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
 text = "Vsync"
 
 [node name="Control" type="Control" parent="Control/Menu/VBoxContainer/Vsync"]
@@ -307,7 +304,6 @@ theme_override_constants/separation = -5
 
 [node name="Label" type="Label" parent="Control/Menu/VBoxContainer/MasterVol"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
 text = "Master Volume"
 horizontal_alignment = 1
 
@@ -321,7 +317,6 @@ theme_override_constants/separation = -5
 
 [node name="Label" type="Label" parent="Control/Menu/VBoxContainer/MusicVol"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
 text = "Music Volume"
 horizontal_alignment = 1
 
@@ -335,7 +330,6 @@ theme_override_constants/separation = -5
 
 [node name="Label" type="Label" parent="Control/Menu/VBoxContainer/SFXVol"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
 text = "SFX Volume"
 horizontal_alignment = 1
 

@@ -39,12 +39,11 @@ theme_override_constants/separation = 5
 
 [node name="Time" type="Label" parent="Control/Panel/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.81, 0.5589, 0.78489, 1)
 text = "Time"
 
 [node name="TimeLabel" type="Label" parent="Control/Panel/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+theme_override_colors/font_color = Color(0, 0.71, 0.71, 1)
 text = "99:99"
 
 [node name="Control" type="Control" parent="Control/Panel/HBoxContainer"]
@@ -53,12 +52,11 @@ size_flags_horizontal = 3
 
 [node name="Score" type="Label" parent="Control/Panel/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.81, 0.5589, 0.78489, 1)
 text = "Moula"
 
 [node name="ScoreLabel" type="Label" parent="Control/Panel/HBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
+theme_override_colors/font_color = Color(0, 0.71, 0.71, 1)
 text = "1000"
 
 [node name="Timer" type="Timer" parent="."]

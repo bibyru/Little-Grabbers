@@ -561,7 +561,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bjse5"]
-size = Vector3(1.045, 0.78, 1.072)
+size = Vector3(1.045, 0.78, 1.30602)
 
 [node name="GrabberCube" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
@@ -661,7 +661,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Char_GrabberCube/Front"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45712e-13, 0.429189, -0.518319)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45712e-13, 0.429189, -0.401309)
 shape = SubResource("BoxShape3D_bjse5")
 
 [node name="Hand" type="Node3D" parent="Char_GrabberCube"]

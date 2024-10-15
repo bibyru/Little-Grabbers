@@ -1,0 +1,125 @@
+[gd_scene load_steps=13 format=3 uid="uid://dqxpicxqhv5vb"]
+
+[ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_dda50"]
+[ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="2_4v0rv"]
+[ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/Spawners/SpawnerItem.tscn" id="3_5gbvq"]
+[ext_resource type="PackedScene" uid="uid://bnjwctrutcrt" path="res://Prefabs/Entities/EntityFallCatcher.tscn" id="3_rvlyo"]
+[ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/Spawners/SpawnerPlayer.tscn" id="4_b18es"]
+[ext_resource type="PackedScene" uid="uid://b84n3uihcue8d" path="res://Prefabs/Entities/EntityFallDestroyer.tscn" id="4_rn03j"]
+[ext_resource type="PackedScene" uid="uid://bm3badq7ralcp" path="res://Prefabs/Entities/BID.tscn" id="5_6sy2q"]
+[ext_resource type="PackedScene" uid="uid://c322uhlmy564l" path="res://Prefabs/Entities/MovingPlatform.tscn" id="5_q748e"]
+[ext_resource type="PackedScene" uid="uid://cylg3xai1dn5m" path="res://Prefabs/Spawners/SpawnerRecycler.tscn" id="6_5m3yl"]
+[ext_resource type="PackedScene" uid="uid://bg0spx35h8fs0" path="res://Prefabs/Garbage/Paper_PaperStack.tscn" id="8_mrf5g"]
+[ext_resource type="PackedScene" uid="uid://cgjd3207jxvh3" path="res://Prefabs/Garbage/Plastic_Bottle.tscn" id="9_lqndm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0e38i"]
+size = Vector3(0.745, 0.175, 0.21)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_dda50")
+levelid = [2, 0]
+
+[node name="GameUI" parent="." instance=ExtResource("2_4v0rv")]
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50103, 3.84281, -1.93317)
+omni_range = 14.0218
+omni_attenuation = 0.0301855
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22825, 3.84281, -7.61588)
+omni_range = 14.0218
+omni_attenuation = 0.0301855
+
+[node name="FallCatcher" parent="." instance=ExtResource("3_rvlyo")]
+collision_mask = 2
+
+[node name="FallDestroyer" parent="." instance=ExtResource("4_rn03j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.37499, -1.33001)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("5_q748e")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -4)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 13, 5.73)
+fov = 40.0
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.165, -0.507, -4.59)
+size = Vector3(7, 1, 8.84)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.165, -0.507, -4.59)
+size = Vector3(7, 1, 8.84)
+
+[node name="BID" parent="." instance=ExtResource("5_6sy2q")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.61985, 0, -7.00192)
+
+[node name="Recyclers" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.07739, 0, -6.98086)
+
+[node name="RecyclerSpawner" parent="Recyclers" instance=ExtResource("6_5m3yl")]
+type = "Metal"
+
+[node name="RecyclerSpawner2" parent="Recyclers" instance=ExtResource("6_5m3yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46757, 0, 0)
+type = "Organic"
+
+[node name="RecyclerSpawner3" parent="Recyclers" instance=ExtResource("6_5m3yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01621, 0, 0)
+type = "Paper"
+
+[node name="RecyclerSpawner4" parent="Recyclers" instance=ExtResource("6_5m3yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.44338, 0, 0)
+type = "Plastic"
+
+[node name="ItemSpawner" parent="." instance=ExtResource("3_5gbvq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -5)
+
+[node name="PaperStack" parent="ItemSpawner" instance=ExtResource("8_mrf5g")]
+transform = Transform3D(-0.643549, 0, -0.765405, 0, 1, 0, 0.765405, 0, -0.643549, 0.859459, 0, 2.17729)
+
+[node name="PaperStack4" parent="ItemSpawner" instance=ExtResource("8_mrf5g")]
+transform = Transform3D(-0.938842, 0, 0.344348, 0, 1, 0, -0.344348, 0, -0.938842, -9.73328, 0.0350986, -1.04962)
+
+[node name="PaperStack2" parent="ItemSpawner" instance=ExtResource("8_mrf5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89081, 0, 0.257838)
+
+[node name="PaperStack3" parent="ItemSpawner" instance=ExtResource("8_mrf5g")]
+transform = Transform3D(0.978028, 0, 0.208475, 0, 1, 0, -0.208475, 0, 0.978028, 0.229189, 0, -1.9481)
+
+[node name="WaterBottle" parent="ItemSpawner" instance=ExtResource("9_lqndm")]
+transform = Transform3D(0.0445435, 0, 0.999007, 0, 1, 0, -0.999007, 0, 0.0445435, 0.601622, 0, 0.687566)
+
+[node name="WaterBottle2" parent="ItemSpawner" instance=ExtResource("9_lqndm")]
+transform = Transform3D(-0.841237, 0, -0.540666, 0, 1, 0, 0.540666, 0, -0.841237, -1.51837, 0, 2.12)
+
+[node name="WaterBottle3" parent="ItemSpawner" instance=ExtResource("9_lqndm")]
+transform = Transform3D(0.328356, 0, 0.944554, 0, 1, 0, -0.944554, 0, 0.328356, -1.74756, 0, -1.83351)
+
+[node name="Mesh" parent="ItemSpawner/WaterBottle3/RigidBody3D" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="ItemSpawner/WaterBottle3/RigidBody3D" index="1"]
+shape = SubResource("BoxShape3D_0e38i")
+
+[node name="WaterBottle4" parent="ItemSpawner" instance=ExtResource("9_lqndm")]
+transform = Transform3D(0.514784, 0, 0.85732, 0, 1, 0, -0.85732, 0, 0.514784, -8.13646, 0, 1.62636)
+
+[node name="Mesh" parent="ItemSpawner/WaterBottle4/RigidBody3D" index="0"]
+transform = Transform3D(1.5, 0, 5.96046e-08, 0, 1.5, 0, -5.96046e-08, 0, 1.5, -1.02214, 0, -0.393294)
+
+[node name="CollisionShape3D" parent="ItemSpawner/WaterBottle4/RigidBody3D" index="1"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.0266728, 0, 2.38419e-07)
+shape = SubResource("BoxShape3D_0e38i")
+
+[node name="PlayerSpawner" parent="." instance=ExtResource("4_b18es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, -5)
+
+[editable path="ItemSpawner/WaterBottle3"]
+[editable path="ItemSpawner/WaterBottle4"]

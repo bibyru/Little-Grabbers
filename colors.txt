@@ -1,9 +1,7 @@
 Theme
-#00ffff (gowon color)
-#228080 (dark gowon)
-#cf8fc8 (bright pink)
-#bf77b9 (pink)
-#85407d (dark pink)
+#00ffff (gowon bright)
+#00d9d9 (gowon mid)
+#009999 (gowon dark)
 
 
 Trash

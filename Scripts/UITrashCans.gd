@@ -37,10 +37,13 @@ func CheckScore():
 	if trashcansgot == 0:
 		for i in 3:
 			trashcanImages[i].texture = trashFalse
+			trashcanImages[i].modulate = Color("#009999")
 		
 	else:
 		for i in 3:
 			if i < trashcansgot:
 				trashcanImages[i].texture = trashTrue
+				trashcanImages[i].modulate = Color("#00d9d9")
 			else:
 				trashcanImages[i].texture = trashFalse
+				trashcanImages[i].modulate = Color("#009999")

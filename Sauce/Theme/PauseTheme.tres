@@ -9,13 +9,13 @@
 [resource]
 default_font = ExtResource("4_wdtal")
 default_font_size = 20
-Button/colors/font_color = Color(0, 1, 1, 1)
-Button/colors/font_hover_color = Color(0, 1, 1, 1)
-Button/colors/font_hover_pressed_color = Color(0.52, 0.2496, 0.488453, 1)
-Button/colors/font_pressed_color = Color(0.52, 0.2496, 0.488453, 1)
+Button/colors/font_color = Color(0, 0.6, 0.6, 1)
+Button/colors/font_hover_color = Color(0, 0.6, 0.6, 1)
+Button/colors/font_hover_pressed_color = Color(0, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0, 1, 1, 1)
 Button/fonts/font = ExtResource("1_q2i0e")
 Button/styles/hover = ExtResource("2_i47jq")
 Button/styles/normal = ExtResource("2_i47jq")
 Button/styles/pressed = ExtResource("3_qma2a")
-Label/colors/font_color = Color(0.749545, 0.464919, 0.723905, 1)
+Label/colors/font_color = Color(0, 0.6, 0.6, 1)
 Panel/styles/panel = ExtResource("3_g45q0")
