@@ -21,7 +21,7 @@ const garbage_colors = [
 
 
 
-var playerindex = []
+var playerindex = [[],[],[],[]]
 var score = 0
 
 var trashcans = [
@@ -121,7 +121,11 @@ func ReqRestartLevel():
 
 
 func CheckInPlayer(player):
-	playerindex.append([player.playerid, "#bf77b9", player])
+	for i in playerindex.size():
+		if playerindex[i].is_empty():
+			playerindex[i] = [player.playerid, "#bf77b9", player]
+			print("success putting in player")
+			break
 
 func TrueIfUsed(id):
 	for playerdata in playerindex:

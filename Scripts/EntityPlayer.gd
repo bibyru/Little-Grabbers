@@ -38,6 +38,7 @@ func _ready():
 	for i in Manager.playerindex.size():
 		if Manager.playerindex[i][0] == playerid:
 			controllerid = i
+			break
 	
 	name = "P" + str(controllerid+1)
 	if controllerid > 0:

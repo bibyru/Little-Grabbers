@@ -49,7 +49,8 @@ func CheckGarbage():
 
 func FinishLevel():
 	for player in Manager.playerindex:
-		player[2].no_input = true
+		if !player.is_empty():
+			player[2].no_input = true
 	GameUI.UpdateScore(3)
 	
 	var trashcansgot = 0

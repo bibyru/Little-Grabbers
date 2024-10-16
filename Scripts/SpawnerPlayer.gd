@@ -7,7 +7,7 @@ var needtospawn = -1
 func _ready():
 	Manager.playerspawner = self
 	
-	if Manager.playerindex.size() == 0:
+	if Manager.playerindex[0].is_empty():
 		SpawnPlayer()
 	else:
 		needtospawn = Manager.playerindex.size()
@@ -33,19 +33,22 @@ func SpawnTimerTimeout(spawntimer, type):
 	var player = grabbercube.instantiate()
 	
 	if type == 0:
-		if Manager.playerindex.size() == 0:
+		if Manager.playerindex[0].is_empty():
 			player.playerid = 0
 		else:
-			player.playerid = Manager.playerindex.size()
+			for i in Manager.playerindex.size():
+				if Manager.playerindex[i].is_empty():
+					player.playerid = i
 		
 		Manager.CheckInPlayer(player)
 		
 	elif type == 1:
-		var index = Manager.playerindex.size()-needtospawn-1
-		player.playerid = Manager.playerindex[index][0]
-		Manager.playerindex[index][2] = player
-		if needtospawn > 0:
-			SpawnPlayer(1)
+		for playerdata in Manager.playerindex:
+			if !playerdata.is_empty():
+				player.playerid = playerdata[0]
+				playerdata[2] = player
+			else:
+				break
 	
 	add_child(player)
 
@@ -62,7 +65,7 @@ func SpawnTimerTimeout(spawntimer, type):
 	#TYPE = 1
 		#- player spawned every scene change
 		#+ rewrite playerindex data with ones
-		  #respawned
+		  #spawned
 		#+ set player.playerid
 		#+ player.changecolor() -> already in player ready()
 	#
