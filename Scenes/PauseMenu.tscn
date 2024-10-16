@@ -167,7 +167,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_jfykm")
-text = "M"
+text = "M / Space"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
