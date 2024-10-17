@@ -81,17 +81,58 @@ var settings = [10,50,100, 1,1,0]
 # settings[4] is aa
 # settings[5] is vsync
 
-var savepath
-# res://Output/Records.txt
-# user://Records.txt
+const savepath = "res://Output/savedata.ini"
+#const savepath = "user://savedata.ini"
+
 
 func _ready():
 	get_window().content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
+	LoadData()
 
 func _input(event):
 	if event.is_action_pressed("Esc"):
 		PauseMenu()
+
+
+
+func SetTrashcansIni():
+	var trashcans_ini = trashcans
+	for i in trashcans_ini.size():
+		for j in trashcans_ini[i].size():
+			trashcans_ini[i][j] = 0
+	return trashcans_ini
+
+func SaveData():
+	get_tree().paused = true
+	var config = ConfigFile.new()
+	
+	config.set_value("SaveData", "trashcans", trashcans)
+	config.save(savepath)
+	get_tree().paused = false
+
+func LoadData():
+	get_tree().paused = true
+	
+	var config = ConfigFile.new()
+	config.load(savepath)
+	
+	var trashcans_ini = SetTrashcansIni()
+	trashcans = config.get_value("SaveData", "trashcans", trashcans_ini)
+	
+	get_tree().paused = false
+
+func DeleteSave():
+	get_tree().paused = true
+	
+	var config = ConfigFile.new()
+	
+	var trashcans_ini = SetTrashcansIni()
+	config.set_value("SaveData", "trashcans", trashcans_ini)
+	
+	get_tree().paused = false
+	ReqRestartLevel()
 
 
 
@@ -124,7 +165,6 @@ func CheckInPlayer(player):
 	for i in playerindex.size():
 		if playerindex[i].is_empty():
 			playerindex[i] = [player.playerid, "#bf77b9", player]
-			print("success putting in player")
 			break
 
 func TrueIfUsed(id):

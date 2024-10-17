@@ -1,6 +1,6 @@
-[gd_scene load_steps=39 format=3 uid="uid://bx3dmu3tsdxid"]
+[gd_scene load_steps=37 format=3 uid="uid://bx3dmu3tsdxid"]
 
-[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="2_7rpoe"]
+[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="2_7rpoe"]
 [ext_resource type="Script" path="res://Scripts/MenuMain.gd" id="3_5p7af"]
 [ext_resource type="PackedScene" uid="uid://b43bys8l6npi2" path="res://Prefabs/UI/ButtonQuit.tscn" id="4_g5ug6"]
 [ext_resource type="Texture2D" uid="uid://vf0orvlw7vt7" path="res://Sauce/Sprites/TrashCan-True.png" id="5_2vl81"]
@@ -9,9 +9,7 @@
 [ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="5_tusdo"]
 [ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/Spawners/SpawnerItem.tscn" id="5_x307l"]
 [ext_resource type="PackedScene" uid="uid://dpf88sgoc7ao2" path="res://Prefabs/Garbage/Organic_Fish.tscn" id="6_gs76u"]
-[ext_resource type="Texture2D" uid="uid://bvsmtmd0j82rv" path="res://Sauce/GamePhotos/Levels-Level0.JPG" id="6_k7oro"]
-[ext_resource type="PackedScene" uid="uid://cakwlqgjrf5w1" path="res://Prefabs/UI/UITrashCans.tscn" id="6_wi6u4"]
-[ext_resource type="Texture2D" uid="uid://di6bpmeevs0wk" path="res://Sauce/GamePhotos/Levels-Level1.JPG" id="7_nhr4m"]
+[ext_resource type="PackedScene" uid="uid://bkc77a1ht46v5" path="res://Prefabs/UI/UILevelDisplay.tscn" id="6_lodvw"]
 [ext_resource type="PackedScene" uid="uid://x4ihdhn1mk1i" path="res://Sauce/Models/Decor/Grass001.glb" id="7_yqany"]
 [ext_resource type="PackedScene" uid="uid://b6d5ispyhvcij" path="res://Sauce/Models/Decor/Grass002.glb" id="8_ajj6y"]
 [ext_resource type="PackedScene" uid="uid://ck183gnsq6vri" path="res://Prefabs/Entities/Step.tscn" id="8_da6me"]
@@ -195,7 +193,7 @@ layout_mode = 1
 offset_left = 365.0
 offset_top = 50.0
 offset_right = 922.0
-offset_bottom = 346.0
+offset_bottom = 350.0
 
 [node name="HideLevelSelect" type="Button" parent="CanvasLayer/Control/LevelSelect"]
 layout_mode = 1
@@ -282,75 +280,43 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_aedfw")
 layout_mode = 2
 theme_override_constants/separation = 55
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer"]
+[node name="Stage1" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer"]
+[node name="Stagename" type="Label" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage1"]
 layout_mode = 2
 text = "@ Garbies Training Facility"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage1"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Level0" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Level" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage1/HBoxContainer" instance=ExtResource("6_lodvw")]
 layout_mode = 2
-theme_override_constants/separation = 10
+levelid = "10"
+levelname = "Tutorial"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0"]
-custom_minimum_size = Vector2(0, 90)
+[node name="Level2" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage1/HBoxContainer" instance=ExtResource("6_lodvw")]
 layout_mode = 2
-texture = ExtResource("6_k7oro")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="TrashStars" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0" instance=ExtResource("6_wi6u4")]
-layout_mode = 2
-levelid = [1, 0]
-manually_set_levelid = true
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Tutorial"
-
-[node name="Level1" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1"]
-custom_minimum_size = Vector2(0, 90)
-layout_mode = 2
-texture = ExtResource("7_nhr4m")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="TrashStars" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1" instance=ExtResource("6_wi6u4")]
-layout_mode = 2
-levelid = [1, 1]
-manually_set_levelid = true
-
-[node name="Button" type="Button" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Level 1"
+levelid = "11"
+levelname = "Level 1"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
 offset_left = 52.0
 offset_top = 50.0
 offset_right = 336.0
-offset_bottom = 384.0
+offset_bottom = 421.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -111.5
-offset_top = 19.0
-offset_right = 111.5
-offset_bottom = 61.0
+offset_left = -108.0
+offset_top = 15.0
+offset_right = 116.0
+offset_bottom = 57.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 30
 text = "Trash Grabbers"
@@ -361,10 +327,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -84.5
-offset_top = 77.0
-offset_right = 84.5
-offset_bottom = 297.0
+offset_left = -94.5
+offset_top = 73.0
+offset_right = 94.5
+offset_bottom = 389.0
 grow_horizontal = 2
 theme_override_constants/separation = 20
 
@@ -372,25 +338,63 @@ theme_override_constants/separation = 20
 layout_mode = 2
 text = "Play"
 
-[node name="ButtonAddPlayer" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+[node name="ButtonColor" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
-text = "Add Player"
+text = "Customize"
 
-[node name="ControllerWarning" type="Panel" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer"]
+[node name="ButtonManagePlayers" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Manage Players"
+
+[node name="PanelPlayers" type="Panel" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers"]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 7.5
+offset_left = 16.0
 offset_top = -20.0
-offset_right = 261.5
+offset_right = 208.0
+offset_bottom = 91.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -35.5
+offset_right = 80.5
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ButtonAddPlayer" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer"]
+layout_mode = 2
+text = "Add Player"
+
+[node name="WarningPanel" type="Panel" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonAddPlayer"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -20.0
+offset_right = 277.0
 offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonAddPlayer/WarningPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -404,19 +408,23 @@ offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
-text = "Not enough controllers!"
+text = "wasd"
 horizontal_alignment = 1
 
-[node name="Timer" type="Timer" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning"]
+[node name="Timer" type="Timer" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonAddPlayer/WarningPanel"]
 one_shot = true
 
-[node name="ButtonColor" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+[node name="ButtonResetPlayers" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer"]
 layout_mode = 2
-text = "Customize"
+text = "Reset Players"
 
 [node name="ButtonOptions" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
 text = "Options"
+
+[node name="ButtonDelSave" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Delete Save"
 
 [node name="ButtonQuit" parent="CanvasLayer/Control/Panel/VBoxContainer" instance=ExtResource("4_g5ug6")]
 layout_mode = 2
@@ -791,12 +799,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 1)
 
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/HideLevelSelect" to="." method="_on_hide_level_select_button_down"]
 [connection signal="timeout" from="CanvasLayer/Control/LevelSelect/CansWarning/Timer" to="." method="CansTimeout"]
-[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level0/Button" to="." method="_on_button_level0_down"]
-[connection signal="button_down" from="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/VBoxContainer/HBoxContainer/Level1/Button" to="." method="_on_button_level1_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonPlay" to="." method="_on_button_play_button_down"]
-[connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer" to="." method="_on_button_add_player_button_down"]
-[connection signal="timeout" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonAddPlayer/ControllerWarning/Timer" to="." method="_on_warning_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonColor" to="." method="_on_button_color_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers" to="." method="_on_button_manage_players_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonAddPlayer" to="." method="_on_button_add_player_button_down"]
+[connection signal="timeout" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonAddPlayer/WarningPanel/Timer" to="." method="_on_warning_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonResetPlayers" to="." method="_on_button_reset_players_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonOptions" to="." method="_on_button_options_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonDelSave" to="." method="_on_button_delsave_button_down"]
 
 [editable path="All3D/ItemSpawner/Fish2"]

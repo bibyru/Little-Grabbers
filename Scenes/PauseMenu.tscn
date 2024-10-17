@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck223tmuuto7h"]
+[gd_scene load_steps=7 format=3 uid="uid://ck223tmuuto7h"]
 
-[ext_resource type="Theme" uid="uid://0h01xmjrd2lg" path="res://Sauce/Theme/PauseTheme.tres" id="1_pc0n4"]
 [ext_resource type="PackedScene" uid="uid://6iqunwf16155" path="res://Prefabs/UI/ButtonOnOff.tscn" id="2_0al4i"]
-[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="2_qbt6a"]
+[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="2_qbt6a"]
 [ext_resource type="Script" path="res://Scripts/MenuPause.gd" id="2_yesc8"]
 [ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="3_jfykm"]
 [ext_resource type="PackedScene" uid="uid://b43bys8l6npi2" path="res://Prefabs/UI/ButtonQuit.tscn" id="5_l45kg"]
@@ -26,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_pc0n4")
+theme = ExtResource("2_qbt6a")
 
 [node name="KeyBinding" type="Panel" parent="Control"]
 layout_mode = 1
@@ -269,6 +268,7 @@ size_flags_horizontal = 3
 
 [node name="Button" parent="Control/Menu/VBoxContainer/Fullscreen" instance=ExtResource("2_0al4i")]
 layout_mode = 2
+focus_mode = 0
 
 [node name="AntiAliasing" type="HBoxContainer" parent="Control/Menu/VBoxContainer"]
 layout_mode = 2
@@ -283,6 +283,7 @@ size_flags_horizontal = 3
 
 [node name="Button" parent="Control/Menu/VBoxContainer/AntiAliasing" instance=ExtResource("2_0al4i")]
 layout_mode = 2
+focus_mode = 0
 
 [node name="Vsync" type="HBoxContainer" parent="Control/Menu/VBoxContainer"]
 layout_mode = 2
@@ -297,6 +298,7 @@ size_flags_horizontal = 3
 
 [node name="Button" parent="Control/Menu/VBoxContainer/Vsync" instance=ExtResource("2_0al4i")]
 layout_mode = 2
+focus_mode = 0
 
 [node name="MasterVol" type="VBoxContainer" parent="Control/Menu/VBoxContainer"]
 layout_mode = 2

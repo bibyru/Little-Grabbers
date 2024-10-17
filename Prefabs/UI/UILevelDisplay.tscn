@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkc77a1ht46v5"]
+
+[ext_resource type="Script" path="res://Scripts/UILevelDisplay.gd" id="1_0o036"]
+[ext_resource type="Texture2D" uid="uid://bvsmtmd0j82rv" path="res://Sauce/GamePhotos/Levels-Level10.JPG" id="1_ouhec"]
+[ext_resource type="PackedScene" uid="uid://cakwlqgjrf5w1" path="res://Prefabs/UI/UITrashCans.tscn" id="2_fw4he"]
+
+[node name="Level" type="VBoxContainer"]
+theme_override_constants/separation = 5
+script = ExtResource("1_0o036")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+texture = ExtResource("1_ouhec")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TrashStars" parent="." instance=ExtResource("2_fw4he")]
+layout_mode = 2
+levelid = [1, 0]
+manually_set_levelid = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wasd"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Start"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

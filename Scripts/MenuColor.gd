@@ -13,9 +13,10 @@ func DeleteChildren():
 func CheckPlayers():
 	DeleteChildren()
 	for i in Manager.playerindex.size():
-		var child = load("res://Prefabs/UI/ButtonColor.tscn").instantiate()
-		child.controllerid = Manager.playerindex[i][2].controllerid
-		buttonparent.add_child(child)
+		if !Manager.playerindex[i].is_empty():
+			var child = load("res://Prefabs/UI/ButtonColor.tscn").instantiate()
+			child.controllerid = Manager.playerindex[i][2].controllerid
+			buttonparent.add_child(child)
 
 func _on_button_button_down():
 	Turn()

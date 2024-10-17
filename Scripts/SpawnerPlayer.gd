@@ -2,7 +2,7 @@ extends Node3D
 
 var grabbercube = preload("res://Prefabs/Entities/GrabberCube.tscn")
 
-var needtospawn = -1
+var needtospawn = 0
 
 func _ready():
 	Manager.playerspawner = self
@@ -10,12 +10,15 @@ func _ready():
 	if Manager.playerindex[0].is_empty():
 		SpawnPlayer()
 	else:
-		needtospawn = Manager.playerindex.size()
+		for i in Manager.playerindex.size():
+			if !Manager.playerindex[i].is_empty():
+				needtospawn += 1
+		
 		SpawnPlayer(1)
 
 
 
-func SpawnPlayer(type = 0):
+func SpawnPlayer(type = 0):	
 	if type == 0:
 		needtospawn = 1
 	
@@ -39,14 +42,21 @@ func SpawnTimerTimeout(spawntimer, type):
 			for i in Manager.playerindex.size():
 				if Manager.playerindex[i].is_empty():
 					player.playerid = i
+					break
 		
 		Manager.CheckInPlayer(player)
 		
 	elif type == 1:
 		for playerdata in Manager.playerindex:
+			
 			if !playerdata.is_empty():
-				player.playerid = playerdata[0]
-				playerdata[2] = player
+				if playerdata[2] == null:
+					player.playerid = playerdata[0]
+					playerdata[2] = player
+					
+					if needtospawn > 0:
+						SpawnPlayer(1)
+					break
 			else:
 				break
 	

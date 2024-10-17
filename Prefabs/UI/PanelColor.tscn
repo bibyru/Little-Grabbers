@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://coxlah0vdhwhp"]
 
-[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/GameTheme.tres" id="1_jx6uf"]
+[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="1_jx6uf"]
 [ext_resource type="Script" path="res://Scripts/MenuColor.gd" id="2_hvo7s"]
 
 [node name="PanelColor" type="Panel"]

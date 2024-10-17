@@ -36,6 +36,9 @@ func _ready():
 	hand.position = normalhandpos
 	
 	for i in Manager.playerindex.size():
+		if Manager.playerindex[i].is_empty():
+			break
+		
 		if Manager.playerindex[i][0] == playerid:
 			controllerid = i
 			break
@@ -57,9 +60,7 @@ func ChangeColor():
 
 func _input(event):
 	if event.is_action_pressed("InputTest"):
-		print("<-Test->")
-		print(Manager.score)
-		print("<-Test end->\n")
+		print("test ", Manager.trashcans)
 	
 	if controllerid == 0:
 		if event.is_action_pressed("Interact"):
@@ -101,6 +102,8 @@ func Interact():
 			
 		elif bid != null:
 			if objectheld != null:
+				if bid.busy == true:
+					return
 				bid.BreakDown(objectheld)
 		
 		ObjectRemoved(true)

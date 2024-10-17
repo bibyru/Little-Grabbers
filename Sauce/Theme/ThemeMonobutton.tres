@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://0h01xmjrd2lg"]
+
+[ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="1_terek"]
+[ext_resource type="StyleBox" uid="uid://bvxx3rfbe7lbx" path="res://Sauce/Theme/ButtonOff.tres" id="2_wh36o"]
+[ext_resource type="StyleBox" uid="uid://s0vujg7ioyon" path="res://Sauce/Theme/ButtonOn.tres" id="3_n8bru"]
+[ext_resource type="FontFile" uid="uid://b2b4gfylusthx" path="res://Sauce/Theme/Zyzol.otf" id="4_3fx5l"]
+
+[resource]
+default_font = ExtResource("4_3fx5l")
+default_font_size = 20
+Button/colors/font_color = Color(0, 0.6, 0.6, 1)
+Button/colors/font_hover_color = Color(0, 0.6, 0.6, 1)
+Button/colors/font_hover_pressed_color = Color(0, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0, 1, 1, 1)
+Button/fonts/font = ExtResource("1_terek")
+Button/styles/hover = ExtResource("2_wh36o")
+Button/styles/normal = ExtResource("2_wh36o")
+Button/styles/pressed = ExtResource("3_n8bru")
