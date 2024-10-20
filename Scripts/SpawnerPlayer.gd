@@ -1,6 +1,6 @@
 extends Node3D
 
-var grabbercube = preload("res://Prefabs/Entities/GrabberCube.tscn")
+var player = preload("res://Prefabs/Entities/Player.tscn")
 
 var needtospawn = 0
 
@@ -30,7 +30,7 @@ func SpawnTimerTimeout(spawntimer, type):
 	remove_child(spawntimer)
 	needtospawn -= 1
 	
-	var player = grabbercube.instantiate()
+	var player = player.instantiate()
 	
 	if type == 0:
 		player.playerid = Manager.CheckPlayerCount()

@@ -1,15 +1,19 @@
 extends Node3D
 
-@onready var platform = $CSGBox3D
+@onready var platform = $RigidBody3D
 @export var points : Array[Node3D]
 var index = 0
+var threshold = 0.1
+var speed = 3
 
 func _physics_process(delta):
-	if platform.position != points[index].position:
-		platform.position.x = move_toward(platform.position.x, points[index].position.x, delta)
-		platform.position.y = move_toward(platform.position.y, points[index].position.y, delta)
-		platform.position.z = move_toward(platform.position.z, points[index].position.z, delta)
+	var distance = points[index].global_position - platform.global_position
+	var direction = distance.normalized()
+	
+	if abs(distance.x) > threshold or abs(distance.y) > threshold or abs(distance.z) > threshold:
+		platform.apply_force(speed * direction)
 	else:
+		platform.set("linear_velocity", Vector3.ZERO)
 		if index + 1 >= 2:
 			index = 0
 		else:

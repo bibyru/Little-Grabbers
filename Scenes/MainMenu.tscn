@@ -192,7 +192,7 @@ offset_bottom = 321.0
 layout_mode = 1
 offset_left = 365.0
 offset_top = 50.0
-offset_right = 922.0
+offset_right = 952.0
 offset_bottom = 383.0
 
 [node name="HideLevelSelect" type="Button" parent="CanvasLayer/Control/LevelSelect"]
@@ -300,6 +300,11 @@ levelname = "Tutorial"
 layout_mode = 2
 levelid = "11"
 levelname = "Level 1"
+
+[node name="Level3" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage1/HBoxContainer" instance=ExtResource("6_lodvw")]
+layout_mode = 2
+levelid = "12"
+levelname = "Level 2"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
