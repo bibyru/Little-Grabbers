@@ -29,8 +29,8 @@ var settings = [10,50,100, 1,1,0]
 # settings[4] is aa
 # settings[5] is vsync
 
-const savepath = "res://Output/savedata.ini"
-#const savepath = "user://savedata.ini"
+#const savepath = "res://Output/savedata.ini"
+const savepath = "user://savedata.ini"
 
 
 
