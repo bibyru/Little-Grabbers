@@ -20,6 +20,19 @@ const garbage_colors = [
 ]
 
 
+var settings = [10,50,100, 1,1,0]
+# settings[0] is master
+# settings[1] is music
+# settings[2] is sound
+#
+# settings[3] is fullscreen
+# settings[4] is aa
+# settings[5] is vsync
+
+const savepath = "res://Output/savedata.ini"
+#const savepath = "user://savedata.ini"
+
+
 
 var playerindex = [[],[],[],[]]
 var score = 0
@@ -72,24 +85,13 @@ var score_property = 20
 var score_onesecond = 2
 
 
-var settings = [10,50,100, 1,1,0]
-# settings[0] is master
-# settings[1] is music
-# settings[2] is sound
-#
-# settings[3] is fullscreen
-# settings[4] is aa
-# settings[5] is vsync
-
-const savepath = "res://Output/savedata.ini"
-#const savepath = "user://savedata.ini"
-
-
 func _ready():
 	get_window().content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	
 	LoadData()
+	
+	if settings[3] == 1:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _input(event):
 	if event.is_action_pressed("Esc"):
@@ -104,11 +106,17 @@ func SetTrashcansIni():
 			trashcans_ini[i][j] = 0
 	return trashcans_ini
 
+func SetSettingsIni():
+	var settings_ini = [10,50,100, 1,1,0]
+	return settings_ini
+
 func SaveData():
 	get_tree().paused = true
 	var config = ConfigFile.new()
 	
-	config.set_value("SaveData", "trashcans", trashcans)
+	config.set_value("Game", "trashcans", trashcans)
+	config.set_value("Settings", "settings", settings)
+	
 	config.save(savepath)
 	get_tree().paused = false
 
@@ -119,7 +127,10 @@ func LoadData():
 	config.load(savepath)
 	
 	var trashcans_ini = SetTrashcansIni()
-	trashcans = config.get_value("SaveData", "trashcans", trashcans_ini)
+	trashcans = config.get_value("Game", "trashcans", trashcans_ini)
+	
+	var settings_ini = SetSettingsIni()
+	settings = config.get_value("Settings", "settings", settings)
 	
 	get_tree().paused = false
 
@@ -129,7 +140,7 @@ func DeleteSave():
 	var config = ConfigFile.new()
 	
 	var trashcans_ini = SetTrashcansIni()
-	config.set_value("SaveData", "trashcans", trashcans_ini)
+	config.set_value("Game", "trashcans", trashcans_ini)
 	
 	get_tree().paused = false
 	ReqRestartLevel()

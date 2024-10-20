@@ -73,6 +73,9 @@ func _input(event):
 		if event.device == joystick:
 			if event.is_action_pressed("JoyInteract"):
 				Interact()
+			
+			if event.is_action_pressed("JoyThrow"):
+				ThrowObject()
 
 
 
@@ -163,26 +166,7 @@ func ThrowObject():
 
 
 
-var flag_joyX = false
-var flag_joyY = false
-
 func _physics_process(delta):
-	# CONTROLLER INPUT
-	#if Input.is_joy_button_pressed(controllerid-1, JOY_BUTTON_X):
-		#if flag_joyX == false:
-			#flag_joyX = true
-			#Interact()
-	#else:
-		#flag_joyX = false
-	#
-	#if Input.is_joy_button_pressed(controllerid-1, JOY_BUTTON_Y):
-		#if flag_joyY == false:
-			#flag_joyY = true
-			#ThrowObject()
-	#else:
-		#flag_joyY = false
-	
-	
 	
 	# ANIMATION
 	if (velocity.x != 0 or velocity.z != 0) and is_on_floor():
