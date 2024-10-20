@@ -60,7 +60,7 @@ func ChangeColor():
 
 func _input(event):
 	if event.is_action_pressed("InputTest"):
-		print("test ", Manager.trashcans)
+		pass
 	
 	if controllerid == 0:
 		if event.is_action_pressed("Interact"):
@@ -68,6 +68,11 @@ func _input(event):
 		
 		if event.is_action_pressed("Throw"):
 			ThrowObject()
+		
+	else:
+		if event.device == joystick:
+			if event.is_action_pressed("JoyInteract"):
+				Interact()
 
 
 
@@ -92,6 +97,11 @@ func _on_front_area_exited(area):
 	else:
 		objectseen = null
 
+
+
+func RestartArea():
+	frontarea.monitoring = false
+	frontarea.monitoring = true
 
 func Interact():
 	if objectheld != null and (recycler != null or bid != null):
@@ -122,9 +132,8 @@ func Interact():
 		if objectheld != null:
 			ObjectRemoved()
 	
-	
-	frontarea.monitoring = false
-	frontarea.monitoring = true
+	RestartArea()
+
 
 
 func GrabObject():
@@ -159,19 +168,19 @@ var flag_joyY = false
 
 func _physics_process(delta):
 	# CONTROLLER INPUT
-	if Input.is_joy_button_pressed(controllerid-1, JOY_BUTTON_X):
-		if flag_joyX == false:
-			flag_joyX = true
-			Interact()
-	else:
-		flag_joyX = false
-	
-	if Input.is_joy_button_pressed(controllerid-1, JOY_BUTTON_Y):
-		if flag_joyY == false:
-			flag_joyY = true
-			ThrowObject()
-	else:
-		flag_joyY = false
+	#if Input.is_joy_button_pressed(controllerid-1, JOY_BUTTON_X):
+		#if flag_joyX == false:
+			#flag_joyX = true
+			#Interact()
+	#else:
+		#flag_joyX = false
+	#
+	#if Input.is_joy_button_pressed(controllerid-1, JOY_BUTTON_Y):
+		#if flag_joyY == false:
+			#flag_joyY = true
+			#ThrowObject()
+	#else:
+		#flag_joyY = false
 	
 	
 	

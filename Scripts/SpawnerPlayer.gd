@@ -10,10 +10,7 @@ func _ready():
 	if Manager.playerindex[0].is_empty():
 		SpawnPlayer()
 	else:
-		for i in Manager.playerindex.size():
-			if !Manager.playerindex[i].is_empty():
-				needtospawn += 1
-		
+		needtospawn = Manager.CheckPlayerCount()
 		SpawnPlayer(1)
 
 
@@ -36,14 +33,7 @@ func SpawnTimerTimeout(spawntimer, type):
 	var player = grabbercube.instantiate()
 	
 	if type == 0:
-		if Manager.playerindex[0].is_empty():
-			player.playerid = 0
-		else:
-			for i in Manager.playerindex.size():
-				if Manager.playerindex[i].is_empty():
-					player.playerid = i
-					break
-		
+		player.playerid = Manager.CheckPlayerCount()
 		Manager.CheckInPlayer(player)
 		
 	elif type == 1:

@@ -33,8 +33,8 @@ func ObjectDisable():
 func PlayerGrabbedMe(player):
 	# if object being held by player, clear its objectheld
 	var grandparent = parent.get_parent()
-	if grandparent.is_in_group("Player"):
-		grandparent.objectheld = null
+	if grandparent.name == "Hand":
+		grandparent.get_parent().get_parent().objectheld = null
 	
 	grandparent.remove_child(parent)
 	grandparent = null

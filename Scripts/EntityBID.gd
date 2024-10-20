@@ -41,6 +41,7 @@ func SpitThing(entity):
 		for i in entity.type:
 			var block = garbageblock.instantiate()
 			block.type = i
+			block.name = "Block" + block.type
 			spitposition.add_child(block)
 		
 	elif spittype == 1:

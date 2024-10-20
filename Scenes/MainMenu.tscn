@@ -193,7 +193,7 @@ layout_mode = 1
 offset_left = 365.0
 offset_top = 50.0
 offset_right = 922.0
-offset_bottom = 350.0
+offset_bottom = 383.0
 
 [node name="HideLevelSelect" type="Button" parent="CanvasLayer/Control/LevelSelect"]
 layout_mode = 1
@@ -306,7 +306,7 @@ layout_mode = 1
 offset_left = 52.0
 offset_top = 50.0
 offset_right = 336.0
-offset_bottom = 421.0
+offset_bottom = 379.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
 layout_mode = 1
@@ -327,10 +327,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -94.5
+offset_left = -94.0
 offset_top = 73.0
-offset_right = 94.5
-offset_bottom = 389.0
+offset_right = 95.0
+offset_bottom = 293.0
 grow_horizontal = 2
 theme_override_constants/separation = 20
 
@@ -338,16 +338,11 @@ theme_override_constants/separation = 20
 layout_mode = 2
 text = "Play"
 
-[node name="ButtonColor" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
-layout_mode = 2
-text = "Customize"
-
 [node name="ButtonManagePlayers" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
 text = "Manage Players"
 
 [node name="PanelPlayers" type="Panel" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers"]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -356,8 +351,8 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 16.0
 offset_top = -20.0
-offset_right = 208.0
-offset_bottom = 91.0
+offset_right = 194.0
+offset_bottom = 135.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -417,6 +412,10 @@ one_shot = true
 [node name="ButtonResetPlayers" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer"]
 layout_mode = 2
 text = "Reset Players"
+
+[node name="ButtonColor" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer"]
+layout_mode = 2
+text = "Customize"
 
 [node name="ButtonOptions" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
@@ -800,11 +799,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 1)
 [connection signal="button_down" from="CanvasLayer/Control/LevelSelect/HideLevelSelect" to="." method="_on_hide_level_select_button_down"]
 [connection signal="timeout" from="CanvasLayer/Control/LevelSelect/CansWarning/Timer" to="." method="CansTimeout"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonPlay" to="." method="_on_button_play_button_down"]
-[connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonColor" to="." method="_on_button_color_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers" to="." method="_on_button_manage_players_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonAddPlayer" to="." method="_on_button_add_player_button_down"]
 [connection signal="timeout" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonAddPlayer/WarningPanel/Timer" to="." method="_on_warning_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonResetPlayers" to="." method="_on_button_reset_players_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonColor" to="." method="_on_button_color_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonOptions" to="." method="_on_button_options_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/Panel/VBoxContainer/ButtonDelSave" to="." method="_on_button_delsave_button_down"]
 

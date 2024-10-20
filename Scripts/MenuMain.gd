@@ -37,6 +37,7 @@ func CansTimeout():
 func _on_button_play_button_down():
 	if LevelSelect.visible == false:
 		LevelSelect.visible = true
+		PlayerPanel.visible = false
 	else:
 		LevelSelect.visible = false
 
@@ -46,6 +47,7 @@ func _on_button_color_button_down():
 func _on_button_manage_players_button_down():
 	if PlayerPanel.visible == false:
 		PlayerPanel.visible = true
+		LevelSelect.visible = false
 	else:
 		PlayerPanel.visible = false
 
@@ -76,7 +78,7 @@ func _on_button_add_player_button_down():
 		PlayerWarning("Max. 4 players!")
 		return
 	
-	if Input.get_connected_joypads().size()+1 > Manager.playerindex.size():
+	if Input.get_connected_joypads().size()+1 > Manager.CheckPlayerCount():
 		Manager.playerspawner.SpawnPlayer()
 	else:
 		PlayerWarning("Not enough controllers!")

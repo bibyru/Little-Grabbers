@@ -167,6 +167,15 @@ func CheckInPlayer(player):
 			playerindex[i] = [player.playerid, "#bf77b9", player]
 			break
 
+func CheckPlayerCount():
+	var count = 0
+	for i in playerindex.size():
+		if !playerindex[i].is_empty():
+			count += 1
+		else:
+			break
+	return count
+
 func TrueIfUsed(id):
 	for playerdata in playerindex:
 		if playerdata[0] == id:
