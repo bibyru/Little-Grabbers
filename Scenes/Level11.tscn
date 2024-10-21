@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cq2kbawxlq6y2"]
+[gd_scene load_steps=35 format=3 uid="uid://cq2kbawxlq6y2"]
 
 [ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_6bphn"]
 [ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="2_nvk00"]
@@ -21,6 +21,16 @@ background_mode = 1
 background_color = Color(0.76, 0.836, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00moq"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bgox"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5a2qi"]
+material = SubResource("StandardMaterial3D_6bgox")
+size = Vector3(0.475, 1.57, 9.985)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0cub"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0)
 
@@ -184,9 +194,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_leh64")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0cub"]
-albedo_color = Color(0, 1, 1, 1)
-
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_6bphn")
 levelid = [1, 1]
@@ -197,6 +204,7 @@ levelid = [1, 1]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290653, 4, -4.4881)
+shadow_enabled = true
 omni_range = 16.8421
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -215,6 +223,16 @@ material = SubResource("StandardMaterial3D_00moq")
 
 [node name="TrainingFacility" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.29, 0, -0.716)
+
+[node name="Obstacle" type="MeshInstance3D" parent="TrainingFacility"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.746, 1.43)
+mesh = SubResource("BoxMesh_5a2qi")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="TrainingFacility"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.751105, 0.0388725)
+use_collision = true
+size = Vector3(0.475, 1.57129, 13.5343)
+material = SubResource("StandardMaterial3D_u0cub")
 
 [node name="Floor" type="MeshInstance3D" parent="TrainingFacility"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -245,12 +263,6 @@ skeleton = NodePath("")
 transform = Transform3D(1.15652, 0, 0, 0, 1.13431, 0, 0, 0, 1.13431, 0, 2.9009, 7.15495)
 mesh = SubResource("ArrayMesh_6dgen")
 skeleton = NodePath("")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="TrainingFacility"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.751105, 0.0388725)
-use_collision = true
-size = Vector3(0.475, 1.57129, 13.5343)
-material = SubResource("StandardMaterial3D_u0cub")
 
 [node name="ItemSpawner" parent="." instance=ExtResource("7_51kcl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.48718, 0)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://brt2jef3a3vd5"
-path="res://.godot/imported/Char_GrabberCube.glb-5550f0425eb83a68af74bbd6da5f4277.scn"
+uid="uid://cx7feuhs8hlrb"
+path="res://.godot/imported/Char1_TriangleGarby.glb-73d157346ab123a643bd17a7ae8fd523.scn"
 
 [deps]
 
-source_file="res://Sauce/Models/Char_GrabberCube.glb"
-dest_files=["res://.godot/imported/Char_GrabberCube.glb-5550f0425eb83a68af74bbd6da5f4277.scn"]
+source_file="res://Sauce/Models/Garbies/Char1_TriangleGarby.glb"
+dest_files=["res://.godot/imported/Char1_TriangleGarby.glb-73d157346ab123a643bd17a7ae8fd523.scn"]
 
 [params]
 

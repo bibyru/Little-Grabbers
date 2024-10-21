@@ -1,9 +1,9 @@
 extends CharacterBody3D
 
 @onready var animtree = $AnimationTree
-@onready var hand = $Char_GrabberCube/Hand
+@onready var hand = $Positions/Hand
 @onready var frontcolshape = $FrontCS
-@onready var frontarea = $Char_GrabberCube/Front
+@onready var frontarea = $Positions/Front
 
 var playerid
 var controllerid
@@ -26,10 +26,10 @@ var objectheld
 var recycler = null
 var bid = null
 
-@onready var normalhandpos = $Char_GrabberCube/NormalHandPos.position
-@onready var stephandpos = $Char_GrabberCube/StepHandPos.position
+@onready var normalhandpos = $Positions/NormalHandPos.position
+@onready var stephandpos = $Positions/StepHandPos.position
 
-
+@export var meshes : Array[MeshInstance3D]
 
 func _ready():
 	frontcolshape.disabled = true
@@ -48,16 +48,28 @@ func _ready():
 		joystick = Input.get_connected_joypads()[controllerid-1]
 	
 	ChangeColor()
+	ChangeShape()
 
 func ChangeColor():
 	var material = StandardMaterial3D.new()
 	material.albedo_color = Manager.playerindex[controllerid][1]
-	$Char_GrabberCube/Armature_GrabberCube/Skeleton3D/Mesh_Arms.material_override = material
-	$Char_GrabberCube/Armature_GrabberCube/Skeleton3D/Mesh_Body.material_override = material
-	$Char_GrabberCube/Armature_GrabberCube/Skeleton3D/Mesh_Legs.material_override = material
+	
+	# cycle every shape
+	for i in 3:
+		if Manager.playerindex[controllerid][3] == i:
+			meshes[i].material_override = material
+			break
 
-func ChangeShape(index: int):
-	print("Player need to change shape!")
+func ChangeShape():
+	var shape_index = Manager.playerindex[controllerid][3]
+	
+	for i in 3:
+		if shape_index == i:
+			meshes[i].visible = true
+		else:
+			meshes[i].visible = false
+	
+	ChangeColor()
 
 
 
