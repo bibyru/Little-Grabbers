@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddcf03r60vgch"]
+
+[ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="1_y6vt1"]
+[ext_resource type="Script" path="res://Scripts/UICustomize.gd" id="2_prcxf"]
+[ext_resource type="PackedScene" uid="uid://rp2sncceh0hi" path="res://Prefabs/UI/ButtonColor.tscn" id="2_wljgl"]
+[ext_resource type="PackedScene" uid="uid://cfqykro4qumy0" path="res://Prefabs/UI/ButtonShape.tscn" id="3_vdi6y"]
+
+[node name="CustomizeContainer" type="VBoxContainer"]
+offset_right = 111.0
+offset_bottom = 156.0
+theme = ExtResource("1_y6vt1")
+theme_override_constants/separation = 20
+script = ExtResource("2_prcxf")
+
+[node name="ButtonColor" parent="." instance=ExtResource("2_wljgl")]
+layout_mode = 2
+
+[node name="ButtonShape" parent="." instance=ExtResource("3_vdi6y")]
+layout_mode = 2

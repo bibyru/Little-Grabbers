@@ -56,6 +56,9 @@ func ChangeColor():
 	$Char_GrabberCube/Armature_GrabberCube/Skeleton3D/Mesh_Body.material_override = material
 	$Char_GrabberCube/Armature_GrabberCube/Skeleton3D/Mesh_Legs.material_override = material
 
+func ChangeShape(index: int):
+	print("Player need to change shape!")
+
 
 
 func _input(event):

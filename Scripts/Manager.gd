@@ -20,6 +20,13 @@ const garbage_colors = [
 ]
 
 
+const garby_shapes = [
+	"Cube",
+	"Triangle",
+	"Circle"
+]
+
+
 var settings = [10,50,100, 1,1,0]
 # settings[0] is master
 # settings[1] is music
@@ -175,7 +182,7 @@ func ReqRestartLevel():
 func CheckInPlayer(player):
 	for i in playerindex.size():
 		if playerindex[i].is_empty():
-			playerindex[i] = [player.playerid, "#bf77b9", player]
+			playerindex[i] = [player.playerid, "#bf77b9", player, 0]
 			break
 
 func CheckPlayerCount():

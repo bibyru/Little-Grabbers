@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfqykro4qumy0"]
+
+[ext_resource type="Script" path="res://Scripts/ButtonShape.gd" id="1_sxo4r"]
+
+[node name="ButtonShape" type="OptionButton"]
+focus_mode = 0
+item_count = 3
+popup/item_0/text = "Cube"
+popup/item_0/id = 0
+popup/item_1/text = "Triangle"
+popup/item_1/id = 1
+popup/item_2/text = "Circle"
+popup/item_2/id = 2
+script = ExtResource("1_sxo4r")
+
+[connection signal="item_selected" from="." to="." method="_on_item_selected"]

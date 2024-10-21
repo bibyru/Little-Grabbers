@@ -1,6 +1,6 @@
 extends Node
 
-@onready var PanelColor = $CanvasLayer/Control/PanelColor
+@onready var MenuColor = $CanvasLayer/Control/MenuColor
 @onready var LevelSelect = $CanvasLayer/Control/LevelSelect
 
 @onready var WarningPanel = $CanvasLayer/Control/Panel/VBoxContainer/ButtonManagePlayers/PanelPlayers/VBoxContainer/ButtonAddPlayer/WarningPanel
@@ -18,7 +18,7 @@ func _ready():
 	Manager.levelentity = self
 	
 	LevelSelect.visible = false
-	PanelColor.visible = false
+	MenuColor.visible = false
 	PlayerPanel.visible = false
 	
 	WarningPanel.modulate = Color(1,1,1,0)
@@ -42,7 +42,7 @@ func _on_button_play_button_down():
 		LevelSelect.visible = false
 
 func _on_button_color_button_down():
-	PanelColor.Turn()
+	MenuColor.Turn()
 
 func _on_button_manage_players_button_down():
 	if PlayerPanel.visible == false:

@@ -1,6 +1,8 @@
-extends Panel
+extends Control
 
-@onready var buttonparent = $HBoxContainer
+var uicustomize_load = load("res://Prefabs/UI/UICustomize.tscn")
+
+@onready var buttonparent = $PanelColor/HBoxContainer
 
 func Turn():
 	visible = !visible
@@ -14,9 +16,10 @@ func CheckPlayers():
 	DeleteChildren()
 	for i in Manager.playerindex.size():
 		if !Manager.playerindex[i].is_empty():
-			var child = load("res://Prefabs/UI/ButtonColor.tscn").instantiate()
-			child.controllerid = Manager.playerindex[i][2].controllerid
-			buttonparent.add_child(child)
+			
+			var uicustomize_child = uicustomize_load.instantiate()
+			uicustomize_child.controllerid = i
+			buttonparent.add_child(uicustomize_child)
 
 func _on_button_button_down():
 	Turn()

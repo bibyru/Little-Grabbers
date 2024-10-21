@@ -5,7 +5,7 @@ extends Control
 
 var controllerid
 
-func _ready():
+func Initialize():
 	label.text = "Player %d" %[controllerid+1]
 	button.color = Manager.playerindex[controllerid][1]
 

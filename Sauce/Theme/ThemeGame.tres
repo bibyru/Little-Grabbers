@@ -1,9 +1,31 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://hpwvqqmbxmcc"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://hpwvqqmbxmcc"]
 
 [ext_resource type="StyleBox" uid="uid://di02hoalcijop" path="res://Sauce/Theme/ButtonNormal.tres" id="1_pj0t1"]
 [ext_resource type="StyleBox" uid="uid://dbh3nruqvowx2" path="res://Sauce/Theme/ButtonHover.tres" id="2_6orgj"]
 [ext_resource type="StyleBox" uid="uid://csodlkoanp6q4" path="res://Sauce/Theme/PanelNormal.tres" id="3_xu2wk"]
 [ext_resource type="FontFile" uid="uid://b2b4gfylusthx" path="res://Sauce/Theme/Zyzol.otf" id="4_r4gd8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0n2m"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0, 0.67, 0.67, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_py0nn"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0, 0.6, 0.6, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
 
 [resource]
 default_font = ExtResource("4_r4gd8")
@@ -18,4 +40,6 @@ Button/styles/hover = ExtResource("2_6orgj")
 Button/styles/normal = ExtResource("1_pj0t1")
 Button/styles/pressed = ExtResource("1_pj0t1")
 Label/colors/font_color = Color(0, 0.6, 0.6, 1)
+OptionButton/styles/hover = SubResource("StyleBoxFlat_t0n2m")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_py0nn")
 Panel/styles/panel = ExtResource("3_xu2wk")
