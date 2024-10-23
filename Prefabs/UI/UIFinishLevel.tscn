@@ -24,10 +24,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -120.5
+offset_left = -120.0
 offset_top = -119.0
-offset_right = 120.5
-offset_bottom = 119.0
+offset_right = 121.0
+offset_bottom = 149.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -72,6 +72,10 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 15
 
+[node name="NextLevel" type="Button" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Next Level"
+
 [node name="Restart" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 text = "Restart"
@@ -80,5 +84,6 @@ text = "Restart"
 layout_mode = 2
 text = "Main menu"
 
+[connection signal="button_down" from="Control/Panel/VBoxContainer/NextLevel" to="." method="button_nextlevel"]
 [connection signal="button_down" from="Control/Panel/VBoxContainer/Restart" to="." method="button_restart"]
 [connection signal="button_down" from="Control/Panel/VBoxContainer/MainMenu" to="." method="button_mainmenu"]

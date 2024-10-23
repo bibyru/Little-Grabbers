@@ -11,6 +11,7 @@ var myrotation = Vector3.ZERO
 
 func _ready():
 	gravity_scale = 3
+	set_collision_mask_value(2, true)
 
 func ResetPosition(obj):
 	obj.position = Vector3.ZERO

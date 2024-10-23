@@ -10,6 +10,8 @@ var finishlevel_timer = null
 var scoretarget
 @onready var GameUI = $GameUI
 
+var hide_nextlevel = false
+
 # Level Requirements
 	# level script
 	# game ui
@@ -61,6 +63,8 @@ func FinishLevel():
 			break
 	
 	Manager.trashcans[levelid[0]][levelid[1]] = trashcansgot
+	if Manager.trashcans[levelid[0]][levelid[1]] < 2:
+		hide_nextlevel = true
 	
 	finishlevel_timer = Timer.new()
 	finishlevel_timer.one_shot = true
@@ -72,3 +76,5 @@ func FinishLevel():
 func SpawnFinishUI():
 	var finishui_child = FinishUI.instantiate()
 	Manager.itemspawner.add_child(finishui_child)
+	if hide_nextlevel == true:
+		finishui_child.HideNextLevel()

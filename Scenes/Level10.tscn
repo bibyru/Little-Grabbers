@@ -262,17 +262,11 @@ transform = Transform3D(-0.539418, 0, 0.842038, 0, 1, 0, -0.842038, 0, -0.539418
 [node name="Fish" parent="ItemSpawner" instance=ExtResource("10_r4tmn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31899, 1.90735e-06, -2.76946)
 
-[node name="Fish2" parent="ItemSpawner" instance=ExtResource("10_r4tmn")]
-transform = Transform3D(0.956244, 0, 0.292572, 0, 1, 0, -0.292572, 0, 0.956244, -3.23737, 1.90735e-06, -0.689536)
-
 [node name="PaperStack" parent="ItemSpawner" instance=ExtResource("11_nriwl")]
 transform = Transform3D(0.68592, 0, -0.727677, 0, 1, 0, 0.727677, 0, 0.68592, 1.85138, 1.90735e-06, -1.7396)
 
 [node name="WaterBottle" parent="ItemSpawner" instance=ExtResource("12_r7jqq")]
 transform = Transform3D(0.784863, 0, 0.619669, 0, 1, 0, -0.619669, 0, 0.784863, -4.14607, 1.90735e-06, -3.69836)
-
-[node name="WaterBottle2" parent="ItemSpawner" instance=ExtResource("12_r7jqq")]
-transform = Transform3D(-0.708906, 0, 0.705303, 0, 1, 0, -0.705303, 0, -0.708906, 0.882089, 1.90735e-06, 0.400904)
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("13_15r25")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0.926818)

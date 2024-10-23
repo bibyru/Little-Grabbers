@@ -27,7 +27,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="Environment" id="Environment_wabu4"]
 background_mode = 1
-background_color = Color(0.994667, 1, 0.84, 1)
+background_color = Color(0.84, 1, 0.992, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ktud"]
 
@@ -440,6 +440,7 @@ environment = SubResource("Environment_wabu4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="All3D"]
 transform = Transform3D(-0.684139, -0.681346, 0.260232, -0.63156, 0.731883, 0.255891, -0.36481, 0.0107127, -0.93102, 11.4637, 5.85101, -24.6089)
+light_color = Color(1, 1, 0, 1)
 shadow_enabled = true
 shadow_opacity = 0.7
 shadow_blur = 2.0

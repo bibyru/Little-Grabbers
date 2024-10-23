@@ -4,7 +4,7 @@ var trashFalse = preload("res://Sauce/Sprites/TrashCan-False.png")
 var trashTrue = preload("res://Sauce/Sprites/TrashCan-True.png")
 
 @export var levelid = [12,12]
-@export var manually_set_levelid = false
+@export var automatic_initialization = false
 
 @onready var trashcanImages = [
 	$VBoxContainer/TextureRect,
@@ -19,7 +19,7 @@ var trashTrue = preload("res://Sauce/Sprites/TrashCan-True.png")
 
 
 func _ready():
-	if manually_set_levelid == true:
+	if automatic_initialization == true:
 		Initialize()
 
 
