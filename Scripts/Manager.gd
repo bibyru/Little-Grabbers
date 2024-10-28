@@ -54,7 +54,7 @@ var trashcans = [
 	[0,0,0],
 	
 	# Stage 2 (Classroom)
-	[0]
+	[0,0,0]
 ]
 var leveltimes = [
 	# Stage 0 (Testing)
@@ -63,8 +63,8 @@ var leveltimes = [
 	# Stage 1 (Training Facility)
 	[60, 100, 70],
 	
-	# Stage 2 (Classroom)
-	[120]
+	# Stage 2 (Factory)
+	[120, 120, 120]
 ]
 var scoretargets = [
 	# Stage 0 (Testing)
@@ -74,9 +74,9 @@ var scoretargets = [
 	# Level 0         Level 1         Level 2
 	[[45, 65, 125], [115, 135, 190], [100, 120, 145]],
 	
-	# Stage 2 (???)
+	# Stage 2 (Factory)
 	# Level 0
-	[[12, 12, 12]]
+	[[12, 12, 12], [12, 12, 12], [12, 12, 12]]
 ]
 
 
@@ -96,7 +96,6 @@ var score_onesecond = 2
 
 func _ready():
 	get_window().content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
-	
 	LoadData()
 	
 	if settings[3] == 1:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqxpicxqhv5vb"]
+[gd_scene load_steps=16 format=3 uid="uid://dqxpicxqhv5vb"]
 
 [ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_dda50"]
 [ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="2_4v0rv"]
@@ -12,6 +12,16 @@
 [ext_resource type="PackedScene" uid="uid://bg0spx35h8fs0" path="res://Prefabs/Garbage/Paper_PaperStack.tscn" id="8_mrf5g"]
 [ext_resource type="PackedScene" uid="uid://cgjd3207jxvh3" path="res://Prefabs/Garbage/Plastic_Bottle.tscn" id="9_lqndm"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gb3sh"]
+size = Vector3(21.1865, 1, 13.0776)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16den"]
+size = Vector3(35.1073, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h43c2"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_0e38i"]
 size = Vector3(0.745, 0.175, 0.21)
 
@@ -22,28 +32,42 @@ levelid = [2, 0]
 [node name="GameUI" parent="." instance=ExtResource("2_4v0rv")]
 
 [node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.93206, -4.58741)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50103, 3.84281, -1.93317)
-omni_range = 14.0218
-omni_attenuation = 0.0301855
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.31985, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.7
+shadow_blur = 2.0
+omni_range = 9.551
+omni_attenuation = 0.258816
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22825, 3.84281, -7.61588)
-omni_range = 14.0218
-omni_attenuation = 0.0301855
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31985, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.7
+shadow_blur = 2.0
+omni_range = 9.551
+omni_attenuation = 0.258816
 
 [node name="FallCatcher" parent="." instance=ExtResource("3_rvlyo")]
-collision_mask = 2
+
+[node name="CollisionShape3D" parent="FallCatcher" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0430584, 0, -3.32331)
+shape = SubResource("BoxShape3D_gb3sh")
 
 [node name="FallDestroyer" parent="." instance=ExtResource("4_rn03j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.37499, -1.33001)
+
+[node name="CollisionShape3D" parent="FallDestroyer" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55981, -7.37499, -1.46431)
+shape = SubResource("BoxShape3D_16den")
 
 [node name="MovingPlatform" parent="." instance=ExtResource("5_q748e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -4)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 13, 5.73)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 13, 7.3)
 fov = 40.0
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
@@ -57,25 +81,45 @@ size = Vector3(7, 1, 8.84)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.165, -0.507, -4.59)
 size = Vector3(7, 1, 8.84)
 
+[node name="Collision" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5012, 0.351459, -4.05009)
+size = Vector3(1, 15.784, 30.183)
+material = SubResource("StandardMaterial3D_h43c2")
+
+[node name="Collision2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4878, 0.351459, -4.05009)
+size = Vector3(1, 15.784, 30.183)
+material = SubResource("StandardMaterial3D_h43c2")
+
+[node name="Collision3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121025, 0.351459, -19.2391)
+size = Vector3(35.4939, 15.784, 1.11577)
+material = SubResource("StandardMaterial3D_h43c2")
+
+[node name="Collision4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121025, 0.351459, 11.1328)
+size = Vector3(35.4939, 15.784, 1.11577)
+material = SubResource("StandardMaterial3D_h43c2")
+
 [node name="BID" parent="." instance=ExtResource("5_6sy2q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.61985, 0, -7.00192)
 
 [node name="Recyclers" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.07739, 0, -6.98086)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.07739, 0, -8.09092)
 
 [node name="RecyclerSpawner" parent="Recyclers" instance=ExtResource("6_5m3yl")]
 type = "Metal"
 
 [node name="RecyclerSpawner2" parent="Recyclers" instance=ExtResource("6_5m3yl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46757, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34981, 0, 0)
 type = "Organic"
 
 [node name="RecyclerSpawner3" parent="Recyclers" instance=ExtResource("6_5m3yl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01621, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62592, 0, 0)
 type = "Paper"
 
 [node name="RecyclerSpawner4" parent="Recyclers" instance=ExtResource("6_5m3yl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.44338, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.96221, 0, 0)
 type = "Plastic"
 
 [node name="ItemSpawner" parent="." instance=ExtResource("3_5gbvq")]
@@ -112,7 +156,7 @@ shape = SubResource("BoxShape3D_0e38i")
 transform = Transform3D(0.514784, 0, 0.85732, 0, 1, 0, -0.85732, 0, 0.514784, -8.13646, 0, 1.62636)
 
 [node name="Mesh" parent="ItemSpawner/WaterBottle4/RigidBody3D" index="0"]
-transform = Transform3D(1.5, 0, 5.96046e-08, 0, 1.5, 0, -5.96046e-08, 0, 1.5, -1.02214, 0, -0.393294)
+transform = Transform3D(1.5, 0, -5.96046e-08, 0, 1.5, 0, 5.96046e-08, 0, 1.5, 0.00911844, 0, -0.00786448)
 
 [node name="CollisionShape3D" parent="ItemSpawner/WaterBottle4/RigidBody3D" index="1"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.0266728, 0, 2.38419e-07)
@@ -121,5 +165,7 @@ shape = SubResource("BoxShape3D_0e38i")
 [node name="PlayerSpawner" parent="." instance=ExtResource("4_b18es")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74691, 5, -3.9986)
 
+[editable path="FallCatcher"]
+[editable path="FallDestroyer"]
 [editable path="ItemSpawner/WaterBottle3"]
 [editable path="ItemSpawner/WaterBottle4"]

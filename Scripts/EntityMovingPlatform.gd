@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var platform = $RigidBody3D
 @export var points : Array[Node3D]
-var index = 0
+var index = 1
 var threshold = 0.1
 var speed = 3
 
@@ -11,9 +11,11 @@ func _physics_process(delta):
 	var direction = distance.normalized()
 	
 	if abs(distance.x) > threshold or abs(distance.y) > threshold or abs(distance.z) > threshold:
-		platform.apply_force(speed * direction)
+		if platform.linear_velocity == Vector3.ZERO:
+			platform.linear_velocity = speed * direction
 	else:
 		platform.set("linear_velocity", Vector3.ZERO)
+		
 		if index + 1 >= 2:
 			index = 0
 		else:

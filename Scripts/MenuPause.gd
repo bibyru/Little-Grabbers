@@ -51,7 +51,5 @@ func Pressed_Button_Vsync(toggled_on):
 
 
 func Pressed_Button_ObjectCollision(toggled_on):
-	print("Before: ", Manager.objectcollision)
 	Manager.objectcollision = !Manager.objectcollision
 	Manager.ReqRestartLevel()
-	print("After: ", Manager.objectcollision)

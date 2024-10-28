@@ -273,7 +273,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_aedfw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer"]
 layout_mode = 2
-theme_override_constants/separation = 55
+theme_override_constants/separation = 15
 
 [node name="Stage1" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -300,6 +300,32 @@ levelname = "Level 1"
 layout_mode = 2
 levelid = "12"
 levelname = "Level 2"
+
+[node name="Stage2" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Stagename" type="Label" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2"]
+layout_mode = 2
+text = "@ Some Factory Somewhere"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Level" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2/HBoxContainer" instance=ExtResource("6_lodvw")]
+layout_mode = 2
+levelid = "20"
+levelname = "Level 1"
+
+[node name="Level2" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2/HBoxContainer" instance=ExtResource("6_lodvw")]
+layout_mode = 2
+levelid = "21"
+levelname = "Level 2"
+
+[node name="Level3" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2/HBoxContainer" instance=ExtResource("6_lodvw")]
+layout_mode = 2
+levelid = "22"
+levelname = "Level 3"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
