@@ -36,6 +36,8 @@ var settings = [10,50,100, 1,1,0]
 # settings[4] is aa
 # settings[5] is vsync
 
+var objectcollision = false
+
 #const savepath = "res://Output/savedata.ini"
 const savepath = "user://savedata.ini"
 
@@ -70,9 +72,9 @@ var scoretargets = [
 	
 	# Stage 1 (Training Facility)
 	# Level 0         Level 1         Level 2
-	[[45, 65, 120], [115, 135, 190], [90, 110, 130]],
+	[[45, 65, 125], [115, 135, 190], [100, 120, 145]],
 	
-	# Stage 2 (Classroom)
+	# Stage 2 (???)
 	# Level 0
 	[[12, 12, 12]]
 ]
@@ -123,6 +125,7 @@ func SaveData():
 	
 	config.set_value("Game", "trashcans", trashcans)
 	config.set_value("Settings", "settings", settings)
+	config.set_value("GameSettings", "objectcollision", objectcollision)
 	
 	config.save(savepath)
 	get_tree().paused = false
@@ -138,6 +141,9 @@ func LoadData():
 	
 	var settings_ini = SetSettingsIni()
 	settings = config.get_value("Settings", "settings", settings)
+	
+	var objectcollision_ini = false
+	objectcollision = config.get_value("GameSettings", "objectcollision", objectcollision_ini)
 	
 	get_tree().paused = false
 

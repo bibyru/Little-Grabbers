@@ -34,9 +34,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -276.0
+offset_left = -419.0
 offset_top = 54.0
-offset_right = 269.0
+offset_right = 126.0
 offset_bottom = 282.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -226,6 +226,56 @@ theme_override_fonts/font = ExtResource("3_jfykm")
 text = "Y"
 horizontal_alignment = 1
 
+[node name="GameSettings" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 137.0
+offset_top = -250.0
+offset_right = 410.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/GameSettings"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -189.0
+offset_top = 9.0
+offset_right = -65.0
+offset_bottom = 44.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 25
+text = "Gameplay"
+
+[node name="ObjectCollision" type="HBoxContainer" parent="Control/GameSettings"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -241.0
+offset_top = 50.0
+offset_right = -15.0
+offset_bottom = 78.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="Control/GameSettings/ObjectCollision"]
+layout_mode = 2
+text = "Object Collision"
+
+[node name="Control" type="Control" parent="Control/GameSettings/ObjectCollision"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" parent="Control/GameSettings/ObjectCollision" instance=ExtResource("2_0al4i")]
+layout_mode = 2
+focus_mode = 0
+
 [node name="Menu" type="Panel" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -233,9 +283,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -295.0
+offset_left = -438.0
 offset_top = -287.0
-offset_right = 287.0
+offset_right = 144.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -345,9 +395,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 26.0
-offset_top = -139.0
+offset_top = -139.5
 offset_right = 245.0
-offset_bottom = 114.0
+offset_bottom = 114.5
 grow_vertical = 2
 theme = ExtResource("2_qbt6a")
 theme_override_constants/separation = 20
@@ -377,9 +427,10 @@ text = "Main Menu"
 [node name="ButtonQuit" parent="Control/Menu/VBoxContainer2" instance=ExtResource("5_l45kg")]
 layout_mode = 2
 
-[connection signal="toggled" from="Control/Menu/VBoxContainer/Fullscreen/Button" to="." method="button_fullscreen"]
-[connection signal="toggled" from="Control/Menu/VBoxContainer/AntiAliasing/Button" to="." method="button_antialiasing"]
-[connection signal="toggled" from="Control/Menu/VBoxContainer/Vsync/Button" to="." method="button_vsync"]
+[connection signal="toggled" from="Control/GameSettings/ObjectCollision/Button" to="." method="Pressed_Button_ObjectCollision"]
+[connection signal="toggled" from="Control/Menu/VBoxContainer/Fullscreen/Button" to="." method="Pressed_Button_Fullscreen"]
+[connection signal="toggled" from="Control/Menu/VBoxContainer/AntiAliasing/Button" to="." method="Pressed_Button_AntiAliasing"]
+[connection signal="toggled" from="Control/Menu/VBoxContainer/Vsync/Button" to="." method="Pressed_Button_Vsync"]
 [connection signal="button_down" from="Control/Menu/VBoxContainer2/ButtonResume" to="." method="_on_button_resume_button_down"]
 [connection signal="button_down" from="Control/Menu/VBoxContainer2/ButtonRestart" to="." method="_on_button_restart_button_down"]
 [connection signal="button_down" from="Control/Menu/VBoxContainer2/ButtonMain" to="." method="_on_button_main_button_down"]

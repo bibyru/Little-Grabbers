@@ -1,24 +1,30 @@
 extends Node
 
-@onready var buttonfullscreen = $Control/Menu/VBoxContainer/Fullscreen/Button
-@onready var buttonantialiasing = $Control/Menu/VBoxContainer/AntiAliasing/Button
-@onready var buttonvsync = $Control/Menu/VBoxContainer/Vsync/Button
+@onready var button_fullscreen = $Control/Menu/VBoxContainer/Fullscreen/Button
+@onready var button_antialiasing = $Control/Menu/VBoxContainer/AntiAliasing/Button
+@onready var button_vsync = $Control/Menu/VBoxContainer/Vsync/Button
+@onready var button_objectcollision = $Control/GameSettings/ObjectCollision/Button
 
 func _ready():
 	if Manager.settings[3] == 1:
-		if buttonfullscreen.button_pressed == false:
-			buttonfullscreen.set_pressed_no_signal(true)
-			buttonfullscreen.Turn(true)
+		if button_fullscreen.button_pressed == false:
+			button_fullscreen.set_pressed_no_signal(true)
+			button_fullscreen.Turn(true)
 	
 	if Manager.settings[4] == 1:
-		if buttonantialiasing.button_pressed == false:
-			buttonantialiasing.set_pressed_no_signal(true)
-			buttonantialiasing.Turn(true)
+		if button_antialiasing.button_pressed == false:
+			button_antialiasing.set_pressed_no_signal(true)
+			button_antialiasing.Turn(true)
 	
 	if Manager.settings[5] == 1:
-		if buttonvsync.button_pressed == false:
-			buttonvsync.set_pressed_no_signal(true)
-			buttonvsync.Turn(true)
+		if button_vsync.button_pressed == false:
+			button_vsync.set_pressed_no_signal(true)
+			button_vsync.Turn(true)
+	
+	if Manager.objectcollision == true:
+		if button_objectcollision.button_pressed == false:
+			button_objectcollision.set_pressed_no_signal(true)
+			button_objectcollision.Turn(true)
 
 
 
@@ -33,12 +39,19 @@ func _on_button_restart_button_down():
 
 
 
-func button_fullscreen(toggled_on):
+func Pressed_Button_Fullscreen(toggled_on):
 	Manager.SetFullscreen(toggled_on)
 
-func button_antialiasing(toggled_on):
+func Pressed_Button_AntiAliasing(toggled_on):
 	Manager.SetAntiAliasing(toggled_on)
 
-func button_vsync(toggled_on):
+func Pressed_Button_Vsync(toggled_on):
 	Manager.SetVsync(toggled_on)
 
+
+
+func Pressed_Button_ObjectCollision(toggled_on):
+	print("Before: ", Manager.objectcollision)
+	Manager.objectcollision = !Manager.objectcollision
+	Manager.ReqRestartLevel()
+	print("After: ", Manager.objectcollision)
