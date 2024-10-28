@@ -104,6 +104,9 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("Esc"):
 		PauseMenu()
+	
+	if event.is_action_pressed("InputTest"):
+		pass
 
 
 
@@ -117,6 +120,12 @@ func SetTrashcansIni():
 func SetSettingsIni():
 	var settings_ini = [10,50,100, 1,1,0]
 	return settings_ini
+
+func FillTrashcans(trashcans_buffer):
+	for i in trashcans.size():
+		for j in trashcans[i].size():
+			trashcans_buffer[i][j] = trashcans[i][j]
+	return trashcans_buffer
 
 func SaveData():
 	get_tree().paused = true
@@ -135,14 +144,27 @@ func LoadData():
 	var config = ConfigFile.new()
 	config.load(savepath)
 	
-	var trashcans_ini = SetTrashcansIni()
-	trashcans = config.get_value("Game", "trashcans", trashcans_ini)
-	
 	var settings_ini = SetSettingsIni()
 	settings = config.get_value("Settings", "settings", settings)
 	
 	var objectcollision_ini = false
 	objectcollision = config.get_value("GameSettings", "objectcollision", objectcollision_ini)
+	
+	var trashcans_ini = SetTrashcansIni()
+	trashcans = config.get_value("Game", "trashcans", trashcans_ini)
+	
+	# to check if save is outdated, check trashcans size and its stage size
+	var firstcheck_pass = false
+	if trashcans.size() != trashcans_ini.size():
+		trashcans = FillTrashcans(trashcans_ini)
+	else:
+		firstcheck_pass = true
+	
+	if firstcheck_pass == true:
+		for i in trashcans.size():
+			if trashcans[i].size() != trashcans_ini[i].size():
+				trashcans = FillTrashcans(trashcans_ini)
+				break
 	
 	get_tree().paused = false
 

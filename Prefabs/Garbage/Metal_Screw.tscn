@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://brr10djbjfp52"]
+
+[ext_resource type="Script" path="res://Scripts/EntityGarbage.gd" id="1_pdhw4"]
+[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_1q0xr"]
+[ext_resource type="PackedScene" uid="uid://du13mpqujl5j6" path="res://Sauce/Models/Garbages/Garbage-Metal-Screw.glb" id="3_4wv06"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51nea"]
+size = Vector3(0.485, 0.150391, 0.485)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wvwm7"]
+size = Vector3(0.26, 0.25, 0.26)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r18dd"]
+
+[node name="Screw" type="Node3D"]
+script = ExtResource("1_pdhw4")
+type = Array[String](["Metal"])
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 4
+collision_mask = 5
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.02, 0)
+continuous_cd = true
+script = ExtResource("2_1q0xr")
+path = "res://Prefabs/Garbage/Metal_Screw.tscn"
+
+[node name="Mesh" parent="RigidBody3D" instance=ExtResource("3_4wv06")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.068657, 0)
+shape = SubResource("BoxShape3D_51nea")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.101929, 0)
+shape = SubResource("BoxShape3D_wvwm7")
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+shape = SubResource("BoxShape3D_r18dd")
