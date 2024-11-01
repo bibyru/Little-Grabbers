@@ -98,7 +98,7 @@ This project is currently being developed using Godot v4.2.2.
 
 <br/>
 
-## 💿 How to open in Game Engine
+## 💿 How to Open in Game Engine
 1. Download all files.
 2. Extract to **Folder A** (an empty folder).
 3. Launch Godot v4.2.2.
