@@ -2,10 +2,10 @@ extends Node3D
 
 @onready var platform = $RigidBody3D
 @export var points : Array[Node3D]
+@export var speed = 3
 
 var index = 1
 var threshold = 0.1
-var speed = 3
 
 @onready var ControlMesh = $RigidBody3D/Control
 @onready var controlLocation_side = Vector3(-0.827, 0.644, 0)
@@ -15,10 +15,15 @@ var speed = 3
 @export var locationReminder = ["Side", "Back"]
 
 @export var broken = false
+@export var manual = false
+
+var finished_moving = true
 
 
 
 func _ready():
+	add_to_group("Platform")
+	
 	for point in points:
 		point.visible = false
 	
@@ -37,6 +42,13 @@ func _ready():
 		ControlMesh.rotation_degrees = Vector3(0,-90,0)
 
 
+func NextPointIndex():
+	if finished_moving == true:
+		if index + 1 >= 2:
+			index = 0
+			return
+		index += 1
+
 
 func _physics_process(delta):
 	var distance = points[index].global_position - platform.global_position
@@ -45,10 +57,10 @@ func _physics_process(delta):
 	if abs(distance.x) > threshold or abs(distance.y) > threshold or abs(distance.z) > threshold:
 		if platform.linear_velocity == Vector3.ZERO:
 			platform.linear_velocity = speed * direction
+			finished_moving = false
 	else:
 		platform.set("linear_velocity", Vector3.ZERO)
+		finished_moving = true
 		
-		if index + 1 >= 2:
-			index = 0
-		else:
-			index += 1
+		if manual == false:
+			NextPointIndex()

@@ -23,8 +23,10 @@ var animaccel = 0.5
 
 var objectseen
 var objectheld
+
 var recycler = null
 var bid = null
+var platform = null
 
 @onready var normalhandpos = $Positions/NormalHandPos.position
 @onready var stephandpos = $Positions/StepHandPos.position
@@ -101,6 +103,8 @@ func _on_front_area_entered(area):
 		recycler = area_entity
 	elif area_entity.is_in_group("BID"):
 		bid = area_entity
+	elif area_entity.is_in_group("Platform"):
+		platform = area_entity
 	else:
 		if objectseen == null:
 			objectseen = area_entity
@@ -112,6 +116,8 @@ func _on_front_area_exited(area):
 		recycler = null
 	elif area_entity.is_in_group("BID"):
 		bid = null
+	elif area_entity.is_in_group("Platform"):
+		platform = null
 	else:
 		objectseen = null
 
@@ -122,7 +128,11 @@ func RestartArea():
 	frontarea.monitoring = true
 
 func Interact():
-	if objectheld != null and (recycler != null or bid != null):
+	if platform != null:
+		platform.NextPointIndex()
+		return
+		
+	elif objectheld != null and (recycler != null or bid != null):
 		
 		if recycler != null:
 			if objectheld != null:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c322uhlmy564l"]
+[gd_scene load_steps=20 format=3 uid="uid://c322uhlmy564l"]
 
 [ext_resource type="Script" path="res://Scripts/EntityMovingPlatform.gd" id="1_6no27"]
 
@@ -222,6 +222,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tnrsk")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gu848"]
+size = Vector3(0.518921, 1.09558, 0.432617)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbjli"]
 size = Vector3(2.25818, 0.296158, 1.51794)
 
@@ -238,6 +241,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 mesh = SubResource("BoxMesh_l1l13")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_mask = 0
 gravity_scale = 0.0
 can_sleep = false
 continuous_cd = true
@@ -250,6 +254,7 @@ skeleton = NodePath("")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00231761, 0.643877, -0.538316)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RigidBody3D/Control"]
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Control/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0433502, 0.0234985, 0)
@@ -269,6 +274,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0505002, 0)
 visible = false
 mesh = SubResource("ArrayMesh_b640w")
 skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D/Control"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.538316, -0.643877, -0.00231763)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Control/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00311279, 0.690956, -0.500488)
+shape = SubResource("BoxShape3D_gu848")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0512342, -0.000104785)
