@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgjd3207jxvh3"]
 
-[ext_resource type="Script" path="res://Scripts/EntityGarbage.gd" id="1_ucm64"]
-[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_8pghx"]
+[ext_resource type="Script" path="res://Scripts/Entity_Garbage.gd" id="1_ucm64"]
+[ext_resource type="Script" path="res://Scripts/Entity_Object.gd" id="2_8pghx"]
 [ext_resource type="PackedScene" uid="uid://e32apg0yaso2" path="res://Sauce/Models/Garbages/Garbage-Plastic-WaterBottle.glb" id="3_tosq1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51nea"]

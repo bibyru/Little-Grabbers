@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://bx3dmu3tsdxid"]
 
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="2_7rpoe"]
-[ext_resource type="Script" path="res://Scripts/MenuMain.gd" id="3_5p7af"]
+[ext_resource type="Script" path="res://Scripts/Level_MenuMain.gd" id="3_5p7af"]
 [ext_resource type="PackedScene" uid="uid://b43bys8l6npi2" path="res://Prefabs/UI/ButtonQuit.tscn" id="4_g5ug6"]
 [ext_resource type="Texture2D" uid="uid://vf0orvlw7vt7" path="res://Sauce/Sprites/TrashCan-True.png" id="5_2vl81"]
 [ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/Spawners/SpawnerPlayer.tscn" id="5_3psu1"]
@@ -224,32 +224,6 @@ levelname = "Level 1"
 layout_mode = 2
 levelid = "12"
 levelname = "Level 2"
-
-[node name="Stage2" type="VBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Stagename" type="Label" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2"]
-layout_mode = 2
-text = "@ Some Factory Somewhere"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Level" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2/HBoxContainer" instance=ExtResource("6_lodvw")]
-layout_mode = 2
-levelid = "20"
-levelname = "Level 1"
-
-[node name="Level2" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2/HBoxContainer" instance=ExtResource("6_lodvw")]
-layout_mode = 2
-levelid = "21"
-levelname = "Level 2"
-
-[node name="Level3" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage2/HBoxContainer" instance=ExtResource("6_lodvw")]
-layout_mode = 2
-levelid = "22"
-levelname = "Level 3"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1

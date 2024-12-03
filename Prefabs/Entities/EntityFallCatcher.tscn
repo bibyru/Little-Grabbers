@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnjwctrutcrt"]
 
-[ext_resource type="Script" path="res://Scripts/EntityFallCatcher.gd" id="1_5ds5t"]
+[ext_resource type="Script" path="res://Scripts/Entity_FallCatcher.gd" id="1_5ds5t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_84tqo"]
 size = Vector3(21.9692, 1, 18.0605)

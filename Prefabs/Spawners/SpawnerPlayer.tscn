@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cokfbtuek8ppv"]
 
-[ext_resource type="Script" path="res://Scripts/SpawnerPlayer.gd" id="1_jw8wb"]
+[ext_resource type="Script" path="res://Scripts/Spawner_Player.gd" id="1_jw8wb"]
 
 [node name="PlayerSpawner" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)

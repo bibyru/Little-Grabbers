@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bd3ujfdon8mlh"]
 
-[ext_resource type="Script" path="res://Scripts/UITutorial.gd" id="1_c2gfu"]
+[ext_resource type="Script" path="res://Scripts/UI_Tutorial.gd" id="1_c2gfu"]
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="2_j3xjs"]
 
 [sub_resource type="Animation" id="Animation_faa3k"]

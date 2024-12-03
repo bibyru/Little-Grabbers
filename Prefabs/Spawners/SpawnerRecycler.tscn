@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cylg3xai1dn5m"]
 
-[ext_resource type="Script" path="res://Scripts/SpawnerRecycler.gd" id="1_05uaw"]
+[ext_resource type="Script" path="res://Scripts/Spawner_Recycler.gd" id="1_05uaw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5gg1"]
 

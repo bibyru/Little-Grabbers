@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bm3badq7ralcp"]
 
-[ext_resource type="Script" path="res://Scripts/EntityBID.gd" id="1_2scn4"]
+[ext_resource type="Script" path="res://Scripts/Entity_BID.gd" id="1_2scn4"]
 [ext_resource type="PackedScene" uid="uid://cnkuvbam6eix6" path="res://Prefabs/UI/UIPropWarning.tscn" id="2_d1qmi"]
 [ext_resource type="Texture2D" uid="uid://cr1youda1ueva" path="res://Sauce/Models/BID_BID.png" id="3_2egqt"]
 

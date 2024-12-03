@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://coxlah0vdhwhp"]
 
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="1_jx6uf"]
-[ext_resource type="Script" path="res://Scripts/MenuColor.gd" id="2_hvo7s"]
+[ext_resource type="Script" path="res://Scripts/UI_MenuColor.gd" id="2_hvo7s"]
 
 [node name="MenuColor" type="Control"]
 layout_mode = 3

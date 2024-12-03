@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cfqykro4qumy0"]
 
-[ext_resource type="Script" path="res://Scripts/ButtonShape.gd" id="1_sxo4r"]
+[ext_resource type="Script" path="res://Scripts/UI_ButtonShape.gd" id="1_sxo4r"]
 
 [node name="ButtonShape" type="OptionButton"]
 focus_mode = 0

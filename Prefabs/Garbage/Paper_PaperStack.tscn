@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bg0spx35h8fs0"]
 
-[ext_resource type="Script" path="res://Scripts/EntityGarbage.gd" id="1_17p48"]
-[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_tnsp4"]
+[ext_resource type="Script" path="res://Scripts/Entity_Garbage.gd" id="1_17p48"]
+[ext_resource type="Script" path="res://Scripts/Entity_Object.gd" id="2_tnsp4"]
 [ext_resource type="PackedScene" uid="uid://b1oa74wy1v01" path="res://Sauce/Models/Garbages/Garbage-Paper-PaperStack.glb" id="3_pdry6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51nea"]

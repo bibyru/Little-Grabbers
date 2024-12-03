@@ -2,49 +2,49 @@ extends Node3D
 
 var player = preload("res://Prefabs/Entities/Player.tscn")
 
-var needtospawn = 0
+var playersToSpawn = 0
 
 func _ready():
-	Manager.playerspawner = self
+	Manager.PlayerSpawner = self
 	
-	if Manager.playerindex[0].is_empty():
+	if Manager.playerIndex[0].is_empty():
 		SpawnPlayer()
 	else:
-		needtospawn = Manager.CheckPlayerCount()
+		playersToSpawn = Manager.CheckPlayerCount()
 		SpawnPlayer(1)
 
 
 
-func SpawnPlayer(type = 0):	
+func SpawnPlayer(type = 0):
 	if type == 0:
-		needtospawn = 1
+		playersToSpawn = 1
 	
-	var spawntimer = Timer.new()
-	spawntimer.autostart = true
-	spawntimer.one_shot = true
-	spawntimer.wait_time = 0.3
-	spawntimer.timeout.connect(SpawnTimerTimeout.bind(spawntimer, type))
-	add_child(spawntimer)
+	var spawnTimer = Timer.new()
+	spawnTimer.autostart = true
+	spawnTimer.one_shot = true
+	spawnTimer.wait_time = 0.3
+	spawnTimer.timeout.connect(SpawnTimerTimeout.bind(spawnTimer, type))
+	add_child(spawnTimer)
 
-func SpawnTimerTimeout(spawntimer, type):
-	remove_child(spawntimer)
-	needtospawn -= 1
+func SpawnTimerTimeout(spawnTimer, type):
+	remove_child(spawnTimer)
+	playersToSpawn -= 1
 	
 	var player = player.instantiate()
 	
 	if type == 0:
-		player.playerid = Manager.CheckPlayerCount()
+		player.playerId = Manager.CheckPlayerCount()
 		Manager.CheckInPlayer(player)
 		
 	elif type == 1:
-		for playerdata in Manager.playerindex:
+		for playerData in Manager.playerIndex:
 			
-			if !playerdata.is_empty():
-				if playerdata[2] == null:
-					player.playerid = playerdata[0]
-					playerdata[2] = player
+			if !playerData.is_empty():
+				if playerData[2] == null:
+					player.playerid = playerData[0]
+					playerData[2] = player
 					
-					if needtospawn > 0:
+					if playersToSpawn > 0:
 						SpawnPlayer(1)
 					break
 			else:

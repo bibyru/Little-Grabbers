@@ -2,13 +2,13 @@ extends CanvasLayer
 
 @onready var TrashCansUI = $Control/Panel/TrashCans
 
-var curr_levelid = Manager.levelentity.levelid
+var currLevelId = Manager.LevelEntity.levelId
 
 func _ready():
 	if CheckMaxLevel() == true:
 		HideNextLevel()
 	
-	TrashCansUI.levelid = Manager.levelentity.levelid
+	TrashCansUI.levelid = Manager.LevelEntity.levelId
 	TrashCansUI.Initialize()
 
 func HideNextLevel():
@@ -22,10 +22,10 @@ func button_mainmenu():
 
 
 func CheckMaxLevel():
-	if curr_levelid[1]+1 >= Manager.leveltimes[curr_levelid[0]].size():
+	if currLevelId[1]+1 >= Manager.levelTimes[currLevelId[0]].size():
 		return true
 	return false
 
 func button_nextlevel():
 	if CheckMaxLevel() == false:
-		Manager.ReqLevel([curr_levelid[0], curr_levelid[1]+1])
+		Manager.ReqLevel([currLevelId[0], currLevelId[1]+1])

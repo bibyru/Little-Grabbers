@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://rli7n8xuqrev"]
 
-[ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_eg00c"]
+[ext_resource type="Script" path="res://Scripts/Level_General.gd" id="1_eg00c"]
 [ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="2_crfc7"]
 [ext_resource type="PackedScene" uid="uid://bnjwctrutcrt" path="res://Prefabs/Entities/EntityFallCatcher.tscn" id="4_fsayd"]
 [ext_resource type="Texture2D" uid="uid://cb5ew30664q8v" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Floor.png" id="5_ro831"]

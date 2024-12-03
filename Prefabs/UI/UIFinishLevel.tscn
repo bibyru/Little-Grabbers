@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dskvbwy6j0rd6"]
 
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="1_3vqo5"]
-[ext_resource type="Script" path="res://Scripts/UIFinishLevel.gd" id="1_fcddn"]
+[ext_resource type="Script" path="res://Scripts/UI_FinishLevel.gd" id="1_fcddn"]
 [ext_resource type="PackedScene" uid="uid://cakwlqgjrf5w1" path="res://Prefabs/UI/UITrashCans.tscn" id="2_68pxp"]
 
 [node name="UIFinishLevel" type="CanvasLayer"]

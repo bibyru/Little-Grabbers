@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b4jk71sfoityt"]
 
-[ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_pbcif"]
+[ext_resource type="Script" path="res://Scripts/Level_General.gd" id="1_pbcif"]
 [ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="1_sku1n"]
 [ext_resource type="PackedScene" uid="uid://bnjwctrutcrt" path="res://Prefabs/Entities/EntityFallCatcher.tscn" id="2_5qicc"]
 [ext_resource type="PackedScene" uid="uid://cokfbtuek8ppv" path="res://Prefabs/Spawners/SpawnerPlayer.tscn" id="2_800ds"]

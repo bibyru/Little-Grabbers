@@ -1,18 +1,18 @@
 extends Node
 
-const garbage_types = [
+const garbageTypes = [
 	"Metal",
 	"Organic",
 	"Paper",
 	"Plastic"
 ]
-const recycler_materials = [
+const recyclerMaterials = [
 	"res://Sauce/Models/Recyclers/Recycler-Metal.tres",
 	"res://Sauce/Models/Recyclers/Recycler-Organic.tres",
 	"res://Sauce/Models/Recyclers/Recycler-Paper.tres",
 	"res://Sauce/Models/Recyclers/Recycler-Plastic.tres"
 ]
-const garbage_colors = [
+const garbageColors = [
 	Color("#ff0000"),
 	Color("#803300"),
 	Color("#0000ff"),
@@ -20,7 +20,7 @@ const garbage_colors = [
 ]
 
 
-const garby_shapes = [
+const garbyShapes = [
 	"Cube",
 	"Triangle",
 	"Circle"
@@ -36,14 +36,14 @@ var settings = [10,50,100, 1,1,0]
 # settings[4] is aa
 # settings[5] is vsync
 
-var objectcollision = false
+var objectCollision = false
 
-#const savepath = "res://Output/savedata.ini"
-const savepath = "user://savedata.ini"
+#const savePath = "res://Output/savedata.ini"
+const savePath = "user://savedata.ini"
 
 
 
-var playerindex = [[],[],[],[]]
+var playerIndex = [[],[],[],[]]
 var score = 0
 
 var trashcans = [
@@ -56,7 +56,7 @@ var trashcans = [
 	# Stage 2 (Classroom)
 	[0,0,0]
 ]
-var leveltimes = [
+var levelTimes = [
 	# Stage 0 (Testing)
 	[120, "Hi High"],
 	
@@ -66,7 +66,7 @@ var leveltimes = [
 	# Stage 2 (Factory)
 	[150, 120, 120]
 ]
-var scoretargets = [
+var scoreTargets = [
 	# Stage 0 (Testing)
 	[[0, 5, 10], ["TTYL"]],
 	
@@ -81,17 +81,17 @@ var scoretargets = [
 
 
 
-var playerspawner
-var itemspawner
+var PlayerSpawner
+var ItemSpawner
 
-var levelentity
-var pausechild
-var gameui
-var score_name = "Moula"
-var score_reward = 10
-var score_punish = 5
-var score_property = 20
-var score_onesecond = 2
+var LevelEntity
+var PauseChild
+var GameUI
+var scoreName = "Moula"
+var scoreReward = 10
+var scorePunish = 5
+var scoreProperty = 20
+var scoreOneSecond = 2
 
 
 func _ready():
@@ -111,21 +111,21 @@ func _input(event):
 
 
 func SetTrashcansIni():
-	var trashcans_ini = trashcans
-	for i in trashcans_ini.size():
-		for j in trashcans_ini[i].size():
-			trashcans_ini[i][j] = 0
-	return trashcans_ini
+	var trashcansInitial = trashcans
+	for i in trashcansInitial.size():
+		for j in trashcansInitial[i].size():
+			trashcansInitial[i][j] = 0
+	return trashcansInitial
 
 func SetSettingsIni():
-	var settings_ini = [10,50,100, 1,1,0]
-	return settings_ini
+	var settingsInitial = [10,50,100, 1,1,0]
+	return settingsInitial
 
-func FillTrashcans(trashcans_buffer):
+func FillTrashcans(trashcansBuffer):
 	for i in trashcans.size():
 		for j in trashcans[i].size():
-			trashcans_buffer[i][j] = trashcans[i][j]
-	return trashcans_buffer
+			trashcansBuffer[i][j] = trashcans[i][j]
+	return trashcansBuffer
 
 func SaveData():
 	get_tree().paused = true
@@ -133,37 +133,37 @@ func SaveData():
 	
 	config.set_value("Game", "trashcans", trashcans)
 	config.set_value("Settings", "settings", settings)
-	config.set_value("GameSettings", "objectcollision", objectcollision)
+	config.set_value("GameSettings", "objectCollision", objectCollision)
 	
-	config.save(savepath)
+	config.save(savePath)
 	get_tree().paused = false
 
 func LoadData():
 	get_tree().paused = true
 	
 	var config = ConfigFile.new()
-	config.load(savepath)
+	config.load(savePath)
 	
-	var settings_ini = SetSettingsIni()
+	var settingsInitial = SetSettingsIni()
 	settings = config.get_value("Settings", "settings", settings)
 	
-	var objectcollision_ini = false
-	objectcollision = config.get_value("GameSettings", "objectcollision", objectcollision_ini)
+	var objectCollisionInitial = false
+	objectCollision = config.get_value("GameSettings", "objectCollision", objectCollisionInitial)
 	
-	var trashcans_ini = SetTrashcansIni()
-	trashcans = config.get_value("Game", "trashcans", trashcans_ini)
+	var trashcansInitial = SetTrashcansIni()
+	trashcans = config.get_value("Game", "trashcans", trashcansInitial)
 	
 	# to check if save is outdated, check trashcans size and its stage size
-	var firstcheck_pass = false
-	if trashcans.size() != trashcans_ini.size():
-		trashcans = FillTrashcans(trashcans_ini)
+	var firstCheckPass = false
+	if trashcans.size() != trashcansInitial.size():
+		trashcans = FillTrashcans(trashcansInitial)
 	else:
-		firstcheck_pass = true
+		firstCheckPass = true
 	
-	if firstcheck_pass == true:
+	if firstCheckPass == true:
 		for i in trashcans.size():
-			if trashcans[i].size() != trashcans_ini[i].size():
-				trashcans = FillTrashcans(trashcans_ini)
+			if trashcans[i].size() != trashcansInitial[i].size():
+				trashcans = FillTrashcans(trashcansInitial)
 				break
 	
 	get_tree().paused = false
@@ -173,8 +173,8 @@ func DeleteSave():
 	
 	var config = ConfigFile.new()
 	
-	var trashcans_ini = SetTrashcansIni()
-	config.set_value("Game", "trashcans", trashcans_ini)
+	var trashcansInitial = SetTrashcansIni()
+	config.set_value("Game", "trashcans", trashcansInitial)
 	
 	get_tree().paused = false
 	ReqRestartLevel()
@@ -186,58 +186,58 @@ func ReqMainMenu():
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	get_tree().paused = false
 
-func ReqLevel(levelid):
-	if levelid[1] > 0 and trashcans[levelid[0]][levelid[1]-1] < 2:
-		levelentity.CansWarning()
+func ReqLevel(levelId):
+	if levelId[1] > 0 and trashcans[levelId[0]][levelId[1]-1] < 2:
+		LevelEntity.CansWarning()
 		return
 	
 	get_tree().paused = true
-	get_tree().change_scene_to_file("res://Scenes/Level"+ str(levelid[0]) + str(levelid[1]) +".tscn")
+	get_tree().change_scene_to_file("res://Scenes/Level"+ str(levelId[0]) + str(levelId[1]) +".tscn")
 	get_tree().paused = false
 
 func ReqRestartLevel():
 	get_tree().paused = true
 	get_tree().reload_current_scene()
 	
-	if pausechild != null:
-		itemspawner.remove_child(pausechild)
-		pausechild = null
+	if PauseChild != null:
+		ItemSpawner.remove_child(PauseChild)
+		PauseChild = null
 	get_tree().paused = false
 
 
 
 func CheckInPlayer(player):
-	for i in playerindex.size():
-		if playerindex[i].is_empty():
-			playerindex[i] = [player.playerid, "#bf77b9", player, 0]
+	for i in playerIndex.size():
+		if playerIndex[i].is_empty():
+			playerIndex[i] = [player.playerid, "#bf77b9", player, 0]
 			break
 
 func CheckPlayerCount():
 	var count = 0
-	for i in playerindex.size():
-		if !playerindex[i].is_empty():
+	for i in playerIndex.size():
+		if !playerIndex[i].is_empty():
 			count += 1
 		else:
 			break
 	return count
 
 func TrueIfUsed(id):
-	for playerdata in playerindex:
-		if playerdata[0] == id:
+	for playerData in playerIndex:
+		if playerData[0] == id:
 			return true
 	return false
 
 
 
 func PauseMenu():
-	if pausechild == null:
+	if PauseChild == null:
 		get_tree().paused = true
-		pausechild = load("res://Scenes/PauseMenu.tscn").instantiate()
-		itemspawner.add_child(pausechild)
+		PauseChild = load("res://Scenes/PauseMenu.tscn").instantiate()
+		ItemSpawner.add_child(PauseChild)
 	else:
 		get_tree().paused = false
-		itemspawner.remove_child(pausechild)
-		pausechild = null
+		ItemSpawner.remove_child(PauseChild)
+		PauseChild = null
 
 
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6iqunwf16155" path="res://Prefabs/UI/ButtonOnOff.tscn" id="2_0al4i"]
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="2_qbt6a"]
-[ext_resource type="Script" path="res://Scripts/MenuPause.gd" id="2_yesc8"]
+[ext_resource type="Script" path="res://Scripts/UI_MenuPause.gd" id="2_yesc8"]
 [ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="3_jfykm"]
 [ext_resource type="PackedScene" uid="uid://b43bys8l6npi2" path="res://Prefabs/UI/ButtonQuit.tscn" id="5_l45kg"]
 

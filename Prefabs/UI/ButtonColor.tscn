@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rp2sncceh0hi"]
 
-[ext_resource type="Script" path="res://Scripts/ButtonColor.gd" id="1_agf2v"]
+[ext_resource type="Script" path="res://Scripts/UI_ButtonColor.gd" id="1_agf2v"]
 
 [node name="ButtonColor" type="VBoxContainer"]
 theme_override_constants/separation = 10

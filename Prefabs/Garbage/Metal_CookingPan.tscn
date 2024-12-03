@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c7l3mpls2kj0h"]
 
-[ext_resource type="Script" path="res://Scripts/EntityGarbage.gd" id="1_ojxgo"]
-[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_w8i5m"]
+[ext_resource type="Script" path="res://Scripts/Entity_Garbage.gd" id="1_ojxgo"]
+[ext_resource type="Script" path="res://Scripts/Entity_Object.gd" id="2_w8i5m"]
 [ext_resource type="PackedScene" uid="uid://cgpryegdot2h5" path="res://Sauce/Models/Garbages/Garbage-Metal-CookingPan.glb" id="3_n16oq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51nea"]

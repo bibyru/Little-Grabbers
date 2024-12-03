@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bl6k73lpc3p1m"]
 
-[ext_resource type="Script" path="res://Scripts/EntityGarbage.gd" id="1_mekhi"]
-[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_ehw5i"]
+[ext_resource type="Script" path="res://Scripts/Entity_Garbage.gd" id="1_mekhi"]
+[ext_resource type="Script" path="res://Scripts/Entity_Object.gd" id="2_ehw5i"]
 [ext_resource type="PackedScene" uid="uid://cmlm4tt3t02xb" path="res://Sauce/Models/Garbages/Garbage-Metal-Nut.glb" id="3_cww6e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51nea"]

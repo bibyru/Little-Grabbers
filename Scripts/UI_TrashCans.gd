@@ -3,15 +3,15 @@ extends HBoxContainer
 var trashFalse = preload("res://Sauce/Sprites/TrashCan-False.png")
 var trashTrue = preload("res://Sauce/Sprites/TrashCan-True.png")
 
-@export var levelid = [12,12]
-@export var automatic_initialization = false
+@export var levelId = [12,12]
+@export var doAutoInitialize = false
 
 @onready var trashcanImages = [
 	$VBoxContainer/TextureRect,
 	$VBoxContainer2/TextureRect,
 	$VBoxContainer3/TextureRect
 ]
-@onready var scoretargetLabels = [
+@onready var scoreTargetLabels = [
 	$VBoxContainer/Label,
 	$VBoxContainer2/Label,
 	$VBoxContainer3/Label
@@ -19,7 +19,7 @@ var trashTrue = preload("res://Sauce/Sprites/TrashCan-True.png")
 
 
 func _ready():
-	if automatic_initialization == true:
+	if doAutoInitialize == true:
 		Initialize()
 
 
@@ -29,10 +29,10 @@ func Initialize():
 
 func ScoreTargets():
 	for i in 3:
-		scoretargetLabels[i].text = str(Manager.scoretargets[levelid[0]][levelid[1]][i])
+		scoreTargetLabels[i].text = str(Manager.scoretargets[levelId[0]][levelId[1]][i])
 
 func CheckScore():
-	var trashcansgot = Manager.trashcans[levelid[0]][levelid[1]]
+	var trashcansgot = Manager.trashcans[levelId[0]][levelId[1]]
 	
 	if trashcansgot == 0:
 		for i in 3:

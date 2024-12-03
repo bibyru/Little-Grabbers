@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://ck183gnsq6vri"]
 
-[ext_resource type="Script" path="res://Scripts/EntityStep.gd" id="1_nttal"]
-[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_ebbiu"]
+[ext_resource type="Script" path="res://Scripts/Entity_Step.gd" id="1_nttal"]
+[ext_resource type="Script" path="res://Scripts/Entity_Object.gd" id="2_ebbiu"]
 [ext_resource type="Texture2D" uid="uid://b7s6blyqxshu5" path="res://Sauce/Models/Step_Step.png" id="2_s7nh6"]
 [ext_resource type="Texture2D" uid="uid://cdt3wulmeryn0" path="res://Sauce/Models/Step_Step-Rough.png" id="3_1r1y3"]
 

@@ -7,7 +7,7 @@ extends CanvasLayer
 
 @onready var AnimPlayer = $AnimationPlayer
 
-var howtoplay = [
+var howToPlayTexts = [
 	[
 		"Look up the key bindings\nin the pause menu!",
 		"(any type of controllers are usable)"
@@ -34,14 +34,14 @@ var howtoplay = [
 	]
 ]
 var index = -1
-var maxindex
+var maxIndex
 
-var hidden_htp = false
+var doHideHTP = false
 
 
 
 func _ready():
-	maxindex = howtoplay.size()
+	maxIndex = howToPlayTexts.size()
 	NextHtp()
 
 func _input(event):
@@ -59,25 +59,25 @@ func NextHtp():
 	UpdateHtp()
 
 func UpdateHtp():
-	if index >= maxindex:
+	if index >= maxIndex:
 		index = 0
 	elif index <= -1:
-		index = maxindex-1
+		index = maxIndex-1
 	
-	HtpNumber.text = "How To Play: %d /%d" %[index+1, maxindex]
-	HtpLabel.text = howtoplay[index][0]
-	HtpLabel2.text = howtoplay[index][1]
+	HtpNumber.text = "How To Play: %d /%d" %[index+1, maxIndex]
+	HtpLabel.text = howToPlayTexts[index][0]
+	HtpLabel2.text = howToPlayTexts[index][1]
 
 
 
 func _on_button_hide_button_down():
-	if hidden_htp == false:
-		hidden_htp = true
+	if doHideHTP == false:
+		doHideHTP = true
 		AnimPlayer.play("HtpPanelExit")
 		HtpHideLabel.text = "How To Play"
 		return
 	
-	hidden_htp = false
+	doHideHTP = false
 	AnimPlayer.play("HtpPanelEnter")
 	AnimPlayer.queue("HtpPanelBounce")
 	HtpHideLabel.text = "Hide"

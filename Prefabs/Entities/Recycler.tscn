@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cxw4k4hvkdxrs"]
 
-[ext_resource type="Script" path="res://Scripts/EntityRecycler.gd" id="1_x02et"]
+[ext_resource type="Script" path="res://Scripts/Entity_Recycler.gd" id="1_x02et"]
 [ext_resource type="PackedScene" uid="uid://cnkuvbam6eix6" path="res://Prefabs/UI/UIPropWarning.tscn" id="2_4emul"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5gg1"]

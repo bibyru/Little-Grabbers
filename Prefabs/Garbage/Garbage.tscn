@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btu0uw7j2563f"]
 
-[ext_resource type="Script" path="res://Scripts/EntityGarbage.gd" id="1_m7ush"]
-[ext_resource type="Script" path="res://Scripts/EntityObject.gd" id="2_ug3if"]
+[ext_resource type="Script" path="res://Scripts/Entity_Garbage.gd" id="1_m7ush"]
+[ext_resource type="Script" path="res://Scripts/Entity_Object.gd" id="2_ug3if"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51nea"]
 size = Vector3(1.21538, 0.3, 0.3)

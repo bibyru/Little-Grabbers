@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cakwlqgjrf5w1"]
 
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="1_3hlw8"]
-[ext_resource type="Script" path="res://Scripts/UITrashCans.gd" id="1_agbhc"]
+[ext_resource type="Script" path="res://Scripts/UI_TrashCans.gd" id="1_agbhc"]
 [ext_resource type="Texture2D" uid="uid://vf0orvlw7vt7" path="res://Sauce/Sprites/TrashCan-True.png" id="1_tkd10"]
 [ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="4_3wdpd"]
 [ext_resource type="Texture2D" uid="uid://bjqm4qk55qxgu" path="res://Sauce/Sprites/TrashCan-False.png" id="5_nhg3h"]

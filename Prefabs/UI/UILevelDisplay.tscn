@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkc77a1ht46v5"]
 
-[ext_resource type="Script" path="res://Scripts/UILevelDisplay.gd" id="1_0o036"]
+[ext_resource type="Script" path="res://Scripts/UI_LevelDisplay.gd" id="1_0o036"]
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="1_o3kqu"]
 [ext_resource type="Texture2D" uid="uid://bvsmtmd0j82rv" path="res://Sauce/GamePhotos/Levels-Level10.JPG" id="1_ouhec"]
 [ext_resource type="PackedScene" uid="uid://cakwlqgjrf5w1" path="res://Prefabs/UI/UITrashCans.tscn" id="2_fw4he"]

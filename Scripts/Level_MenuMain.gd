@@ -12,10 +12,10 @@ extends Node
 @onready var CansPanel = $CanvasLayer/Control/LevelSelect/CansWarning
 @onready var CansTimer = $CanvasLayer/Control/LevelSelect/CansWarning/Timer
 
-var levelid = [0, 1]
+var levelId = [0, 1]
 
 func _ready():
-	Manager.levelentity = self
+	Manager.LevelEntity = self
 	
 	LevelSelect.visible = false
 	MenuColor.visible = false
@@ -67,19 +67,19 @@ func _on_hide_level_select_button_down():
 
 
 
-func PlayerWarning(given_text : String):
+func PlayerWarning(givenText : String):
 	WarningPanel.modulate = Color(1,1,1,1)
-	WarningPanelLabel.text = given_text
+	WarningPanelLabel.text = givenText
 	if WarningTimer.is_stopped():
 		WarningTimer.start()
 
 func _on_button_add_player_button_down():
-	if !Manager.playerindex[3].is_empty():
+	if !Manager.playerIndex[3].is_empty():
 		PlayerWarning("Max. 4 players!")
 		return
 	
 	if Input.get_connected_joypads().size()+1 > Manager.CheckPlayerCount():
-		Manager.playerspawner.SpawnPlayer()
+		Manager.PlayerSpawner.SpawnPlayer()
 	else:
 		PlayerWarning("Not enough controllers!")
 

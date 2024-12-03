@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddcf03r60vgch"]
 
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="1_y6vt1"]
-[ext_resource type="Script" path="res://Scripts/UICustomize.gd" id="2_prcxf"]
+[ext_resource type="Script" path="res://Scripts/UI_Customize.gd" id="2_prcxf"]
 [ext_resource type="PackedScene" uid="uid://rp2sncceh0hi" path="res://Prefabs/UI/ButtonColor.tscn" id="2_wljgl"]
 [ext_resource type="PackedScene" uid="uid://cfqykro4qumy0" path="res://Prefabs/UI/ButtonShape.tscn" id="3_vdi6y"]
 

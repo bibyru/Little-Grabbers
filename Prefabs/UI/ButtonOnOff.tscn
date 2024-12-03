@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6iqunwf16155"]
 
-[ext_resource type="Script" path="res://Scripts/ButtonOnOff.gd" id="1_4xo4k"]
+[ext_resource type="Script" path="res://Scripts/UI_ButtonOnOff.gd" id="1_4xo4k"]
 [ext_resource type="Theme" uid="uid://0h01xmjrd2lg" path="res://Sauce/Theme/ThemeMonobutton.tres" id="1_ng5xw"]
 
 [node name="Button" type="Button"]

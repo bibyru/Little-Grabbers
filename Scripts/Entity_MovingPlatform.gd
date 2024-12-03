@@ -1,15 +1,15 @@
 extends Node3D
 
-@onready var platform = $RigidBody3D
-@export var points : Array[Node3D]
+@onready var Platform = $RigidBody3D
+@export var Points : Array[Node3D]
 @export var speed = 3
 
 var index = 1
 var threshold = 0.1
 
 @onready var ControlMesh = $RigidBody3D/Control
-@onready var controlLocation_side = Vector3(-0.827, 0.644, 0)
-@onready var controlLocation_back = Vector3(-0.002, 0.644, -0.538)
+@onready var controlLocationSide = Vector3(-0.827, 0.644, 0)
+@onready var controlLocationBack = Vector3(-0.002, 0.644, -0.538)
 
 @export var controlLocation = 0
 @export var locationReminder = ["Side", "Back"]
@@ -17,14 +17,14 @@ var threshold = 0.1
 @export var broken = false
 @export var manual = false
 
-var finished_moving = true
+var isFinishedMoving = true
 
 
 
 func _ready():
 	add_to_group("Platform")
 	
-	for point in points:
+	for point in Points:
 		point.visible = false
 	
 	if broken == true:
@@ -35,15 +35,15 @@ func _ready():
 		$RigidBody3D/Control/Normal.visible = true
 	
 	if controlLocation == 0:
-		ControlMesh.position = controlLocation_side
+		ControlMesh.position = controlLocationSide
 		ControlMesh.rotation_degrees = Vector3(0,0,0)
 	else:
-		ControlMesh.position = controlLocation_back
+		ControlMesh.position = controlLocationBack
 		ControlMesh.rotation_degrees = Vector3(0,-90,0)
 
 
 func NextPointIndex():
-	if finished_moving == true:
+	if isFinishedMoving == true:
 		if index + 1 >= 2:
 			index = 0
 			return
@@ -51,16 +51,16 @@ func NextPointIndex():
 
 
 func _physics_process(delta):
-	var distance = points[index].global_position - platform.global_position
+	var distance = Points[index].global_position - Platform.global_position
 	var direction = distance.normalized()
 	
 	if abs(distance.x) > threshold or abs(distance.y) > threshold or abs(distance.z) > threshold:
-		if platform.linear_velocity == Vector3.ZERO:
-			platform.linear_velocity = speed * direction
-			finished_moving = false
+		if Platform.linear_velocity == Vector3.ZERO:
+			Platform.linear_velocity = speed * direction
+			isFinishedMoving = false
 	else:
-		platform.set("linear_velocity", Vector3.ZERO)
-		finished_moving = true
+		Platform.set("linear_velocity", Vector3.ZERO)
+		isFinishedMoving = true
 		
 		if manual == false:
 			NextPointIndex()
