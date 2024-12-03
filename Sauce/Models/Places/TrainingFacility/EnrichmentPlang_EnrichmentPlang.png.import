@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bixi2wmsskcx8"
-path.s3tc="res://.godot/imported/BreakItDowner_BreakItDowner.png-e87d8af407b07f3c45546aa1932c5628.s3tc.ctex"
+uid="uid://btr2fe64njmdi"
+path.s3tc="res://.godot/imported/EnrichmentPlang_EnrichmentPlang.png-98e933157e2904ab5df0aab42baf31ec.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3e5e0a5d320a3b1cd88d763fbb005096"
+"md5": "46b3753f3d2ca141c56efa977acb1331"
 }
 
 [deps]
 
-source_file="res://Sauce/Models/BreakItDowner_BreakItDowner.png"
-dest_files=["res://.godot/imported/BreakItDowner_BreakItDowner.png-e87d8af407b07f3c45546aa1932c5628.s3tc.ctex"]
+source_file="res://Sauce/Models/Places/TrainingFacility/EnrichmentPlang_EnrichmentPlang.png"
+dest_files=["res://.godot/imported/EnrichmentPlang_EnrichmentPlang.png-98e933157e2904ab5df0aab42baf31ec.s3tc.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
-[gd_scene load_steps=35 format=3 uid="uid://cq2kbawxlq6y2"]
+[gd_scene load_steps=32 format=3 uid="uid://cq2kbawxlq6y2"]
 
 [ext_resource type="Script" path="res://Scripts/EntityLevels.gd" id="1_6bphn"]
 [ext_resource type="PackedScene" uid="uid://c0x3nbrb5gh5i" path="res://Prefabs/UI/UIGame.tscn" id="2_nvk00"]
 [ext_resource type="PackedScene" uid="uid://bnjwctrutcrt" path="res://Prefabs/Entities/EntityFallCatcher.tscn" id="3_nfn7n"]
 [ext_resource type="Texture2D" uid="uid://cb5ew30664q8v" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Floor.png" id="4_0n31v"]
 [ext_resource type="Texture2D" uid="uid://4hvisqlu7kkc" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Wall.png" id="5_gc0ta"]
-[ext_resource type="Texture2D" uid="uid://lsjm4r1uvkdo" path="res://Sauce/Models/Places/TrainingFacility/TrainingFacility_TrainingFacility-Sign.png" id="6_3c8xq"]
+[ext_resource type="PackedScene" uid="uid://c4msb0b7tfotb" path="res://Sauce/Models/Places/TrainingFacility/TrainingPlang.glb" id="6_1s13v"]
 [ext_resource type="PackedScene" uid="uid://cbe7e4ljlvp1p" path="res://Prefabs/Spawners/SpawnerItem.tscn" id="7_51kcl"]
 [ext_resource type="PackedScene" uid="uid://ck183gnsq6vri" path="res://Prefabs/Entities/Step.tscn" id="8_j1vpd"]
 [ext_resource type="PackedScene" uid="uid://c7l3mpls2kj0h" path="res://Prefabs/Garbage/Metal_CookingPan.tscn" id="9_uwnnc"]
@@ -156,44 +156,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mpjha")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51bii"]
-resource_name = "Sign"
-cull_mode = 2
-albedo_texture = ExtResource("6_3c8xq")
-roughness = 0.5
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_leh64"]
-_surfaces = [{
-"aabb": AABB(-1.9, -0.44, -0.2, 3.8, 0.88, 0.40001),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 2, 0, 7, 0, 3, 0, 2, 0, 6, 0, 7, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 5, 0, 4, 0, 1, 0, 5, 0, 4, 0, 0, 0, 1, 0, 2, 0, 4, 0, 6, 0, 2, 0, 0, 0, 4, 0, 7, 0, 1, 0, 3, 0, 7, 0, 5, 0, 1, 0),
-"name": "Sign",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 255, 255, 253, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 253, 255, 0, 0, 255, 255, 255, 255, 253, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_6dgen"]
-resource_name = "TrainingFacility_Cube_003"
-_surfaces = [{
-"aabb": AABB(-1.9, -0.44, -0.2, 3.8, 0.88, 0.40001),
-"attribute_data": PackedByteArray(0, 122, 3, 212, 2, 113, 1, 221, 0, 122, 250, 247, 254, 130, 3, 212, 252, 139, 1, 221, 254, 130, 250, 247, 51, 245, 196, 234, 2, 113, 255, 229, 0, 122, 252, 238, 51, 245, 156, 18, 252, 139, 255, 229, 254, 130, 252, 238, 0, 122, 1, 221, 0, 122, 1, 221, 0, 122, 1, 221, 254, 130, 1, 221, 254, 130, 1, 221, 254, 130, 1, 221, 217, 11, 196, 234, 0, 122, 255, 229, 0, 122, 255, 229, 217, 11, 156, 18, 254, 130, 255, 229, 254, 130, 255, 229),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray(2, 0, 11, 0, 5, 0, 2, 0, 8, 0, 11, 0, 6, 0, 21, 0, 9, 0, 6, 0, 18, 0, 21, 0, 20, 0, 17, 0, 23, 0, 20, 0, 14, 0, 17, 0, 12, 0, 3, 0, 15, 0, 12, 0, 0, 0, 3, 0, 7, 0, 13, 0, 19, 0, 7, 0, 1, 0, 13, 0, 22, 0, 4, 0, 10, 0, 22, 0, 16, 0, 4, 0),
-"material": SubResource("StandardMaterial3D_51bii"),
-"name": "Sign",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray(0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 0, 0, 253, 255, 255, 191, 0, 0, 0, 0, 253, 255, 84, 213, 0, 0, 255, 255, 253, 255, 255, 191, 0, 0, 255, 255, 253, 255, 255, 255, 0, 0, 255, 255, 253, 255, 84, 213, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 84, 213, 255, 255, 0, 0, 253, 255, 255, 191, 255, 255, 0, 0, 253, 255, 255, 191, 255, 255, 0, 0, 253, 255, 84, 213, 255, 255, 255, 255, 253, 255, 255, 191, 255, 255, 255, 255, 253, 255, 255, 255, 255, 255, 255, 255, 253, 255, 84, 213, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 255, 127, 84, 213, 84, 213, 255, 255, 255, 255, 255, 127, 255, 191, 84, 213, 84, 213, 255, 127, 255, 255, 0, 0, 255, 127, 84, 213, 84, 213, 255, 127, 255, 255, 255, 127, 255, 191, 84, 213, 84, 213, 255, 255, 255, 255, 0, 0, 255, 127, 170, 42, 170, 42, 255, 255, 255, 255, 255, 127, 255, 191, 170, 42, 170, 42, 255, 127, 255, 255, 0, 0, 255, 127, 170, 42, 170, 42, 255, 127, 255, 255, 255, 127, 255, 191, 170, 42, 170, 42)
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_leh64")
-
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_6bphn")
 levelid = [1, 1]
@@ -259,25 +221,23 @@ transform = Transform3D(1, 0, 0, 0, 0.774897, 0, 0, 0, 1, 0, 1.50625, 7.3)
 mesh = SubResource("ArrayMesh_80r70")
 skeleton = NodePath("")
 
-[node name="Sign" type="MeshInstance3D" parent="TrainingFacility"]
-transform = Transform3D(1.15652, 0, 0, 0, 1.13431, 0, 0, 0, 1.13431, 0, 2.9009, 7.15495)
-mesh = SubResource("ArrayMesh_6dgen")
-skeleton = NodePath("")
+[node name="TrainingPlang" parent="TrainingFacility" instance=ExtResource("6_1s13v")]
+transform = Transform3D(1.79, 0, 1.13796e-07, 0, 1.79, 0, -1.13796e-07, 0, 1.79, -0.00559294, 0.6005, 7)
 
 [node name="ItemSpawner" parent="." instance=ExtResource("7_51kcl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.48718, 0)
 
 [node name="Step" parent="ItemSpawner" instance=ExtResource("8_j1vpd")]
-transform = Transform3D(-0.286742, 0, 0.958008, 0, 1, 0, -0.958008, 0, -0.286742, 2.89334, -1.78024, -0.987736)
+transform = Transform3D(-0.286742, 0, 0.958008, 0, 1, 0, -0.958008, 0, -0.286742, 2.34584, -1.78024, -0.987736)
 
 [node name="Step2" parent="ItemSpawner" instance=ExtResource("8_j1vpd")]
-transform = Transform3D(0.695298, 0, -0.718722, 0, 1, 0, 0.718722, 0, 0.695298, 0.0773225, -0.998426, -5.19815)
+transform = Transform3D(0.695298, 0, -0.718722, 0, 1, 0, 0.718722, 0, 0.695298, 0.243766, -0.998426, -5.19815)
 
 [node name="CookingPan" parent="ItemSpawner" instance=ExtResource("9_uwnnc")]
 transform = Transform3D(-0.916496, 0, 0.400045, 0, 1, 0, -0.400045, 0, -0.916496, 3.85267, 1.90735e-06, -5.80883)
 
 [node name="Fish" parent="ItemSpawner" instance=ExtResource("10_j1nss")]
-transform = Transform3D(-0.697403, 0, -0.716679, 0, 1, 0, 0.716679, 0, -0.697403, 5.22008, 1.90735e-06, -3.64716)
+transform = Transform3D(-0.697403, 0, -0.716679, 0, 1, 0, 0.716679, 0, -0.697403, 6.12737, 1.90735e-06, -4.37293)
 
 [node name="Fish2" parent="ItemSpawner" instance=ExtResource("10_j1nss")]
 transform = Transform3D(0.956244, 0, 0.292572, 0, 1, 0, -0.292572, 0, 0.956244, -3.23737, 1.90735e-06, -0.689536)
@@ -292,7 +252,7 @@ transform = Transform3D(0.784863, 0, 0.619669, 0, 1, 0, -0.619669, 0, 0.784863, 
 transform = Transform3D(-0.708906, 0, 0.705303, 0, 1, 0, -0.705303, 0, -0.708906, 4.84395, 1.90735e-06, -0.156833)
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("13_j3gi7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96395, 5, -2.77637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69067, 5, -1.55503)
 
 [node name="Recyclers" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.74835, 0, -6.33871)
@@ -314,4 +274,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.636, 0, 0)
 type = "Metal"
 
 [node name="BID" parent="." instance=ExtResource("15_oo5vx")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.582, 0, -4.384)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.87336, 0, -2.89019)

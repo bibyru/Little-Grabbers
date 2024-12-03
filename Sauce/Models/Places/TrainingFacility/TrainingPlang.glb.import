@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cn73814ma6k0f"
-path="res://.godot/imported/BreakItDowner.glb-267c4fe569c67edc2251cf3b0cf79fb7.scn"
+uid="uid://c4msb0b7tfotb"
+path="res://.godot/imported/TrainingPlang.glb-3306eb5c7b40fc23dcf3894f60292ac6.scn"
 
 [deps]
 
-source_file="res://Sauce/Models/BreakItDowner.glb"
-dest_files=["res://.godot/imported/BreakItDowner.glb-267c4fe569c67edc2251cf3b0cf79fb7.scn"]
+source_file="res://Sauce/Models/Places/TrainingFacility/TrainingPlang.glb"
+dest_files=["res://.godot/imported/TrainingPlang.glb-3306eb5c7b40fc23dcf3894f60292ac6.scn"]
 
 [params]
 

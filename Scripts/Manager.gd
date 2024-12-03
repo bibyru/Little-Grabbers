@@ -58,13 +58,13 @@ var trashcans = [
 ]
 var leveltimes = [
 	# Stage 0 (Testing)
-	[10, "Hi High"],
+	[120, "Hi High"],
 	
 	# Stage 1 (Training Facility)
 	[60, 100, 70],
 	
 	# Stage 2 (Factory)
-	[120, 120, 120]
+	[150, 120, 120]
 ]
 var scoretargets = [
 	# Stage 0 (Testing)
@@ -76,7 +76,7 @@ var scoretargets = [
 	
 	# Stage 2 (Factory)
 	# Level 0
-	[[12, 12, 12], [12, 12, 12], [12, 12, 12]]
+	[[110, 130, 150], [12, 12, 12], [12, 12, 12]]
 ]
 
 

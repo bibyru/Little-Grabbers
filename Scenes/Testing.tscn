@@ -58,7 +58,7 @@ type = "Organic"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -1)
 
 [node name="Fish" parent="ItemSpawner" instance=ExtResource("2_ptm41")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91339, 5.30129, 0.1282)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53956, -0.862407, -0.165995)
 
 [node name="PortalSpawner" parent="." instance=ExtResource("7_482u6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201218, -0.00587082, -9.81961)
