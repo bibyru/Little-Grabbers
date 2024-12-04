@@ -21,7 +21,7 @@ func _ready():
 			buttonVsync.set_pressed_no_signal(true)
 			buttonVsync.Turn(true)
 	
-	if Manager.objectcollision == true:
+	if Manager.objectCollision == true:
 		if buttonObjectcollision.button_pressed == false:
 			buttonObjectcollision.set_pressed_no_signal(true)
 			buttonObjectcollision.Turn(true)

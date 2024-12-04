@@ -45,13 +45,13 @@ func SpitThing(entity):
 			block.type = i
 			block.name = "Block" + block.type
 			SpitPosition.add_child(block)
-			block.object.Thrown( Vector3(RandomNumber(), 0, RandomNumber()) )
+			block.Rb.Thrown( Vector3(RandomNumber(), 0, RandomNumber()) )
 		
 	elif spittype == 1:
 		SpitPosition.add_child(entity)
-		entity.object.ObjectActivate()
+		entity.Rb.ObjectActivate()
 		entity.global_position = SpitPosition.global_position
-		entity.object.Thrown( Vector3(RandomNumber(), 0, RandomNumber()) )
+		entity.Rb.Thrown( Vector3(RandomNumber(), 0, RandomNumber()) )
 	
 	busy = false
 

@@ -8,7 +8,7 @@ func _ready():
 	if CheckMaxLevel() == true:
 		HideNextLevel()
 	
-	TrashCansUI.levelid = Manager.LevelEntity.levelId
+	TrashCansUI.levelId = Manager.LevelEntity.levelId
 	TrashCansUI.Initialize()
 
 func HideNextLevel():

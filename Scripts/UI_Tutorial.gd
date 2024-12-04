@@ -18,18 +18,18 @@ var howToPlayTexts = [
 	],
 	[
 		"Pick up the Garbage Block, then put\nit into the same colored Recycler!",
-		"(+%d %ss as reward)" %[Manager.score_reward, Manager.score_name]
+		"(+%d %ss as reward)" %[Manager.scoreReward, Manager.scoreName]
 	],
 	[
 		"If you put garbage into the wrong\nRecycler, you'll be fined!",
-		"(-%d %ss as punishment)" %[Manager.score_punish, Manager.score_name]
+		"(-%d %ss as punishment)" %[Manager.scorePunish, Manager.scoreName]
 	],
 	[
 		"If you can't reach something,\nuse the cyan Stool!",
 		"(stools are corporate properties)"
 	],
 	[
-		"Don't recycle corporate property\nor you'll be fined %d %ss!" %[Manager.score_property, Manager.score_name],
+		"Don't recycle corporate property\nor you'll be fined %d %ss!" %[Manager.scoreProperty, Manager.scoreName],
 		"(corporate props have cyan stickers)"
 	]
 ]

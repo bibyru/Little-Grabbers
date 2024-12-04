@@ -29,7 +29,7 @@ func Initialize():
 
 func ScoreTargets():
 	for i in 3:
-		scoreTargetLabels[i].text = str(Manager.scoretargets[levelId[0]][levelId[1]][i])
+		scoreTargetLabels[i].text = str(Manager.scoreTargets[levelId[0]][levelId[1]][i])
 
 func CheckScore():
 	var trashcansgot = Manager.trashcans[levelId[0]][levelId[1]]

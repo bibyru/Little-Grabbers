@@ -209,7 +209,7 @@ func ReqRestartLevel():
 func CheckInPlayer(player):
 	for i in playerIndex.size():
 		if playerIndex[i].is_empty():
-			playerIndex[i] = [player.playerid, "#bf77b9", player, 0]
+			playerIndex[i] = [player.playerId, "#bf77b9", player, 0]
 			break
 
 func CheckPlayerCount():

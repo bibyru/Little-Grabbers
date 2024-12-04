@@ -166,7 +166,7 @@ func Interact():
 
 func GrabObject():
 	FrontColshape.disabled = false
-	objectSeen.object.PlayerGrabbedMe(self)
+	objectSeen.Rb.PlayerGrabbedMe(self)
 	
 	if objectHeld.is_in_group("Property"):
 		Hand.position = stepHandpos
@@ -176,16 +176,16 @@ func GrabObject():
 func ObjectRemoved(ate = false):
 	FrontColshape.disabled = true
 	if ate == true:
-		objectHeld.object.Ate()
+		objectHeld.Rb.Ate()
 	else:
-		objectHeld.object.PlayerRemovedMe(self)
+		objectHeld.Rb.PlayerRemovedMe(self)
 	
 	objectHeld = null
 
 func ThrowObject():
 	FrontColshape.disabled = true
 	if objectHeld != null:
-		objectHeld.object.PlayerRemovedMe(self, true)
+		objectHeld.Rb.PlayerRemovedMe(self, true)
 		
 		objectHeld = null
 

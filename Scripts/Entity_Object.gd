@@ -10,7 +10,7 @@ var myRotation = Vector3.ZERO
 func _ready():
 	gravity_scale = 3
 	
-	if Manager.objectcollision == true:
+	if Manager.objectCollision == true:
 		set_collision_mask_value(2, true)
 	else:
 		set_collision_mask_value(2, false)
@@ -34,16 +34,16 @@ func ObjectDisable():
 
 
 func PlayerGrabbedMe(player):
-	# if object being held by player, clear its objectheld
+	# if object being held by player, clear its objectHeld
 	var grandparent = Parent.get_parent()
 	if grandparent.name == "Hand":
-		grandparent.get_parent().get_parent().objectheld = null
+		grandparent.get_parent().get_parent().objectHeld = null
 	
 	grandparent.remove_child(Parent)
 	grandparent = null
 	
-	player.hand.add_child(Parent)
-	player.objectheld = Parent
+	player.Hand.add_child(Parent)
+	player.objectHeld = Parent
 	
 	ResetPosition(Parent)
 	ResetPosition(self)
@@ -54,9 +54,9 @@ func PlayerGrabbedMe(player):
 func PlayerRemovedMe(player, thrown = false):
 	myLocation = global_position
 	myRotation = global_rotation
-	player.hand.remove_child(Parent)
+	player.Hand.remove_child(Parent)
 	
-	Manager.itemspawner.add_child(Parent)
+	Manager.ItemSpawner.add_child(Parent)
 	global_position = myLocation
 	global_rotation = myRotation
 	

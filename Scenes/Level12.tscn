@@ -147,7 +147,7 @@ shadow_mesh = SubResource("ArrayMesh_mpjha")
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_eg00c")
-levelid = [1, 2]
+levelId = [1, 2]
 
 [node name="GameUI" parent="." instance=ExtResource("2_crfc7")]
 

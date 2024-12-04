@@ -30,8 +30,8 @@ func _ready():
 	scoreTarget = Manager.scoreTargets[levelId[0]][levelId[1]]
 	
 	var time = Manager.levelTimes[levelId[0]][levelId[1]]
-	GameUI.level_time = time
-	GameUI.timelabel.text = str("%02d:%02d" %[time/60, time%60])
+	GameUI.levelTime = time
+	GameUI.timeLabel.text = str("%02d:%02d" %[time/60, time%60])
 
 func GarbageRecycled():
 	if checkGarbageTimer != null:
@@ -52,7 +52,7 @@ func CheckGarbage():
 func FinishLevel():
 	for player in Manager.playerIndex:
 		if !player.is_empty():
-			player[2].no_input = true
+			player[2].doNoInput = true
 	GameUI.UpdateScore(3)
 	
 	var trashcansgot = 0

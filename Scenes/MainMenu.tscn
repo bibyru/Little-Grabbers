@@ -212,18 +212,16 @@ theme_override_constants/separation = 10
 
 [node name="Level" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage1/HBoxContainer" instance=ExtResource("6_lodvw")]
 layout_mode = 2
-levelid = "10"
-levelname = "Tutorial"
+levelId = "10"
+levelName = "Tutorial"
 
 [node name="Level2" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage1/HBoxContainer" instance=ExtResource("6_lodvw")]
 layout_mode = 2
-levelid = "11"
-levelname = "Level 1"
+levelId = "11"
 
 [node name="Level3" parent="CanvasLayer/Control/LevelSelect/Control/ScrollContainer/VBoxContainer/Stage1/HBoxContainer" instance=ExtResource("6_lodvw")]
 layout_mode = 2
-levelid = "12"
-levelname = "Level 2"
+levelId = "12"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1

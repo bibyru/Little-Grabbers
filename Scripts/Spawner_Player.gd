@@ -41,7 +41,7 @@ func SpawnTimerTimeout(spawnTimer, type):
 			
 			if !playerData.is_empty():
 				if playerData[2] == null:
-					player.playerid = playerData[0]
+					player.playerId = playerData[0]
 					playerData[2] = player
 					
 					if playersToSpawn > 0:

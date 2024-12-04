@@ -670,11 +670,11 @@ _data = {
 "Unholding_Run": SubResource("Animation_gejsn")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("meshes") groups=["Player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("Meshes") groups=["Player"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_nojqy")
-meshes = [NodePath("Meshes/Char0_CubeGarby/Armature_CubeGarby/Skeleton3D/Body0"), NodePath("Meshes/Char0_CubeGarby/Armature_CubeGarby/Skeleton3D/Body1"), NodePath("Meshes/Char0_CubeGarby/Armature_CubeGarby/Skeleton3D/Body2")]
+Meshes = [NodePath("Meshes/Char0_CubeGarby/Armature_CubeGarby/Skeleton3D/Body0"), NodePath("Meshes/Char0_CubeGarby/Armature_CubeGarby/Skeleton3D/Body1"), NodePath("Meshes/Char0_CubeGarby/Armature_CubeGarby/Skeleton3D/Body2")]
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.502906, 0)
