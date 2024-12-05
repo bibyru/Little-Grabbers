@@ -208,16 +208,16 @@ horizontal_alignment = 1
 layout_mode = 2
 value = 50.0
 
-[node name="SFXVol" type="VBoxContainer" parent="Control/Menu/RightContainer/Settings"]
+[node name="SoundVol" type="VBoxContainer" parent="Control/Menu/RightContainer/Settings"]
 layout_mode = 2
 theme_override_constants/separation = -5
 
-[node name="Label" type="Label" parent="Control/Menu/RightContainer/Settings/SFXVol"]
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Settings/SoundVol"]
 layout_mode = 2
-text = "SFX Volume"
+text = "Sound Volume"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Control/Menu/RightContainer/Settings/SFXVol"]
+[node name="HSlider" type="HSlider" parent="Control/Menu/RightContainer/Settings/SoundVol"]
 layout_mode = 2
 value = 50.0
 
@@ -315,6 +315,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jfykm")
 text = "Move"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/ActionVbox"]
 custom_minimum_size = Vector2(0, 50)
@@ -322,6 +323,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jfykm")
 text = "Jump"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/ActionVbox"]
 custom_minimum_size = Vector2(0, 50)
@@ -330,6 +332,7 @@ theme_override_fonts/font = ExtResource("3_jfykm")
 text = "Pick Up /
 Interact"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/ActionVbox"]
 custom_minimum_size = Vector2(0, 50)
@@ -337,6 +340,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jfykm")
 text = "Throw"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MKBVbox" type="VBoxContainer" parent="Control/Menu/RightContainer/Controls/Keys"]
 custom_minimum_size = Vector2(120, 0)
@@ -355,6 +359,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jfykm")
 text = "WASD"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/MKBVbox"]
 custom_minimum_size = Vector2(0, 50)
@@ -362,6 +367,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jfykm")
 text = "M / Space"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/MKBVbox"]
 custom_minimum_size = Vector2(0, 50)
@@ -369,6 +375,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jfykm")
 text = "J"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/MKBVbox"]
 custom_minimum_size = Vector2(0, 50)
@@ -376,6 +383,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_jfykm")
 text = "I"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ControllerVbox" type="VBoxContainer" parent="Control/Menu/RightContainer/Controls/Keys"]
 custom_minimum_size = Vector2(120, 0)
@@ -418,7 +426,7 @@ offset_right = 10.5
 grow_horizontal = 2
 scale = Vector2(2.2, 2.2)
 pivot_offset = Vector2(10.51, 0)
-chosenState = 4
+chosenCircle = 3
 
 [node name="Control3" type="Control" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox"]
 custom_minimum_size = Vector2(0, 50)
@@ -434,7 +442,7 @@ offset_right = 10.5
 grow_horizontal = 2
 scale = Vector2(2.2, 2.2)
 pivot_offset = Vector2(10.51, 0)
-chosenState = 2
+chosenCircle = 2
 
 [node name="Control4" type="Control" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox"]
 custom_minimum_size = Vector2(0, 50)
@@ -450,7 +458,7 @@ offset_right = 10.5
 grow_horizontal = 2
 scale = Vector2(2.2, 2.2)
 pivot_offset = Vector2(10.51, 0)
-chosenState = 1
+chosenCircle = 1
 
 [connection signal="button_down" from="Control/Menu/Buttons/ButtonResume" to="." method="_on_button_resume_button_down"]
 [connection signal="button_down" from="Control/Menu/Buttons/ButtonRestart" to="." method="_on_button_restart_button_down"]
@@ -461,4 +469,7 @@ chosenState = 1
 [connection signal="toggled" from="Control/Menu/RightContainer/Settings/Fullscreen/Button" to="." method="Pressed_Button_Fullscreen"]
 [connection signal="toggled" from="Control/Menu/RightContainer/Settings/AntiAliasing/Button" to="." method="Pressed_Button_AntiAliasing"]
 [connection signal="toggled" from="Control/Menu/RightContainer/Settings/Vsync/Button" to="." method="Pressed_Button_Vsync"]
+[connection signal="value_changed" from="Control/Menu/RightContainer/Settings/MasterVol/HSlider" to="." method="SliderMaster_ValueChange"]
+[connection signal="value_changed" from="Control/Menu/RightContainer/Settings/MusicVol/HSlider" to="." method="SliderMusic_ValueChange"]
+[connection signal="value_changed" from="Control/Menu/RightContainer/Settings/SoundVol/HSlider" to="." method="SliderSound_ValueChange"]
 [connection signal="toggled" from="Control/Menu/RightContainer/Gameplay/ObjectCollision/Button" to="." method="Pressed_Button_ObjectCollision"]

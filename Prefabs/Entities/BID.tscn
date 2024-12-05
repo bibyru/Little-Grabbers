@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bm3badq7ralcp"]
+[gd_scene load_steps=12 format=3 uid="uid://bm3badq7ralcp"]
 
 [ext_resource type="Script" path="res://Scripts/Entity_BID.gd" id="1_2scn4"]
 [ext_resource type="PackedScene" uid="uid://cnkuvbam6eix6" path="res://Prefabs/UI/UIPropWarning.tscn" id="2_d1qmi"]
 [ext_resource type="Texture2D" uid="uid://yen28ptlfdud" path="res://Sauce/Models/BIDv2_BID-White.png" id="3_git2e"]
+[ext_resource type="AudioStream" uid="uid://dg8pc2jsea4ls" path="res://Sauce/Sounds/TrashGrabbers-Sound-BID.mp3" id="4_jisxp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5u8c6"]
 size = Vector3(1, 0.985862, 0.976)
@@ -132,3 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07519, 0)
 [node name="ProcessingTimer" type="Timer" parent="."]
 wait_time = 0.75
 one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jisxp")
+bus = &"Sound"

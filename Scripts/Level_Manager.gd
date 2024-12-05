@@ -61,7 +61,7 @@ var levelTimes = [
 	[120, "Hi High"],
 	
 	# Stage 1 (Training Facility)
-	[60, 100, 70],
+	[60, 60, 60],
 	
 	# Stage 2 (Factory)
 	[150, 120, 120]
@@ -72,7 +72,7 @@ var scoreTargets = [
 	
 	# Stage 1 (Training Facility)
 	# Level 0         Level 1         Level 2
-	[[90, 110, 135], [115, 135, 200], [120, 140, 160]],
+	[[90, 110, 135], [95, 105, 115], [100, 110, 130]],
 	
 	# Stage 2 (Factory)
 	# Level 0
@@ -93,6 +93,19 @@ var scorePunish = 5
 var scoreProperty = 20
 var scoreOneSecond = 2
 
+var levelFinishTimer = 3
+
+@onready var musicTheme = $MusicTheme
+@onready var musicLevelSuccess = $MusicLevelSuccess
+@onready var musicLevelFailed = $MusicLevelFailed
+@onready var soundCountTime = $SoundCountTime
+
+var busMaster = AudioServer.get_bus_index("Master")
+var busMusic = AudioServer.get_bus_index("Music")
+var busSound = AudioServer.get_bus_index("Sound")
+var allBus = [busMaster, busMusic, busSound]
+
+
 
 func _ready():
 	get_window().content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
@@ -100,6 +113,9 @@ func _ready():
 	
 	if settings[3] == 1:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
+	for i in 3:
+		SetVolumeBus(i, settings[i])
 
 func _input(event):
 	if event.is_action_pressed("Esc"):
@@ -264,3 +280,22 @@ func SetVsync(booleah):
 	else:
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 		settings[5] = 0
+
+
+
+func SetVolumeBus(busId : int, value : int):
+	AudioServer.set_bus_volume_db(busId, linear_to_db(value * 0.01))
+	settings[busId] = value
+	SaveData()
+
+func PlayMusicLevel(success : bool):
+	if success == true:
+		musicLevelSuccess.play()
+	else:
+		musicLevelFailed.play()
+
+func PlayMusicTheme():
+	musicTheme.play()
+
+func PlaySoundCountTime():
+	soundCountTime.play()

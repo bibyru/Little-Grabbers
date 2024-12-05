@@ -11,10 +11,19 @@ extends Node
 @onready var buttonVsync = $Control/Menu/RightContainer/Settings/Vsync/Button
 @onready var buttonObjectcollision = $Control/Menu/RightContainer/Gameplay/ObjectCollision/Button
 
+@onready var volumeSliders = [
+	$Control/Menu/RightContainer/Settings/MasterVol/HSlider,
+	$Control/Menu/RightContainer/Settings/MusicVol/HSlider,
+	$Control/Menu/RightContainer/Settings/SoundVol/HSlider
+]
+
 func _ready():
 	panels[0].visible = true
 	panels[1].visible = false
 	panels[2].visible = false
+	
+	for i in 3:
+		volumeSliders[i].value = Manager.settings[i]
 	
 	if Manager.settings[3] == 1:
 		if buttonFullscreen.button_pressed == false:
@@ -86,3 +95,14 @@ func Pressed_Button_Vsync(toggled_on):
 func Pressed_Button_ObjectCollision(toggled_on):
 	Manager.objectCollision = !Manager.objectCollision
 	Manager.ReqRestartLevel()
+
+
+
+func SliderMaster_ValueChange(value):
+	Manager.SetVolumeBus(Manager.busMaster, value)
+
+func SliderMusic_ValueChange(value):
+	Manager.SetVolumeBus(Manager.busMusic, value)
+
+func SliderSound_ValueChange(value):
+	Manager.SetVolumeBus(Manager.busSound, value)

@@ -32,6 +32,9 @@ func _ready():
 	var time = Manager.levelTimes[levelId[0]][levelId[1]]
 	GameUI.levelTime = time
 	GameUI.timeLabel.text = str("%02d:%02d" %[time/60, time%60])
+	
+	if Manager.musicTheme.playing == false:
+		Manager.PlayMusicTheme()
 
 func GarbageRecycled():
 	if checkGarbageTimer != null:
@@ -69,12 +72,19 @@ func FinishLevel():
 	finishLevelTimer = Timer.new()
 	finishLevelTimer.one_shot = true
 	finishLevelTimer.autostart = true
-	finishLevelTimer.wait_time = 4
+	finishLevelTimer.wait_time = Manager.levelFinishTimer
 	finishLevelTimer.timeout.connect(SpawnFinishUI)
 	add_child(finishLevelTimer)
+	
+	Manager.musicTheme.stop()
+	if GameUI.levelTime > 0:
+		Manager.PlaySoundCountTime()
 
 func SpawnFinishUI():
 	var FinishUIChild = FinishUI.instantiate()
 	Manager.ItemSpawner.add_child(FinishUIChild)
 	if doHideNextLevel == true:
 		FinishUIChild.HideNextLevel()
+		Manager.PlayMusicLevel(false)
+	else:
+		Manager.PlayMusicLevel(true)

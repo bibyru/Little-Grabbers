@@ -51,6 +51,7 @@ func SpawnTimerTimeout(spawnTimer, type):
 				break
 	
 	add_child(player)
+	$SoundSpawnPlayer.play()
 
 
 

@@ -172,6 +172,8 @@ func GrabObject():
 		Hand.position = stepHandpos
 	else:
 		Hand.position = normalHandpos
+	
+	$Sounds/PickUp.play()
 
 func ObjectRemoved(ate = false):
 	FrontColshape.disabled = true
@@ -188,6 +190,8 @@ func ThrowObject():
 		objectHeld.Rb.PlayerRemovedMe(self, true)
 		
 		objectHeld = null
+	
+	$Sounds/Throw.play()
 
 
 
@@ -239,9 +243,11 @@ func _physics_process(delta):
 		if controllerId > 0 and Input.get_connected_joypads().size() > 0:
 			if Input.is_joy_button_pressed(joystick, JOY_BUTTON_A):
 				velocity.y = jumpforce * delta
+				$Sounds/Jump.play()
 		else:
 			if Input.is_action_just_pressed("Jump"):
 				velocity.y = jumpforce * delta
+				$Sounds/Jump.play()
 	
 	if doNoInput == false:
 		move_and_slide()

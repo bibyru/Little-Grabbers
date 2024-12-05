@@ -7,6 +7,8 @@ extends CanvasLayer
 
 var levelTime = 1
 
+@onready var soundTimer8s = $SoundTimer8s
+
 func _ready():
 	Manager.GameUI = self
 	scoreName.text = Manager.scoreName
@@ -30,6 +32,9 @@ func CountTime():
 	var minute = levelTime / 60
 	var second = levelTime % 60
 	timeLabel.text = "%02d:%02d" % [minute, second]
+	
+	if levelTime == 8:
+		soundTimer8s.play()
 
 
 

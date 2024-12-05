@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxw4k4hvkdxrs"]
+[gd_scene load_steps=12 format=3 uid="uid://cxw4k4hvkdxrs"]
 
 [ext_resource type="Script" path="res://Scripts/Entity_Recycler.gd" id="1_x02et"]
 [ext_resource type="PackedScene" uid="uid://cnkuvbam6eix6" path="res://Prefabs/UI/UIPropWarning.tscn" id="2_4emul"]
+[ext_resource type="AudioStream" uid="uid://371mbc1l484e" path="res://Sauce/Sounds/TrashGrabbers-Sound-RecyclerNo.mp3" id="3_vuxv6"]
+[ext_resource type="AudioStream" uid="uid://dusbiamwyeabr" path="res://Sauce/Sounds/TrashGrabbers-Sound-RecyclerYes.mp3" id="4_vu0kl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_duuyt"]
 size = Vector3(1.021, 1.126, 0.895)
@@ -119,3 +121,11 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.554, 0)
 shape = SubResource("BoxShape3D_jsdlk")
+
+[node name="SoundNo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vuxv6")
+bus = &"Sound"
+
+[node name="SoundYes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vu0kl")
+bus = &"Sound"

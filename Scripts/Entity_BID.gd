@@ -16,10 +16,11 @@ var busy = false
 func _ready():
 	add_to_group("BID")
 
-func BreakDown(entity):	
+func BreakDown(entity):
 	if entity.is_in_group("Property"):
 		PropWarning.WarnProp()
 		Manager.GameUI.UpdateScore(9)
+		$Sound.play()
 		
 	elif entity.is_in_group("Garbage"):
 		if ProcessingTimer.is_stopped():
@@ -28,6 +29,7 @@ func BreakDown(entity):
 			ProcessingTimer.start()
 			
 			ProcessingTimer.timeout.connect(SpitThing.bind(entity))
+			$Sound.play()
 		
 	elif entity.is_in_group("GarbageBlock"):
 		if ProcessingTimer.is_stopped():
@@ -36,6 +38,7 @@ func BreakDown(entity):
 			ProcessingTimer.start()
 			
 			ProcessingTimer.timeout.connect(SpitThing.bind(entity))
+			$Sound.play()
 
 func SpitThing(entity):
 	ProcessingTimer.disconnect("timeout", SpitThing)

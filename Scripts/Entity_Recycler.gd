@@ -17,16 +17,20 @@ func GarbageCheck(entity):
 	if entity.is_in_group("Property") == true:
 		Manager.GameUI.UpdateScore(9)
 		PropWarning.WarnProp()
+		$SoundNo.play()
 		return
 	
 	if entity.is_in_group("GarbageBlock"):
 		if entity.type == type:
 			Manager.GameUI.UpdateScore(0)
+			$SoundYes.play()
 		else:
 			Manager.GameUI.UpdateScore(1)
+			$SoundNo.play()
 			
 	elif entity.is_in_group("Garbage"):
 		Manager.GameUI.UpdateScore(1)
 		Manager.GameUI.UpdateScore(1)
+		$SoundNo.play()
 	
 	Manager.LevelEntity.GarbageRecycled()

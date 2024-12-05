@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0x3nbrb5gh5i"]
+[gd_scene load_steps=4 format=3 uid="uid://c0x3nbrb5gh5i"]
 
 [ext_resource type="Script" path="res://Scripts/UI_Game.gd" id="1_37dgn"]
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="2_637tu"]
+[ext_resource type="AudioStream" uid="uid://br26m5a87lnpm" path="res://Sauce/Sounds/TrashGrabbers-Sound-Timer8s.mp3" id="3_l4h46"]
 
 [node name="GameUI" type="CanvasLayer"]
 script = ExtResource("1_37dgn")
@@ -59,3 +60,6 @@ text = "1000"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="SoundTimer8s" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_l4h46")
