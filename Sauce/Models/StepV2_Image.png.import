@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdt3wulmeryn0"
-path.s3tc="res://.godot/imported/Step_Step-Rough.png-bb26eeb02fce7f02dd971eab897b2f1a.s3tc.ctex"
+uid="uid://dfu2vqm3mr0va"
+path.s3tc="res://.godot/imported/StepV2_Image.png-9f0f8688202a03a2cdb5d1441639c902.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "114f33a7a7a64aa626e7488aacab8049"
+"md5": "8597d4e7e65352a302b63e07bc01a7da"
 }
 
 [deps]
 
-source_file="res://Sauce/Models/Step_Step-Rough.png"
-dest_files=["res://.godot/imported/Step_Step-Rough.png-bb26eeb02fce7f02dd971eab897b2f1a.s3tc.ctex"]
+source_file="res://Sauce/Models/StepV2_Image.png"
+dest_files=["res://.godot/imported/StepV2_Image.png-9f0f8688202a03a2cdb5d1441639c902.s3tc.ctex"]
 
 [params]
 

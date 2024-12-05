@@ -72,7 +72,7 @@ var scoreTargets = [
 	
 	# Stage 1 (Training Facility)
 	# Level 0         Level 1         Level 2
-	[[45, 65, 125], [115, 135, 190], [100, 120, 145]],
+	[[90, 110, 135], [115, 135, 200], [120, 140, 160]],
 	
 	# Stage 2 (Factory)
 	# Level 0
@@ -209,7 +209,7 @@ func ReqRestartLevel():
 func CheckInPlayer(player):
 	for i in playerIndex.size():
 		if playerIndex[i].is_empty():
-			playerIndex[i] = [player.playerId, "#bf77b9", player, 0]
+			playerIndex[i] = [player.playerId, "#9b9b9b", player, 0]
 			break
 
 func CheckPlayerCount():

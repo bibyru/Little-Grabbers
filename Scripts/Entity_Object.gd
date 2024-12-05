@@ -65,12 +65,12 @@ func PlayerRemovedMe(player, thrown = false):
 	if thrown == true:
 		Thrown()
 
-func Thrown(random_dir = Vector3()):
-	var throwdir = global_transform.basis.z.normalized()
-	var throwstren = -8
+func Thrown(random_dir = Vector3(), throwStrength = 0):
+	if throwStrength == 0:
+		throwStrength = -8
 	
+	var throwDirection = global_transform.basis.z.normalized()
 	if random_dir != Vector3():
-		throwdir = random_dir
-		throwstren = -6
+		throwDirection = random_dir
 	
-	apply_impulse(throwdir * throwstren + Vector3(0,12,0))
+	apply_impulse(throwDirection * throwStrength + Vector3(0,12,0))

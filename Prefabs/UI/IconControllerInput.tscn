@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbd0r2aplqtg2"]
+
+[ext_resource type="Texture2D" uid="uid://bbt6bp7dtncgv" path="res://Sauce/Sprites/Controller-CircleFill.png" id="1_m2hso"]
+[ext_resource type="Script" path="res://Scripts/UI_ControllerIcon.gd" id="1_o7uut"]
+[ext_resource type="Texture2D" uid="uid://xow5dsnd8le6" path="res://Sauce/Sprites/Controller-LeftStick.png" id="2_6ov47"]
+
+[node name="ControllerInputIcon" type="Control"]
+custom_minimum_size = Vector2(21, 21)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 21.0
+offset_bottom = 21.0
+script = ExtResource("1_o7uut")
+
+[node name="Icons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CircleIconL" type="TextureRect" parent="Icons"]
+texture_filter = 1
+custom_minimum_size = Vector2(21, 21)
+layout_mode = 0
+offset_right = 21.0
+offset_bottom = 21.0
+texture = ExtResource("2_6ov47")
+expand_mode = 1
+
+[node name="Circles" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Circle1" type="TextureRect" parent="Circles"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -13.5
+offset_right = -5.5
+offset_bottom = 8.0
+grow_horizontal = 2
+texture = ExtResource("1_m2hso")
+expand_mode = 1
+
+[node name="Circle2" type="TextureRect" parent="Circles"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_right = 8.0
+offset_bottom = -5.5
+grow_vertical = 2
+texture = ExtResource("1_m2hso")
+expand_mode = 1
+
+[node name="Circle3" type="TextureRect" parent="Circles"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.5
+offset_top = -27.0
+offset_right = -5.5
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_m2hso")
+expand_mode = 1
+
+[node name="Circle4" type="TextureRect" parent="Circles"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -13.5
+offset_right = -19.0
+offset_bottom = -5.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_m2hso")
+expand_mode = 1

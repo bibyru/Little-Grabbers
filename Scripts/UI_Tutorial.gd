@@ -10,11 +10,11 @@ extends CanvasLayer
 var howToPlayTexts = [
 	[
 		"Look up the key bindings\nin the pause menu!",
-		"(any type of controllers are usable)"
+		"(any type of controllers is usable)"
 	],
 	[
 		"Pick up the Garbage, then put\nit into the BID machine!",
-		"(the cyan machine with two holes)"
+		"(the white machine with a hole on top)"
 	],
 	[
 		"Pick up the Garbage Block, then put\nit into the same colored Recycler!",
@@ -25,13 +25,13 @@ var howToPlayTexts = [
 		"(-%d %ss as punishment)" %[Manager.scorePunish, Manager.scoreName]
 	],
 	[
-		"If you can't reach something,\nuse the cyan Stool!",
-		"(stools are corporate properties)"
+		"Don't recycle corporate property\nor you'll be fined %d %ss!" %[Manager.scoreProperty, Manager.scoreName],
+		"(corporate props are black and white)"
 	],
 	[
-		"Don't recycle corporate property\nor you'll be fined %d %ss!" %[Manager.scoreProperty, Manager.scoreName],
-		"(corporate props have cyan stickers)"
-	]
+		"If you can't reach something,\nuse the white Stool!",
+		"(stools are corporate properties)"
+	],
 ]
 var index = -1
 var maxIndex

@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://0h01xmjrd2lg" path="res://Sauce/Theme/ThemeMonobutton.tres" id="1_ng5xw"]
 
 [node name="Button" type="Button"]
+focus_mode = 0
 theme = ExtResource("1_ng5xw")
 toggle_mode = true
 text = " OFF "

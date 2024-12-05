@@ -34,9 +34,9 @@ func _on_button_button_down():
 
 
 func TextureToHover():
-	BgPanel.set("theme_override_styles/BgPanel", hoverTexture)
+	BgPanel.set("theme_override_styles/panel", hoverTexture)
 func TextureToNormal():
-	BgPanel.set("theme_override_styles/BgPanel", normalTexture)
+	BgPanel.set("theme_override_styles/panel", normalTexture)
 
 func _on_button_mouse_entered():
 	TextureToHover()

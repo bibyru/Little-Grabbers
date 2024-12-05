@@ -19,7 +19,7 @@ layout_mode = 2
 theme_override_constants/separation = -1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-modulate = Color(0, 0.85, 0.85, 1)
+modulate = Color(0.497474, 0.497474, 0.497474, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -28,7 +28,6 @@ stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
 theme_override_fonts/font = ExtResource("4_3wdpd")
 theme_override_font_sizes/font_size = 16
 text = "999"
@@ -39,7 +38,7 @@ layout_mode = 2
 theme_override_constants/separation = -1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer2"]
-modulate = Color(0, 0.85, 0.85, 1)
+modulate = Color(0.497474, 0.497474, 0.497474, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -48,7 +47,6 @@ stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
 theme_override_fonts/font = ExtResource("4_3wdpd")
 theme_override_font_sizes/font_size = 16
 text = "999"
@@ -59,7 +57,7 @@ layout_mode = 2
 theme_override_constants/separation = -1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer3"]
-modulate = Color(0, 0.85, 0.85, 1)
+modulate = Color(0.497474, 0.497474, 0.497474, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
@@ -68,7 +66,6 @@ stretch_mode = 3
 
 [node name="Label" type="Label" parent="VBoxContainer3"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.135, 0.5, 0.5, 1)
 theme_override_fonts/font = ExtResource("4_3wdpd")
 theme_override_font_sizes/font_size = 16
 text = "999"

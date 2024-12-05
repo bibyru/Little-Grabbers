@@ -1,11 +1,21 @@
 extends Node
 
-@onready var buttonFullscreen = $Control/Menu/VBoxContainer/Fullscreen/Button
-@onready var buttonAntiAliasing = $Control/Menu/VBoxContainer/AntiAliasing/Button
-@onready var buttonVsync = $Control/Menu/VBoxContainer/Vsync/Button
-@onready var buttonObjectcollision = $Control/GameSettings/ObjectCollision/Button
+@onready var panels = [
+	$Control/Menu/RightContainer/Settings,
+	$Control/Menu/RightContainer/Gameplay,
+	$Control/Menu/RightContainer/Controls
+]
+
+@onready var buttonFullscreen = $Control/Menu/RightContainer/Settings/Fullscreen/Button
+@onready var buttonAntiAliasing = $Control/Menu/RightContainer/Settings/AntiAliasing/Button
+@onready var buttonVsync = $Control/Menu/RightContainer/Settings/Vsync/Button
+@onready var buttonObjectcollision = $Control/Menu/RightContainer/Gameplay/ObjectCollision/Button
 
 func _ready():
+	panels[0].visible = true
+	panels[1].visible = false
+	panels[2].visible = false
+	
 	if Manager.settings[3] == 1:
 		if buttonFullscreen.button_pressed == false:
 			buttonFullscreen.set_pressed_no_signal(true)
@@ -36,6 +46,29 @@ func _on_button_main_button_down():
 
 func _on_button_restart_button_down():
 	Manager.ReqRestartLevel()
+
+
+
+func Pressed_Button_PanelSettings():
+	for i in panels.size():
+		if i == 0:
+			panels[i].visible = true
+		else:
+			panels[i].visible = false
+
+func Pressed_Button_PanelGameplay():
+	for i in panels.size():
+		if i == 1:
+			panels[i].visible = true
+		else:
+			panels[i].visible = false
+
+func Pressed_Button_PanelControls():
+	for i in panels.size():
+		if i == 2:
+			panels[i].visible = true
+		else:
+			panels[i].visible = false
 
 
 

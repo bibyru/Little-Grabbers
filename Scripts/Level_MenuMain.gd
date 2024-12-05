@@ -52,8 +52,8 @@ func _on_button_manage_players_button_down():
 		PlayerPanel.visible = false
 
 func _on_button_reset_players_button_down():
-	for i in Manager.playerindex.size():
-		Manager.playerindex[i] = []
+	for i in Manager.playerIndex.size():
+		Manager.playerIndex[i] = []
 	Manager.ReqRestartLevel()
 
 func _on_button_options_button_down():

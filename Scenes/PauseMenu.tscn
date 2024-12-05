@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck223tmuuto7h"]
+[gd_scene load_steps=8 format=3 uid="uid://ck223tmuuto7h"]
 
 [ext_resource type="PackedScene" uid="uid://6iqunwf16155" path="res://Prefabs/UI/ButtonOnOff.tscn" id="2_0al4i"]
 [ext_resource type="Theme" uid="uid://hpwvqqmbxmcc" path="res://Sauce/Theme/ThemeGame.tres" id="2_qbt6a"]
 [ext_resource type="Script" path="res://Scripts/UI_MenuPause.gd" id="2_yesc8"]
 [ext_resource type="FontFile" uid="uid://b8esk8pmdrrka" path="res://Sauce/Theme/UbuntuMono-B.ttf" id="3_jfykm"]
+[ext_resource type="PackedScene" uid="uid://cbd0r2aplqtg2" path="res://Prefabs/UI/IconControllerInput.tscn" id="4_ke8st"]
 [ext_resource type="PackedScene" uid="uid://b43bys8l6npi2" path="res://Prefabs/UI/ButtonQuit.tscn" id="5_l45kg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv6jt"]
-bg_color = Color(0, 0.6, 0.6, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6n2j"]
+bg_color = Color(0.838896, 0.838897, 0.838897, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -27,255 +28,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_qbt6a")
 
-[node name="KeyBinding" type="Panel" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -292.0
-offset_top = 54.0
-offset_right = 253.0
-offset_bottom = 282.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Control/KeyBinding"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -83.5
-offset_top = 16.0
-offset_right = 83.5
-offset_bottom = 56.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 25
-text = "Key Bindings"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panels" type="HBoxContainer" parent="Control/KeyBinding"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -251.5
-offset_top = 62.0
-offset_right = 252.5
-offset_bottom = 212.0
-grow_horizontal = 2
-
-[node name="Panel" type="Panel" parent="Control/KeyBinding/Panels"]
-custom_minimum_size = Vector2(160, 118)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fv6jt")
-
-[node name="Control" type="Control" parent="Control/KeyBinding/Panels"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Panel2" type="Panel" parent="Control/KeyBinding/Panels"]
-custom_minimum_size = Vector2(160, 118)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fv6jt")
-
-[node name="Control2" type="Control" parent="Control/KeyBinding/Panels"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Panel3" type="Panel" parent="Control/KeyBinding/Panels"]
-custom_minimum_size = Vector2(160, 118)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fv6jt")
-
-[node name="Keys" type="HBoxContainer" parent="Control/KeyBinding"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -252.0
-offset_top = 70.0
-offset_right = 252.0
-offset_bottom = 188.0
-grow_horizontal = 2
-
-[node name="ActionVbox" type="VBoxContainer" parent="Control/KeyBinding/Keys"]
-custom_minimum_size = Vector2(160, 0)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "Action"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "Move"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "Jump"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "Interact"
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="Control/KeyBinding/Keys/ActionVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "Throw"
-horizontal_alignment = 1
-
-[node name="Control2" type="Control" parent="Control/KeyBinding/Keys"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="MKBVbox" type="VBoxContainer" parent="Control/KeyBinding/Keys"]
-custom_minimum_size = Vector2(160, 0)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "Keyboard"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "WASD"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "M / Space"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "J"
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="Control/KeyBinding/Keys/MKBVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "I"
-horizontal_alignment = 1
-
-[node name="Control" type="Control" parent="Control/KeyBinding/Keys"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ControllerVbox" type="VBoxContainer" parent="Control/KeyBinding/Keys"]
-custom_minimum_size = Vector2(160, 0)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "Joystick"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "Left Stick"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "A"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "X"
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="Control/KeyBinding/Keys/ControllerVbox"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_jfykm")
-text = "Y"
-horizontal_alignment = 1
-
-[node name="GameSettings" type="Panel" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 264.0
-offset_top = -250.0
-offset_right = 537.0
-offset_bottom = -80.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Control/GameSettings"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -189.0
-offset_top = 9.0
-offset_right = -65.0
-offset_bottom = 44.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 25
-text = "Gameplay"
-
-[node name="ObjectCollision" type="HBoxContainer" parent="Control/GameSettings"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -241.0
-offset_top = 50.0
-offset_right = -15.0
-offset_bottom = 78.0
-grow_horizontal = 0
-
-[node name="Label" type="Label" parent="Control/GameSettings/ObjectCollision"]
-layout_mode = 2
-text = "Object Collision"
-
-[node name="Control" type="Control" parent="Control/GameSettings/ObjectCollision"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button" parent="Control/GameSettings/ObjectCollision" instance=ExtResource("2_0al4i")]
-layout_mode = 2
-focus_mode = 0
-
 [node name="Menu" type="Panel" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -283,154 +35,430 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -311.0
-offset_top = -287.0
-offset_right = 271.0
-offset_bottom = 60.0
+offset_left = -345.0
+offset_top = -221.0
+offset_right = 385.0
+offset_bottom = 171.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menu"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -319.0
-offset_top = -133.0
-offset_right = -31.0
-offset_bottom = 133.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Fullscreen" type="HBoxContainer" parent="Control/Menu/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/Fullscreen"]
-layout_mode = 2
-text = "Fullscreen"
-
-[node name="Control" type="Control" parent="Control/Menu/VBoxContainer/Fullscreen"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button" parent="Control/Menu/VBoxContainer/Fullscreen" instance=ExtResource("2_0al4i")]
-layout_mode = 2
-focus_mode = 0
-
-[node name="AntiAliasing" type="HBoxContainer" parent="Control/Menu/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/AntiAliasing"]
-layout_mode = 2
-text = "Anti Aliasing"
-
-[node name="Control" type="Control" parent="Control/Menu/VBoxContainer/AntiAliasing"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button" parent="Control/Menu/VBoxContainer/AntiAliasing" instance=ExtResource("2_0al4i")]
-layout_mode = 2
-focus_mode = 0
-
-[node name="Vsync" type="HBoxContainer" parent="Control/Menu/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/Vsync"]
-layout_mode = 2
-text = "Vsync"
-
-[node name="Control" type="Control" parent="Control/Menu/VBoxContainer/Vsync"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button" parent="Control/Menu/VBoxContainer/Vsync" instance=ExtResource("2_0al4i")]
-layout_mode = 2
-focus_mode = 0
-
-[node name="MasterVol" type="VBoxContainer" parent="Control/Menu/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = -5
-
-[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/MasterVol"]
-layout_mode = 2
-text = "Master Volume"
-horizontal_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Control/Menu/VBoxContainer/MasterVol"]
-layout_mode = 2
-value = 10.0
-
-[node name="MusicVol" type="VBoxContainer" parent="Control/Menu/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = -5
-
-[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/MusicVol"]
-layout_mode = 2
-text = "Music Volume"
-horizontal_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Control/Menu/VBoxContainer/MusicVol"]
-layout_mode = 2
-value = 50.0
-
-[node name="SFXVol" type="VBoxContainer" parent="Control/Menu/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = -5
-
-[node name="Label" type="Label" parent="Control/Menu/VBoxContainer/SFXVol"]
-layout_mode = 2
-text = "SFX Volume"
-horizontal_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Control/Menu/VBoxContainer/SFXVol"]
-layout_mode = 2
-value = 50.0
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/Menu"]
+[node name="Buttons" type="VBoxContainer" parent="Control/Menu"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 26.0
-offset_top = -139.5
+offset_top = -110.0
 offset_right = 245.0
-offset_bottom = 114.5
+offset_bottom = 160.0
 grow_vertical = 2
 theme = ExtResource("2_qbt6a")
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="Control/Menu/VBoxContainer2"]
+[node name="Label" type="Label" parent="Control/Menu/Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Paused"
 horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="Control/Menu/VBoxContainer2"]
+[node name="Control" type="Control" parent="Control/Menu/Buttons"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ButtonResume" type="Button" parent="Control/Menu/VBoxContainer2"]
+[node name="ButtonResume" type="Button" parent="Control/Menu/Buttons"]
 layout_mode = 2
 text = "Resume"
 
-[node name="ButtonRestart" type="Button" parent="Control/Menu/VBoxContainer2"]
+[node name="ButtonRestart" type="Button" parent="Control/Menu/Buttons"]
 layout_mode = 2
 text = "Restart"
 
-[node name="ButtonMain" type="Button" parent="Control/Menu/VBoxContainer2"]
+[node name="ButtonMain" type="Button" parent="Control/Menu/Buttons"]
 layout_mode = 2
 text = "Main Menu"
 
-[node name="ButtonQuit" parent="Control/Menu/VBoxContainer2" instance=ExtResource("5_l45kg")]
+[node name="ButtonQuit" parent="Control/Menu/Buttons" instance=ExtResource("5_l45kg")]
 layout_mode = 2
 
-[connection signal="toggled" from="Control/GameSettings/ObjectCollision/Button" to="." method="Pressed_Button_ObjectCollision"]
-[connection signal="toggled" from="Control/Menu/VBoxContainer/Fullscreen/Button" to="." method="Pressed_Button_Fullscreen"]
-[connection signal="toggled" from="Control/Menu/VBoxContainer/AntiAliasing/Button" to="." method="Pressed_Button_AntiAliasing"]
-[connection signal="toggled" from="Control/Menu/VBoxContainer/Vsync/Button" to="." method="Pressed_Button_Vsync"]
-[connection signal="button_down" from="Control/Menu/VBoxContainer2/ButtonResume" to="." method="_on_button_resume_button_down"]
-[connection signal="button_down" from="Control/Menu/VBoxContainer2/ButtonRestart" to="." method="_on_button_restart_button_down"]
-[connection signal="button_down" from="Control/Menu/VBoxContainer2/ButtonMain" to="." method="_on_button_main_button_down"]
+[node name="RightContainer" type="Control" parent="Control/Menu"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -467.0
+offset_top = 78.0
+offset_bottom = 102.0
+grow_horizontal = 0
+
+[node name="Tabs" type="HBoxContainer" parent="Control/Menu/RightContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.5
+offset_top = -50.0
+offset_right = 212.5
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Settings" type="Button" parent="Control/Menu/RightContainer/Tabs"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+text = "Settings"
+
+[node name="Gameplay" type="Button" parent="Control/Menu/RightContainer/Tabs"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+text = "Gameplay"
+
+[node name="KeyBindings" type="Button" parent="Control/Menu/RightContainer/Tabs"]
+custom_minimum_size = Vector2(135, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+text = "Key Bindings"
+
+[node name="Settings" type="VBoxContainer" parent="Control/Menu/RightContainer"]
+visible = false
+custom_minimum_size = Vector2(266, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.0
+offset_top = 7.0
+offset_right = 144.0
+offset_bottom = 273.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Fullscreen" type="HBoxContainer" parent="Control/Menu/RightContainer/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Settings/Fullscreen"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="Control" type="Control" parent="Control/Menu/RightContainer/Settings/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" parent="Control/Menu/RightContainer/Settings/Fullscreen" instance=ExtResource("2_0al4i")]
+layout_mode = 2
+
+[node name="AntiAliasing" type="HBoxContainer" parent="Control/Menu/RightContainer/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Settings/AntiAliasing"]
+layout_mode = 2
+text = "Anti Aliasing"
+
+[node name="Control" type="Control" parent="Control/Menu/RightContainer/Settings/AntiAliasing"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" parent="Control/Menu/RightContainer/Settings/AntiAliasing" instance=ExtResource("2_0al4i")]
+layout_mode = 2
+
+[node name="Vsync" type="HBoxContainer" parent="Control/Menu/RightContainer/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Settings/Vsync"]
+layout_mode = 2
+text = "Vsync"
+
+[node name="Control" type="Control" parent="Control/Menu/RightContainer/Settings/Vsync"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" parent="Control/Menu/RightContainer/Settings/Vsync" instance=ExtResource("2_0al4i")]
+layout_mode = 2
+
+[node name="MasterVol" type="VBoxContainer" parent="Control/Menu/RightContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Settings/MasterVol"]
+layout_mode = 2
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Control/Menu/RightContainer/Settings/MasterVol"]
+layout_mode = 2
+value = 10.0
+
+[node name="MusicVol" type="VBoxContainer" parent="Control/Menu/RightContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Settings/MusicVol"]
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Control/Menu/RightContainer/Settings/MusicVol"]
+layout_mode = 2
+value = 50.0
+
+[node name="SFXVol" type="VBoxContainer" parent="Control/Menu/RightContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Settings/SFXVol"]
+layout_mode = 2
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Control/Menu/RightContainer/Settings/SFXVol"]
+layout_mode = 2
+value = 50.0
+
+[node name="Gameplay" type="VBoxContainer" parent="Control/Menu/RightContainer"]
+visible = false
+custom_minimum_size = Vector2(288, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.0
+offset_top = 7.0
+offset_right = 144.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="ObjectCollision" type="HBoxContainer" parent="Control/Menu/RightContainer/Gameplay"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Gameplay/ObjectCollision"]
+layout_mode = 2
+text = "Object Collision"
+
+[node name="Control" type="Control" parent="Control/Menu/RightContainer/Gameplay/ObjectCollision"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" parent="Control/Menu/RightContainer/Gameplay/ObjectCollision" instance=ExtResource("2_0al4i")]
+layout_mode = 2
+
+[node name="Controls" type="Control" parent="Control/Menu/RightContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.0
+offset_top = 7.0
+offset_right = 190.0
+offset_bottom = 72.0
+grow_horizontal = 2
+
+[node name="Panels" type="HBoxContainer" parent="Control/Menu/RightContainer/Controls"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.0
+offset_right = 190.0
+offset_bottom = 280.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="Control/Menu/RightContainer/Controls/Panels"]
+custom_minimum_size = Vector2(120, 118)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v6n2j")
+
+[node name="Panel2" type="Panel" parent="Control/Menu/RightContainer/Controls/Panels"]
+custom_minimum_size = Vector2(120, 118)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v6n2j")
+
+[node name="Panel3" type="Panel" parent="Control/Menu/RightContainer/Controls/Panels"]
+custom_minimum_size = Vector2(120, 118)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v6n2j")
+
+[node name="Keys" type="HBoxContainer" parent="Control/Menu/RightContainer/Controls"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.0
+offset_top = 4.0
+offset_right = 190.0
+offset_bottom = 275.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="ActionVbox" type="VBoxContainer" parent="Control/Menu/RightContainer/Controls/Keys"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/ActionVbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Action"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/ActionVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Move"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/ActionVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Jump"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/ActionVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Pick Up /
+Interact"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/ActionVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "Throw"
+horizontal_alignment = 1
+
+[node name="MKBVbox" type="VBoxContainer" parent="Control/Menu/RightContainer/Controls/Keys"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/MKBVbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Keyboard"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/MKBVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "WASD"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/MKBVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "M / Space"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/MKBVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "J"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/MKBVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jfykm")
+text = "I"
+horizontal_alignment = 1
+
+[node name="ControllerVbox" type="VBoxContainer" parent="Control/Menu/RightContainer/Controls/Keys"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Joystick"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ControllerInputIcon" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox/Control" instance=ExtResource("4_ke8st")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.5
+offset_right = 10.5
+grow_horizontal = 2
+scale = Vector2(2.2, 2.2)
+pivot_offset = Vector2(10.51, 0)
+chosenIcon = 1
+
+[node name="Control2" type="Control" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ControllerInputIcon" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox/Control2" instance=ExtResource("4_ke8st")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.5
+offset_right = 10.5
+grow_horizontal = 2
+scale = Vector2(2.2, 2.2)
+pivot_offset = Vector2(10.51, 0)
+chosenState = 4
+
+[node name="Control3" type="Control" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ControllerInputIcon" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox/Control3" instance=ExtResource("4_ke8st")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.5
+offset_right = 10.5
+grow_horizontal = 2
+scale = Vector2(2.2, 2.2)
+pivot_offset = Vector2(10.51, 0)
+chosenState = 2
+
+[node name="Control4" type="Control" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ControllerInputIcon" parent="Control/Menu/RightContainer/Controls/Keys/ControllerVbox/Control4" instance=ExtResource("4_ke8st")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.5
+offset_right = 10.5
+grow_horizontal = 2
+scale = Vector2(2.2, 2.2)
+pivot_offset = Vector2(10.51, 0)
+chosenState = 1
+
+[connection signal="button_down" from="Control/Menu/Buttons/ButtonResume" to="." method="_on_button_resume_button_down"]
+[connection signal="button_down" from="Control/Menu/Buttons/ButtonRestart" to="." method="_on_button_restart_button_down"]
+[connection signal="button_down" from="Control/Menu/Buttons/ButtonMain" to="." method="_on_button_main_button_down"]
+[connection signal="button_down" from="Control/Menu/RightContainer/Tabs/Settings" to="." method="Pressed_Button_PanelSettings"]
+[connection signal="button_down" from="Control/Menu/RightContainer/Tabs/Gameplay" to="." method="Pressed_Button_PanelGameplay"]
+[connection signal="button_down" from="Control/Menu/RightContainer/Tabs/KeyBindings" to="." method="Pressed_Button_PanelControls"]
+[connection signal="toggled" from="Control/Menu/RightContainer/Settings/Fullscreen/Button" to="." method="Pressed_Button_Fullscreen"]
+[connection signal="toggled" from="Control/Menu/RightContainer/Settings/AntiAliasing/Button" to="." method="Pressed_Button_AntiAliasing"]
+[connection signal="toggled" from="Control/Menu/RightContainer/Settings/Vsync/Button" to="." method="Pressed_Button_Vsync"]
+[connection signal="toggled" from="Control/Menu/RightContainer/Gameplay/ObjectCollision/Button" to="." method="Pressed_Button_ObjectCollision"]

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr1youda1ueva"
-path.s3tc="res://.godot/imported/BID_BID.png-116013a3c1450392e389d216b97c4f83.s3tc.ctex"
+uid="uid://yen28ptlfdud"
+path.s3tc="res://.godot/imported/BIDv2_BID-White.png-74d4030bca476c1b29d5828830f2bd03.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "93097706778009c6ac9b72da2ff2ef03"
+"md5": "12c374b64976e52d04c6919a0f1de339"
 }
 
 [deps]
 
-source_file="res://Sauce/Models/BID_BID.png"
-dest_files=["res://.godot/imported/BID_BID.png-116013a3c1450392e389d216b97c4f83.s3tc.ctex"]
+source_file="res://Sauce/Models/BIDv2_BID-White.png"
+dest_files=["res://.godot/imported/BIDv2_BID-White.png-74d4030bca476c1b29d5828830f2bd03.s3tc.ctex"]
 
 [params]
 

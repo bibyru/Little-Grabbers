@@ -8,10 +8,10 @@
 [resource]
 default_font = ExtResource("4_3fx5l")
 default_font_size = 20
-Button/colors/font_color = Color(0, 0.6, 0.6, 1)
-Button/colors/font_hover_color = Color(0, 0.6, 0.6, 1)
-Button/colors/font_hover_pressed_color = Color(0, 1, 1, 1)
-Button/colors/font_pressed_color = Color(0, 1, 1, 1)
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/fonts/font = ExtResource("1_terek")
 Button/styles/hover = ExtResource("2_wh36o")
 Button/styles/normal = ExtResource("2_wh36o")
