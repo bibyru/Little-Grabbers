@@ -7,7 +7,7 @@ var garbageBlock = preload("res://Prefabs/Entities/GarbageBlock.tscn")
 # spitType
 # 0 = ate a garbage / 1 = ate a block
 var spitType = 0
-var spitStrength = -4
+var spitStrength = -5
 var busy = false
 
 @onready var SpitPosition = $SpitPosition

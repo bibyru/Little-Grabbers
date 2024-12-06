@@ -316,4 +316,4 @@ transform = Transform3D(0.784863, 0, 0.619669, 0, 1, 0, -0.619669, 0, 0.784863, 
 transform = Transform3D(-0.708906, 0, 0.705303, 0, 1, 0, -0.705303, 0, -0.708906, -0.585154, 1.90735e-06, -0.207466)
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("14_wk1r1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0.926818)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18016, 5, -1.76855)

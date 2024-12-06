@@ -188,10 +188,8 @@ func ThrowObject():
 	FrontColshape.disabled = true
 	if objectHeld != null:
 		objectHeld.Rb.PlayerRemovedMe(self, true)
-		
 		objectHeld = null
-	
-	$Sounds/Throw.play()
+		$Sounds/Throw.play()
 
 
 

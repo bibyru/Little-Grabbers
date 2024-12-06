@@ -23,6 +23,9 @@ func _ready():
 	
 	WarningPanel.modulate = Color(1,1,1,0)
 	CansPanel.modulate = Color(1,1,1,0)
+	
+	if Manager.musicTheme.playing == false:
+		Manager.PlayMusicTheme()
 
 
 func CansWarning():

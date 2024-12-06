@@ -61,7 +61,7 @@ var levelTimes = [
 	[120, "Hi High"],
 	
 	# Stage 1 (Training Facility)
-	[60, 60, 60],
+	[60, 60, 70],
 	
 	# Stage 2 (Factory)
 	[150, 120, 120]
@@ -227,6 +227,11 @@ func CheckInPlayer(player):
 		if playerIndex[i].is_empty():
 			playerIndex[i] = [player.playerId, "#9b9b9b", player, 0]
 			break
+		
+		## Comment below if don't need to initialize others' colors
+		#else:
+			#var randomColor = ["#4190ff", "#ff9741", "#d8ff41", "#8d41ff"]
+			#playerIndex[i] = [player.playerId, randomColor[randi_range(0, 3)], player, 0]
 
 func CheckPlayerCount():
 	var count = 0
@@ -296,6 +301,10 @@ func PlayMusicLevel(success : bool):
 
 func PlayMusicTheme():
 	musicTheme.play()
+	if musicLevelFailed.playing == true:
+		musicLevelFailed.stop()
+	if musicLevelSuccess.playing == true:
+		musicLevelSuccess.stop()
 
 func PlaySoundCountTime():
 	soundCountTime.play()
