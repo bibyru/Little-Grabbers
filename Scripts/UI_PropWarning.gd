@@ -8,7 +8,7 @@ func _ready():
 	WarningPanel.modulate = Color(1,1,1,0)
 
 func WarnProp():
-	WarningLabel.text = "Corporate property destroyed, %d %ss subtracted." %[Manager.score_property, Manager.score_name]
+	WarningLabel.text = "Corporate property destroyed, %d %ss subtracted." %[Manager.scoreProperty, Manager.scoreName]
 	StartWarning()
 
 func StartWarning():

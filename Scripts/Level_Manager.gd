@@ -72,7 +72,7 @@ var scoreTargets = [
 	
 	# Stage 1 (Training Facility)
 	# Level 0         Level 1         Level 2
-	[[90, 110, 135], [95, 105, 115], [100, 110, 130]],
+	[[90, 110, 135], [110, 120, 150], [90, 110, 135]],
 	
 	# Stage 2 (Factory)
 	# Level 0
