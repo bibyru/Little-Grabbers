@@ -25,12 +25,12 @@ _**Any type of joystick can be used**, the following are labels on an **xbox joy
 This project is currently being developed using Godot v4.2.2.
 | **Role** | **Credit** | **Development Time** |
 | :- | :- | :- |
-| Game programmer | bibyru (Ruby) | 4 days |
 | Project lead | bibyru (Ruby) | 8 days |
-| Visual designer | bibyru (Ruby) | 2 day |
 | Game designer | bibyru (Ruby) | 2 day |
-| Level 1-1 designer | Deo Manuel Gani | 1 day |
-| Level 1-2 | Darren Keane | 1 day |
+| Visual designer | bibyru (Ruby) | 2 day |
+| Game programmer | bibyru (Ruby) | 4 days |
+| Level designer | bibyru (Ruby), Deo Manuel Gani, Darren Keane | 2 day |
+| Game balancer | bibyru (Ruby), Deo Manuel Gani, Darren Keane | 1 day |
 
 <br/>
 
