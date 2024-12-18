@@ -5,6 +5,8 @@
 
 Download game [here](https://github.com/bibyru/Little-Grabbers/releases/).
 
+Check out the trailer [here](https://youtu.be/M5OtNwW0lXs).
+
 <br/>
 
 ## 🎮 Game Controls
